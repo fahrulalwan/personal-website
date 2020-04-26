@@ -4,8 +4,8 @@ import utilStyles from '../styles/utils.module.css'
 import Link from 'next/link'
 import React from "react";
 
-const name = '@fahrulalwan'
-export const siteTitle = 'Next.js Sample Website'
+const name = '@fahrulalwan';
+export const siteTitle = 'Next.js Sample Website';
 
 export default function Layout({children, home}: {
   children: React.ReactNode
