@@ -20,7 +20,7 @@ export default function Home({allPostsData}: {
         <title>{siteTitle}</title>
       </Head>
       <section className={utilStyles.headingMd}>
-        <p>Hi there, i am a digital magician who loves to learn pretty much anything (including outside the dev world!). you may not believe me yet but trust me, journey starts from building this website. stay tuned!</p>
+        <p>Hi there, I'm a digital magician who loves to learn pretty much anything (including outside the dev world!). My journey starts from building this website. stay tuned for the next big thing to happen!</p>
         <p>
           U can say hi: {' '}
           <a href="https://www.instagram.com/fahrulalwan/" rel="noopener noreferrer">Instagram</a>{', '}

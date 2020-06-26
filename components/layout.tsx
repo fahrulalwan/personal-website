@@ -5,7 +5,7 @@ import Link from 'next/link'
 import React from "react";
 
 const name = '@fahrulalwan';
-export const siteTitle = 'Next.js Sample Website';
+export const siteTitle = '@fahrulalwan homepage';
 
 export default function Layout({children, home}: {
   children: React.ReactNode
@@ -14,7 +14,7 @@ export default function Layout({children, home}: {
   return (
     <div className={styles.container}>
       <Head>
-        <title>Default Title</title>
+        <title>@fahrulalwan</title>
         <link rel="icon" href="/favicon.ico" />
         <meta
           name="description"
