@@ -18,10 +18,12 @@ rules:
   react/jsx-filename-extension:
     - 1
     - extensions:
-      - ".js"
-      - ".jsx"
-      - ".ts"
-      - ".tsx"
+        - ".js"
+        - ".jsx"
+        - ".ts"
+        - ".tsx"
   react/jsx-props-no-spreading:
     - 1
     - custom: ignore
+  jsx-a11y/anchor-is-valid: off
+  react/no-danger: off

@@ -1,13 +1,13 @@
-import Head from 'next/head'
-import Layout, { siteTitle } from '../components/layout'
-import utilStyles from '../styles/utils.module.css'
-import { getSortedPostsData } from '../lib/posts'
-import Link from 'next/link'
-import Date from '../components/date'
-import { GetStaticProps } from 'next'
-import React from "react";
+import React from 'react';
+import Head from 'next/head';
+import Link from 'next/link';
+import {GetStaticProps} from 'next';
+import Layout, {siteTitle} from 'components/layout';
+import utilStyles from 'styles/utils.module.css';
+import {getSortedPostsData} from 'lib/posts';
+import Date from 'components/date';
 
-export default function Home({allPostsData}: {
+export default function Home({ allPostsData }: {
   allPostsData: {
     date: string
     title: string
@@ -19,15 +19,22 @@ export default function Home({allPostsData}: {
       <Head>
         <title>{siteTitle}</title>
       </Head>
-      <section className={utilStyles.headingMd}>
-        <p>Hi there, I'm a digital magician who loves to learn pretty much anything (including outside the dev world!). My journey starts from building this website. stay tuned for the next big thing to happen!</p>
+      <section className={`${utilStyles.headingMd} bg-white p-5 rounded-xl mt-3`}>
         <p>
-          U can say hi: {' '}
-          <a href="https://www.instagram.com/fahrulalwan/" rel="noopener noreferrer">Instagram</a>{', '}
-          <a href="mailto:fahrulalwan@gmail.com">Email</a>{'.'}
+          Hi there, I&apos;m a digital magician who loves to learn pretty much anything (including
+          outside the dev world!). My journey starts from building this website. stay tuned for the
+          next big thing to happen!
+        </p>
+        <p className="mt-3">
+          U can say hi:
+          {' '}
+          <a href="https://www.instagram.com/fahrulalwan/" rel="noopener noreferrer">Instagram</a>
+          {', '}
+          <a href="mailto:fahrulalwan@gmail.com">Email</a>
+          .
         </p>
       </section>
-      <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
+      <section className={`${utilStyles.headingMd} ${utilStyles.padding1px} px-5 mt-5`}>
         <h2 className={utilStyles.headingLg}>Blog</h2>
         <ul className={utilStyles.list}>
           {allPostsData.map(({ id, date, title }) => (
@@ -44,14 +51,14 @@ export default function Home({allPostsData}: {
         </ul>
       </section>
     </Layout>
-  )
+  );
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-  const allPostsData = getSortedPostsData()
+  const allPostsData = getSortedPostsData();
   return {
     props: {
-      allPostsData
-    }
-  }
-}
+      allPostsData,
+    },
+  };
+};

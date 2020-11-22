@@ -262,6 +262,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/dompurify@npm:^2.0.4":
+  version: 2.0.4
+  resolution: "@types/dompurify@npm:2.0.4"
+  dependencies:
+    "@types/trusted-types": "*"
+  checksum: a2500864c39b9b6f0fa624e5971c6dddb32437d4c7dbea743aa310adb768bbb7b6406c05be6bf38591cf5f9c4fb1964ec6681d3a3de6b8c67b7d83e808bcdfbf
+  languageName: node
+  linkType: hard
+
 "@types/json-schema@npm:^7.0.3, @types/json-schema@npm:^7.0.5, @types/json-schema@npm:^7.0.6":
   version: 7.0.6
   resolution: "@types/json-schema@npm:7.0.6"
@@ -306,6 +315,13 @@ __metadata:
     "@types/prop-types": "*"
     csstype: ^3.0.2
   checksum: dcef2034b822a949c5528fa8fa3c64da654fdbb822bd8f0488c0084d84cadb8b90af68813a6c95153d4754079f50b1cab206552c7c20f6b67a26c3641383fe31
+  languageName: node
+  linkType: hard
+
+"@types/trusted-types@npm:*":
+  version: 1.0.6
+  resolution: "@types/trusted-types@npm:1.0.6"
+  checksum: a2eb3e307d4fa212888285de782e96bd083dbabb991c3803aed124d50c9637529699299319ec8be301b3c5668067f6ea07785c3c6099f99d92783a3dab48de29
   languageName: node
   linkType: hard
 
@@ -2421,6 +2437,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"dompurify@npm:2.2.2":
+  version: 2.2.2
+  resolution: "dompurify@npm:2.2.2"
+  checksum: eab7b8763c56256bb4fb009e59b814f750fe0a4be40f996f037f136a40dbe8107820989c7b548b92263076fce7023ee31c58a11ad479cba16b4626b8d91559f1
+  languageName: node
+  linkType: hard
+
 "domutils@npm:2.1.0, domutils@npm:^2.0.0":
   version: 2.1.0
   resolution: "domutils@npm:2.1.0"
@@ -3070,12 +3093,14 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "fahrulalwan@workspace:."
   dependencies:
+    "@types/dompurify": ^2.0.4
     "@types/node": 14.14.9
     "@types/react": 17.0.0
     "@typescript-eslint/eslint-plugin": 4.8.1
     "@typescript-eslint/parser": 4.8.1
     autoprefixer: 10.0.2
     dayjs: 1.9.6
+    dompurify: 2.2.2
     eslint: 7.14.0
     eslint-config-airbnb: 18.2.1
     eslint-plugin-import: 2.22.1
