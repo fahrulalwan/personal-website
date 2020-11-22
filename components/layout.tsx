@@ -1,30 +1,24 @@
-import Head from 'next/head'
-import styles from './layout.module.css'
-import utilStyles from '../styles/utils.module.css'
-import Link from 'next/link'
-import React from "react";
+import React, {ReactNode} from 'react';
+import Head from 'next/head';
+import Link from 'next/link';
+import styles from './layout.module.css';
+import utilStyles from '../styles/utils.module.css';
 
 const name = '@fahrulalwan';
 export const siteTitle = '@fahrulalwan homepage';
 
-export default function Layout({children, home}: {
-  children: React.ReactNode
-  home?: boolean
+export default function Layout({ children, home }: {
+  children?: ReactNode
+  home: boolean
 }) {
   return (
     <div className={styles.container}>
       <Head>
-        <title>@fahrulalwan</title>
+        <title>{name}</title>
         <link rel="icon" href="/favicon.ico" />
         <meta
           name="description"
-          content="Learn how to build a personal website using Next.js"
-        />
-        <meta
-          property="og:image"
-          content={`https://og-image.now.sh/${encodeURI(
-            siteTitle
-          )}.png?theme=light&md=0&fontSize=75px&images=https%3A%2F%2Fassets.zeit.co%2Fimage%2Fupload%2Ffront%2Fassets%2Fdesign%2Fnextjs-black-logo.svg`}
+          content="@fahrulalwan 's personal website"
         />
         <meta name="og:title" content={siteTitle} />
         <meta name="twitter:card" content="summary_large_image" />
@@ -67,5 +61,5 @@ export default function Layout({children, home}: {
         </div>
       )}
     </div>
-  )
+  );
 }
