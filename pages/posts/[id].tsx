@@ -1,8 +1,9 @@
+import React, { FC } from 'react';
 import Head from 'next/head';
-import {GetStaticPaths, GetStaticProps} from 'next';
-import React, {FC} from 'react';
+import { GetStaticPaths, GetStaticProps } from 'next';
+import DOMSanitizer from 'isomorphic-dompurify';
 import Layout from '../../components/layout';
-import {getAllPostIds, getPostData} from '../../lib/posts';
+import { getAllPostIds, getPostData } from '../../lib/posts';
 import Date from '../../components/date';
 import utilStyles from '../../styles/utils.module.css';
 
@@ -24,10 +25,13 @@ const Post: FC<PostData> = ({ postData }: PostData) => (
       <div className={`${utilStyles.lightText} mb-2`}>
         <Date dateString={postData.date} />
       </div>
-      <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
+      {/* <div className="space-y-2"
+       dangerouslySetInnerHTML={{ __html: DOMSanitizer.sanitize(postData.contentHtml) }} /> */}
+      <div className="space-y-2" dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
     </article>
   </Layout>
 );
+
 export const getStaticPaths: GetStaticPaths = async () => {
   const paths = getAllPostIds();
   return {
