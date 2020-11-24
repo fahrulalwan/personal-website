@@ -1,6 +1,7 @@
-import React, { FC, PropsWithChildren } from 'react';
+import React, {FC, PropsWithChildren} from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
+import {motion} from 'framer-motion';
 import styles from './layout.module.css';
 import utilStyles from '../styles/utils.module.css';
 
@@ -22,12 +23,44 @@ const Layout: FC<{home?: boolean}> = ({ children, home }: PropsWithChildren<{hom
     <header className={styles.header}>
       {home ? (
         <>
-          <img
+          <motion.img
+            initial="hidden"
+            animate="visible"
+            variants={{
+              hidden: {
+                scale: 0.9,
+                opacity: 0,
+              },
+              visible: {
+                scale: 1,
+                opacity: 1,
+                transition: {
+                  delay: 0.4,
+                },
+              },
+            }}
             src="/images/profile.jpg"
             className={`${styles.headerHomeImage} ${utilStyles.borderCircle}`}
             alt={name}
           />
-          <h1 className="text-4xl font-semibold my-4">{name}</h1>
+          <motion.h1
+            className="text-4xl font-semibold my-4"
+            initial="hidden"
+            animate="visible"
+            variants={{
+              hidden: {
+                opacity: 0,
+              },
+              visible: {
+                opacity: 1,
+                transition: {
+                  duration: 0.5,
+                },
+              },
+            }}
+          >
+            {name}
+          </motion.h1>
         </>
       ) : (
         <>
