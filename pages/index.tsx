@@ -6,6 +6,7 @@ import Layout, {siteTitle} from 'components/layout';
 import utilStyles from 'styles/utils.module.css';
 import {getSortedPostsData} from 'lib/posts';
 import Date from 'components/date';
+import {motion} from 'framer-motion';
 
 export default function Home({ allPostsData }: {
   allPostsData: {
@@ -36,9 +37,40 @@ export default function Home({ allPostsData }: {
       </section>
       <section className={`${utilStyles.headingMd} ${utilStyles.padding1px} px-5 mt-5`}>
         <h2 className={utilStyles.headingLg}>Blog</h2>
-        <ul className={utilStyles.list}>
+        <motion.ul
+          className={utilStyles.list}
+          initial="closed"
+          animate="open"
+          variants={{
+            open: {
+              transition: { staggerChildren: 0.1, delayChildren: 0.2 },
+            },
+            closed: {
+              transition: { staggerChildren: 0.05, staggerDirection: -1 },
+            },
+          }}
+        >
           {allPostsData.map(({ id, date, title }) => (
-            <li className={utilStyles.listItem} key={id}>
+            <motion.li
+              className={utilStyles.listItem}
+              key={id}
+              variants={{
+                open: {
+                  y: 0,
+                  opacity: 1,
+                  transition: {
+                    y: { stiffness: 1000, velocity: -100 },
+                  },
+                },
+                closed: {
+                  y: 25,
+                  opacity: 0,
+                  transition: {
+                    y: { stiffness: 1000 },
+                  },
+                },
+              }}
+            >
               <Link href="/posts/[id]" as={`/posts/${id}`}>
                 <a>{title}</a>
               </Link>
@@ -46,9 +78,9 @@ export default function Home({ allPostsData }: {
               <small className={utilStyles.lightText}>
                 <Date dateString={date} />
               </small>
-            </li>
+            </motion.li>
           ))}
-        </ul>
+        </motion.ul>
       </section>
     </Layout>
   );

@@ -1,9 +1,8 @@
-import React, { FC } from 'react';
+import React, {FC} from 'react';
 import Head from 'next/head';
-import { GetStaticPaths, GetStaticProps } from 'next';
-import DOMSanitizer from 'isomorphic-dompurify';
+import {GetStaticPaths, GetStaticProps} from 'next';
 import Layout from '../../components/layout';
-import { getAllPostIds, getPostData } from '../../lib/posts';
+import {getAllPostIds, getPostData} from '../../lib/posts';
 import Date from '../../components/date';
 import utilStyles from '../../styles/utils.module.css';
 
@@ -20,7 +19,7 @@ const Post: FC<PostData> = ({ postData }: PostData) => (
     <Head>
       <title>{postData.title}</title>
     </Head>
-    <article className="p-5 bg-white rounded-lg mt-3">
+    <article className="p-5 bg-white rounded-lg mt-3 prose lg:prose-sm">
       <h1 className={utilStyles.headingXl}>{postData.title}</h1>
       <div className={`${utilStyles.lightText} mb-2`}>
         <Date dateString={postData.date} />
