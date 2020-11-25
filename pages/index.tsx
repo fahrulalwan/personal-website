@@ -2,11 +2,11 @@ import React from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
 import {GetStaticProps} from 'next';
-import Layout, {siteTitle} from 'components/layout';
-import utilStyles from 'styles/utils.module.css';
-import {getSortedPostsData} from 'lib/posts';
-import Date from 'components/date';
 import {motion} from 'framer-motion';
+import Date from '../components/date';
+import utilStyles from '../styles/utils.module.css';
+import Layout, {siteTitle} from '../components/layout';
+import {getSortedPostsData} from '../lib/posts';
 
 export default function Home({ allPostsData }: {
   allPostsData: {

@@ -9,7 +9,7 @@ const name = '@fahrulalwan';
 export const siteTitle = '@fahrulalwan homepage';
 
 const Layout: FC<{home?: boolean}> = ({ children, home }: PropsWithChildren<{home?: boolean}>) => (
-  <div className={styles.container}>
+  <div className="max-w-screen-sm mx-auto pt-12 pb-24 px-4">
     <Head>
       <title>{name}</title>
       <link rel="icon" href="/favicon.ico" />
