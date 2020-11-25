@@ -1,42 +1,51 @@
 import React from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
-import {GetStaticProps} from 'next';
-import {motion} from 'framer-motion';
+import { GetStaticProps } from 'next';
+import { motion } from 'framer-motion';
 import Date from '../components/date';
 import utilStyles from '../styles/utils.module.css';
-import Layout, {siteTitle} from '../components/layout';
-import {getSortedPostsData} from '../lib/posts';
+import Layout from '../components/layout';
+import { getSortedPostsData } from '../lib/posts';
 
-export default function Home({ allPostsData }: {
+export default function Home({
+  allPostsData,
+}: {
   allPostsData: {
-    date: string
-    title: string
-    id: string
-  }[]
+    date: string;
+    title: string;
+    id: string;
+  }[];
 }) {
   return (
-    <Layout home>
+    <Layout home description="@fahrulalwan 's personal website">
       <Head>
-        <title>{siteTitle}</title>
+        <title>@fahrulalwan homepage</title>
       </Head>
-      <section className={`${utilStyles.headingMd} bg-white p-5 rounded-xl mt-3`}>
+      <section
+        className={`${utilStyles.headingMd} bg-white dark:bg-github p-5 rounded-xl mt-3 dark:text-white`}>
         <p>
           Hi there, I&apos;m a digital magician who loves to learn pretty much anything (including
           outside the dev world!). My journey starts from building this website. stay tuned for the
           next big thing to happen!
         </p>
         <p className="mt-3">
-          U can say hi:
-          {' '}
-          <a href="https://www.instagram.com/fahrulalwan/" rel="noopener noreferrer">Instagram</a>
+          U can say hi:{' '}
+          <a
+            className="dark:text-indigo-300"
+            href="https://www.instagram.com/fahrulalwan/"
+            rel="noopener noreferrer">
+            Instagram
+          </a>
           {', '}
-          <a href="mailto:fahrulalwan@gmail.com">Email</a>
+          <a className="dark:text-indigo-300" href="mailto:fahrulalwan@gmail.com">
+            Email
+          </a>
           .
         </p>
       </section>
       <section className={`${utilStyles.headingMd} ${utilStyles.padding1px} px-5 mt-5`}>
-        <h2 className={utilStyles.headingLg}>Blog</h2>
+        <h2 className={`${utilStyles.headingLg} dark:text-white`}>Blog</h2>
         <motion.ul
           className={utilStyles.list}
           initial="closed"
@@ -48,8 +57,7 @@ export default function Home({ allPostsData }: {
             closed: {
               transition: { staggerChildren: 0.05, staggerDirection: -1 },
             },
-          }}
-        >
+          }}>
           {allPostsData.map(({ id, date, title }) => (
             <motion.li
               className={utilStyles.listItem}
@@ -69,13 +77,12 @@ export default function Home({ allPostsData }: {
                     y: { stiffness: 1000 },
                   },
                 },
-              }}
-            >
+              }}>
               <Link href="/posts/[id]" as={`/posts/${id}`}>
-                <a>{title}</a>
+                <a className="dark:text-purple-200">{title}</a>
               </Link>
               <br />
-              <small className={utilStyles.lightText}>
+              <small className={`${utilStyles.lightText} dark:text-gray-400`}>
                 <Date dateString={date} />
               </small>
             </motion.li>

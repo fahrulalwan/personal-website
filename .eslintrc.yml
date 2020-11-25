@@ -4,6 +4,9 @@ env:
 extends:
   - 'plugin:react/recommended'
   - airbnb
+  - prettier
+  - 'prettier/@typescript-eslint'
+  - 'prettier/react'
 parser: '@typescript-eslint/parser'
 settings:
   import/resolver:
@@ -23,6 +26,19 @@ plugins:
   - react
   - '@typescript-eslint'
 rules:
+  no-shadow: off
+  '@typescript-eslint/no-shadow': error
+  no-unused-vars: off
+  '@typescript-eslint/no-unused-vars': error
+  max-len: off
+  jsx-a11y/label-has-associated-control:
+    - error
+    - labelComponents:
+        - label
+      labelAttributes:
+        - htmlFor
+      controlComponents:
+        - input
   react/jsx-filename-extension:
     - 1
     - extensions:

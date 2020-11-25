@@ -1,27 +1,29 @@
-import React, {FC} from 'react';
+import React, { FC } from 'react';
 import Head from 'next/head';
-import {GetStaticPaths, GetStaticProps} from 'next';
+import { GetStaticPaths, GetStaticProps } from 'next';
+import dayjs from 'dayjs';
 import Layout from '../../components/layout';
-import {getAllPostIds, getPostData} from '../../lib/posts';
+import { getAllPostIds, getPostData } from '../../lib/posts';
 import Date from '../../components/date';
 import utilStyles from '../../styles/utils.module.css';
 
 interface PostData {
   postData: {
-    title: string
-    date: string
-    contentHtml: string
-  }
+    title: string;
+    date: string;
+    contentHtml: string;
+  };
 }
 
 const Post: FC<PostData> = ({ postData }: PostData) => (
-  <Layout>
+  <Layout
+    description={`${postData.title}. Created on ${dayjs(postData.date).format('MMMM D, YYYY')}`}>
     <Head>
       <title>{postData.title}</title>
     </Head>
-    <article className="p-5 bg-white rounded-lg mt-3 prose prose-sm md:prose-lg prose-indigo">
-      <h1>{postData.title}</h1>
-      <div className={`${utilStyles.lightText} mb-2`}>
+    <article className="p-5 bg-white dark:bg-github rounded-lg mt-3 prose prose-sm md:prose-lg prose-indigo dark:prose-dark">
+      <h1 className="dark:text-indigo-200">{postData.title}</h1>
+      <div className={`${utilStyles.lightText} dark:text-gray-400 mb-2`}>
         <Date dateString={postData.date} />
       </div>
       {/* <div className="space-y-2"
@@ -39,7 +41,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
   };
 };
 
-export const getStaticProps: GetStaticProps<PostData, {id: string}> = async ({ params }) => {
+export const getStaticProps: GetStaticProps<PostData, { id: string }> = async ({ params }) => {
   const postData = await getPostData(params?.id as string);
   return {
     props: {
