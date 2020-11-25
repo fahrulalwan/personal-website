@@ -19,8 +19,8 @@ const Post: FC<PostData> = ({ postData }: PostData) => (
     <Head>
       <title>{postData.title}</title>
     </Head>
-    <article className="p-5 bg-white rounded-lg mt-3 prose lg:prose-sm">
-      <h1 className={utilStyles.headingXl}>{postData.title}</h1>
+    <article className="p-5 bg-white rounded-lg mt-3 prose prose-sm md:prose-lg prose-indigo">
+      <h1>{postData.title}</h1>
       <div className={`${utilStyles.lightText} mb-2`}>
         <Date dateString={postData.date} />
       </div>
@@ -39,8 +39,8 @@ export const getStaticPaths: GetStaticPaths = async () => {
   };
 };
 
-export const getStaticProps: GetStaticProps = async ({ params }) => {
-  const postData = await getPostData(params.id as string);
+export const getStaticProps: GetStaticProps<PostData, {id: string}> = async ({ params }) => {
+  const postData = await getPostData(params?.id as string);
   return {
     props: {
       postData,

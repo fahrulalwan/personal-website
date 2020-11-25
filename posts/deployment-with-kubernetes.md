@@ -130,6 +130,6 @@ dont forget to save! :)
 
 
 Reference:
-: [https://medium.com/easyread/today-i-learned-membuat-horizontal-pod-autoscaler-hpa-pada-kubernetes-86da03095071](https://medium.com/easyread/today-i-learned-membuat-horizontal-pod-autoscaler-hpa-pada-kubernetes-86da03095071) (Indonesia)
-: [https://www.digitalocean.com/community/tutorials/how-to-set-up-an-nginx-ingress-on-digitalocean-kubernetes-using-helm](https://www.digitalocean.com/community/tutorials/how-to-set-up-an-nginx-ingress-on-digitalocean-kubernetes-using-helm) (English)
-: [https://medium.com/bb-tutorials-and-thoughts/how-to-use-own-local-doker-images-with-minikube-2c1ed0b0968](https://medium.com/bb-tutorials-and-thoughts/how-to-use-own-local-doker-images-with-minikube-2c1ed0b0968) (English)
+- [Medium: Membuat Horizontal Pod Autoscaler](https://medium.com/easyread/today-i-learned-membuat-horizontal-pod-autoscaler-hpa-pada-kubernetes-86da03095071) (Indonesia)
+- [DigitalOcean: Setup nginx Ingress using Helm](https://www.digitalocean.com/community/tutorials/how-to-set-up-an-nginx-ingress-on-digitalocean-kubernetes-using-helm) (English)
+- [Medium: How to use local own docker images with Minikube](https://medium.com/bb-tutorials-and-thoughts/how-to-use-own-local-doker-images-with-minikube-2c1ed0b0968) (English)

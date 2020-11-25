@@ -1,6 +1,6 @@
 import React from 'react';
-import 'styles/global.css';
-import 'styles/custom-style.css';
+import '../styles/global.css';
+import '../styles/custom-style.css';
 import {AppProps} from 'next/app';
 import {motion} from 'framer-motion';
 
