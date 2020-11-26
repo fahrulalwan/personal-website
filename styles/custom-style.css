@@ -22,3 +22,27 @@ img {
   max-width: 100%;
   display: block;
 }
+
+* {
+  transition: all 0.2s cubic-bezier(0.39, 0.58, 0.57, 1);
+}
+
+.custom-toggle__dot {
+  --tw-translate-x: 3px;
+  --tw-translate-y: 4px;
+  transition: all 0.2s cubic-bezier(0.39, 0.58, 0.57, 1);
+}
+
+.custom-toggle__line {
+  background-color: rgba(0, 0, 0, 0.54);
+  transition: background-color 0.2s cubic-bezier(0.39, 0.58, 0.57, 1);
+}
+
+input:checked ~ .custom-toggle__dot {
+  --tw-translate-x: 2.25rem;
+}
+
+input:checked ~ .custom-toggle__line {
+  background-color: #5600D7;
+}
+

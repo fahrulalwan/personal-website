@@ -39,9 +39,6 @@ module.exports = {
   },
   variants: {
     typography: ['responsive', 'dark'],
-    ringColor: ['hover', 'active', 'dark'],
-    ringOffsetWidth: ['hover', 'active', 'dark'],
-    ringOffsetColor: ['hover', 'active', 'dark'],
   },
   plugins: [require('@tailwindcss/typography')],
 };

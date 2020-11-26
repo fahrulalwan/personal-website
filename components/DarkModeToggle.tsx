@@ -1,20 +1,29 @@
 import React, { FC, useEffect, useState } from 'react';
 
-export type Themes = 'LIGHT' | 'DARK';
+export type Themes = 'light' | 'dark';
 
 export enum Theme {
-  LIGHT = 'LIGHT',
-  DARK = 'DARK',
+  LIGHT = 'light',
+  DARK = 'dark',
 }
-
 const DarkModeToggle: FC = () => {
-  const [theme, setTheme] = useState<Themes>(Theme.LIGHT);
+  const [theme, setTheme] = useState<Themes>(() => {
+    const persistedTheme = localStorage?.getItem('theme') as Themes;
+
+    if (persistedTheme === Theme.DARK) {
+      document.querySelector('html')?.classList.add('dark');
+      return persistedTheme;
+    }
+    return Theme.LIGHT;
+  });
 
   useEffect(() => {
     const existingTheme: Themes = localStorage.getItem('theme') as Themes;
     if (existingTheme && existingTheme !== theme) {
       setTheme(existingTheme);
-      if (existingTheme === Theme.DARK) document.querySelector('html')?.classList.add(Theme.DARK);
+      const htmlTag = document.querySelector('html');
+      if (existingTheme === Theme.DARK && !htmlTag?.classList.contains('dark'))
+        htmlTag.classList.add('dark');
     }
   }, []);
 
@@ -26,7 +35,7 @@ const DarkModeToggle: FC = () => {
   }
 
   return (
-    <div className="inline-flex items-center space-x-3">
+    <div className="inline-flex items-center space-x-3 sm:absolute top-0 right-0">
       {theme === Theme.LIGHT ? (
         <svg
           width={30}
@@ -58,19 +67,21 @@ const DarkModeToggle: FC = () => {
         </svg>
       )}
 
-      <div className="relative inline-block w-10 align-middle select-none transition duration-200 ease-in">
-        <input
-          type="checkbox"
-          name="toggle"
-          id="toggle"
-          checked={theme === Theme.DARK}
-          onChange={onChangeTheme}
-          className="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-4 appearance-none cursor-pointer outline-none"
-        />
-        <label
-          htmlFor="toggle"
-          className="toggle-label block overflow-hidden h-6 rounded-full bg-gray-300 cursor-pointer"
-        />
+      <div className="relative h-8 transition duration-200 ease-in">
+        <label htmlFor="togglePengajuan" className="cursor-pointer inline-flex relative">
+          <input
+            id="togglePengajuan"
+            type="checkbox"
+            className="hidden"
+            checked={theme === Theme.DARK}
+            onChange={onChangeTheme}
+          />
+          <span className="custom-toggle__line w-16 h-8 bg-white rounded-full shadow-inner block" />
+          <span
+            className="custom-toggle__dot transform-gpu absolute w-6 h-6 bg-white rounded-full"
+            style={{ boxShadow: '-0.08rem .2rem 0.3rem 0.01rem rgba(0,0,0,0.2)' }}
+          />
+        </label>
       </div>
       {theme === Theme.LIGHT ? (
         <svg

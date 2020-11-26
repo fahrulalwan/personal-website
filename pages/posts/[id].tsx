@@ -21,7 +21,7 @@ const Post: FC<PostData> = ({ postData }: PostData) => (
     <Head>
       <title>{postData.title}</title>
     </Head>
-    <article className="p-5 bg-white dark:bg-github rounded-lg mt-3 prose prose-sm md:prose-lg prose-indigo dark:prose-dark">
+    <article className="p-5 bg-white dark:bg-github rounded-lg mt-3 prose prose-sm sm:prose-lg prose-indigo dark:prose-dark mx-auto">
       <h1 className="dark:text-indigo-200">{postData.title}</h1>
       <div className={`${utilStyles.lightText} dark:text-gray-400 mb-2`}>
         <Date dateString={postData.date} />
