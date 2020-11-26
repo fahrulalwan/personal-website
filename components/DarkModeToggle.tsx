@@ -76,7 +76,10 @@ const DarkModeToggle: FC = () => {
             checked={theme === Theme.DARK}
             onChange={onChangeTheme}
           />
-          <span className="custom-toggle__line w-16 h-8 bg-white rounded-full shadow-inner block" />
+          <span
+            className="custom-toggle__line w-16 h-8 bg-white rounded-full shadow-inner block"
+            style={{ backgroundColor: theme === Theme.LIGHT ? 'rgba(0, 0, 0, 0.54)' : '#5600D7' }}
+          />
           <span
             className="custom-toggle__dot transform-gpu absolute w-6 h-6 bg-white rounded-full"
             style={{ boxShadow: '-0.08rem .2rem 0.3rem 0.01rem rgba(0,0,0,0.2)' }}

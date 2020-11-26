@@ -4,7 +4,6 @@ import Link from 'next/link';
 import { motion } from 'framer-motion';
 import dayjs from 'dayjs';
 import Typewriter from 'typewriter-effect';
-import utilStyles from '../styles/utils.module.css';
 import DarkModeToggle from './DarkModeToggle';
 
 const name = '@fahrulalwan';
@@ -25,7 +24,7 @@ const Layout: FC<{ home?: boolean; description: string }> = ({
   }
 
   return (
-    <div className="max-w-screen-sm mx-auto pt-12 pb-24 px-6 sm:px-4">
+    <div className="max-w-screen-sm mx-auto pt-12 pb-24 px-4">
       <Head>
         <title>{name}</title>
         <meta property="og:title" content={name} />
@@ -184,27 +183,25 @@ const Layout: FC<{ home?: boolean; description: string }> = ({
                 />
               </a>
             </Link>
-            <h2 className={utilStyles.headingLg}>
-              <Link href="/">
-                <motion.a
-                  initial="hidden"
-                  animate="visible"
-                  variants={{
-                    hidden: {
-                      opacity: 0,
+            <Link href="/">
+              <motion.a
+                initial="hidden"
+                animate="visible"
+                variants={{
+                  hidden: {
+                    opacity: 0,
+                  },
+                  visible: {
+                    opacity: 1,
+                    transition: {
+                      duration: 0.5,
                     },
-                    visible: {
-                      opacity: 1,
-                      transition: {
-                        duration: 0.5,
-                      },
-                    },
-                  }}
-                  className="text-4xl font-semibold my-4 text-black dark:text-white">
-                  {name}
-                </motion.a>
-              </Link>
-            </h2>
+                  },
+                }}
+                className="text-4xl leading-6 font-semibold my-4 text-black dark:text-white cursor-pointer">
+                {name}
+              </motion.a>
+            </Link>
           </>
         )}
         <DarkModeToggle />

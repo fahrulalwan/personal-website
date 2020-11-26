@@ -2,10 +2,9 @@ import React, { FC } from 'react';
 import Head from 'next/head';
 import { GetStaticPaths, GetStaticProps } from 'next';
 import dayjs from 'dayjs';
-import Layout from '../../components/layout';
+import Layout from '../../components/Layout';
 import { getAllPostIds, getPostData } from '../../lib/posts';
 import Date from '../../components/date';
-import utilStyles from '../../styles/utils.module.css';
 
 interface PostData {
   postData: {
@@ -21,9 +20,9 @@ const Post: FC<PostData> = ({ postData }: PostData) => (
     <Head>
       <title>{postData.title}</title>
     </Head>
-    <article className="p-5 bg-white dark:bg-github rounded-lg mt-3 prose prose-sm sm:prose-lg prose-indigo dark:prose-dark mx-auto">
+    <article className="p-5 bg-white dark:bg-github rounded-lg mt-3 prose prose-sm prose-indigo sm:prose-lg dark:prose-dark mx-auto">
       <h1 className="dark:text-indigo-200">{postData.title}</h1>
-      <div className={`${utilStyles.lightText} dark:text-gray-400 mb-2`}>
+      <div className="text-gray-500 dark:text-gray-400 dark:text-gray-400 mb-2">
         <Date dateString={postData.date} />
       </div>
       {/* <div className="space-y-2"
