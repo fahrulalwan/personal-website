@@ -22,8 +22,7 @@ export default function Home({
       <Head>
         <title>@fahrulalwan homepage</title>
       </Head>
-      <section
-        className={`${utilStyles.headingMd} bg-white dark:bg-github p-5 rounded-xl mt-3 dark:text-white`}>
+      <section className="text-xl bg-white dark:bg-github p-5 rounded-xl mt-3 dark:text-white">
         <p>
           Hi there, I&apos;m a digital magician who loves to learn pretty much anything (including
           outside the dev world!). My journey starts from building this website. stay tuned for the
@@ -44,7 +43,7 @@ export default function Home({
           .
         </p>
       </section>
-      <section className={`${utilStyles.headingMd} ${utilStyles.padding1px} px-5 mt-5`}>
+      <section className={`${utilStyles.headingMd} pt-px px-5 mt-5`}>
         <h2 className={`${utilStyles.headingLg} dark:text-white`}>Blog</h2>
         <motion.ul
           className={utilStyles.list}

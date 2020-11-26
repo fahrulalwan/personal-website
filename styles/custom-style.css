@@ -27,6 +27,10 @@ img {
   transition: all 0.2s cubic-bezier(0.39, 0.58, 0.57, 1);
 }
 
+*:not(.Typewriter__cursor) {
+  transition: none;
+}
+
 .custom-toggle__dot {
   --tw-translate-x: 3px;
   --tw-translate-y: 4px;

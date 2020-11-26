@@ -22,7 +22,7 @@ const DarkModeToggle: FC = () => {
     if (existingTheme && existingTheme !== theme) {
       setTheme(existingTheme);
       const htmlTag = document.querySelector('html');
-      if (existingTheme === Theme.DARK && !htmlTag?.classList.contains('dark'))
+      if (existingTheme === Theme.DARK && htmlTag?.classList.contains('dark') === false)
         htmlTag.classList.add('dark');
     }
   }, []);

@@ -25,7 +25,7 @@ const Layout: FC<{ home?: boolean; description: string }> = ({
   }
 
   return (
-    <div className="max-w-screen-sm mx-auto pt-12 pb-24 px-4">
+    <div className="max-w-screen-sm mx-auto pt-12 pb-24 px-6 sm:px-4">
       <Head>
         <title>{name}</title>
         <meta property="og:title" content={name} />
@@ -104,7 +104,7 @@ const Layout: FC<{ home?: boolean; description: string }> = ({
 
         {/* google some update */}
       </Head>
-      <header className="flex flex-col sm:flex-row items-center sm:relative sm:space-x-10 pb-4">
+      <header className="flex flex-col sm:flex-row items-center sm:relative sm:space-x-6 pb-4">
         {home ? (
           <>
             <motion.img
@@ -143,17 +143,19 @@ const Layout: FC<{ home?: boolean; description: string }> = ({
               }}
               className="my-4">
               <h1 className="text-4xl font-semibold dark:text-white">{name}</h1>
-              <Typewriter
-                options={{
-                  strings: ['Hello', 'World'],
-                  autoStart: true,
-                  loop: true,
-                  delay: 'natural',
-                  deleteSpeed: 'natural',
-                  wrapperClassName: 'dark:text-white text-2xl tracking-wide my-2',
-                }}
-                onInit={typewriter => typewriter.start()}
-              />
+              <div className="dark:text-white text-xl my-2 text-center sm:text-left">
+                <Typewriter
+                  options={{
+                    strings: ['Software Engineer', 'Student', 'Night Owl'],
+                    autoStart: true,
+                    loop: true,
+                    delay: 'natural',
+                    deleteSpeed: 'natural',
+                    skipAddStyles: true,
+                  }}
+                  onInit={typewriter => typewriter.start()}
+                />
+              </div>
             </motion.div>
           </>
         ) : (
