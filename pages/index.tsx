@@ -17,14 +17,16 @@ export default function Home({
   }[];
 }) {
   return (
-    <Layout home description="@fahrulalwan 's personal website">
+    <Layout
+      home
+      description="Hi, welcome to my website. Here you can see my posts. Will updated monthly.">
       <Head>
-        <title>@fahrulalwan homepage</title>
+        <title>@fahrulalwan personal room</title>
       </Head>
       <section className="text-xl bg-white dark:bg-github p-5 rounded-xl mt-3 dark:text-white space-y-3">
         <p>
           Hi, thanks for visiting my website. I&apos;m Fahrul, a software engineer (currently work
-          in Front-end) at Jatis. I&apos;m just like another human, I like to search good stuff on
+          as Front-end) in Jatis. I&apos;m just like another human, I like to search good stuff on
           the internet. But often neighbours ask me to do work I dont know about, like electrical &
           mechanical stuff.
         </p>
