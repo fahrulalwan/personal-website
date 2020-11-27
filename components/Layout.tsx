@@ -28,14 +28,22 @@ const Layout: FC<{ home?: boolean; description: string }> = ({
       <Head>
         <title>{name}</title>
         <meta property="og:title" content={name} />
+        <meta name="twitter:title" content="European Travel Destinations " />
 
         {description && (
           <>
             <meta name="description" content={description} />
             <meta property="og:description" content={description} />
             <meta name="twitter:card" content={description} />
+            <meta
+              name="twitter:description"
+              content=" Offering tour packages for individuals or groups."
+            />
           </>
         )}
+
+        <meta name="twitter:image" content="/images/profile.jpg" />
+        <meta property="og:image" content="/images/profile.jpg" />
 
         {/* belom di edit */}
         {/* Basic HTML Meta Tags */}
@@ -69,7 +77,6 @@ const Layout: FC<{ home?: boolean; description: string }> = ({
         {/* OpenGraph Meta Tags */}
         <meta property="og:type" content="blog" />
         <meta property="og:url" content="https://fahrulalwan.now.sh" />
-        <meta property="og:image" content="/images/profile.jpg" />
         <meta property="og:site_name" content="fahrulalwan blog" />
         <meta property="og:email" content="fahrulalwan@gmail.com" />
         <meta property="og:region" content="Jakarta" />
