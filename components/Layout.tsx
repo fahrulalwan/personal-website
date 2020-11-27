@@ -28,17 +28,14 @@ const Layout: FC<{ home?: boolean; description: string }> = ({
       <Head>
         <title>{name}</title>
         <meta property="og:title" content={name} />
-        <meta name="twitter:title" content="European Travel Destinations " />
+        <meta name="twitter:title" content={name} />
 
         {description && (
           <>
             <meta name="description" content={description} />
             <meta property="og:description" content={description} />
             <meta name="twitter:card" content={description} />
-            <meta
-              name="twitter:description"
-              content=" Offering tour packages for individuals or groups."
-            />
+            <meta name="twitter:description" content={description} />
           </>
         )}
 
