@@ -1968,10 +1968,10 @@ domhandler@^3.0.0, domhandler@^3.3.0:
   dependencies:
     domelementtype "^2.0.1"
 
-dompurify@^2.2.2:
-  version "2.2.2"
-  resolved "https://registry.yarnpkg.com/dompurify/-/dompurify-2.2.2.tgz#cb8c2b1a2f3c8a0b565127504ae4eedec176a972"
-  integrity sha512-BsGR4nDLaC5CNBnyT5I+d5pOeaoWvgVeg6Gq/aqmKYWMPR07131u60I80BvExLAJ0FQEIBQ1BTicw+C5+jOyrg==
+dompurify@^2.2.3:
+  version "2.2.3"
+  resolved "https://registry.yarnpkg.com/dompurify/-/dompurify-2.2.3.tgz#ec653ba521b39f397c2ca045769438d593ea8a9f"
+  integrity sha512-8Hv7Q0FuwD9rWoB6qI2eZsfKbGXfoUVuGHHrE15vgk4ReOKwOkSgbqb2OMFtc0d5besOEkoLkcyuV10zQ2X5gw==
 
 domutils@2.1.0:
   version "2.1.0"
@@ -3480,13 +3480,13 @@ isobject@^3.0.0, isobject@^3.0.1:
   resolved "https://registry.yarnpkg.com/isobject/-/isobject-3.0.1.tgz#4e431e92b11a9731636aa1f9c8d1ccbcfdab78df"
   integrity sha1-TkMekrEalzFjaqH5yNHMvP2reN8=
 
-isomorphic-dompurify@^0.9.0:
-  version "0.9.0"
-  resolved "https://registry.yarnpkg.com/isomorphic-dompurify/-/isomorphic-dompurify-0.9.0.tgz#b94050dca9af79131db14cf3b312f8f3029af5eb"
-  integrity sha512-ctvmXdH+u8qnG5+Q5IqjEH+qflEbF0Qj8rOQCfpLoUwLgfKm31kds/d6WDGI/AskaXKbEr40OaQ9FcZtrlVUFA==
+isomorphic-dompurify@^0.10.0:
+  version "0.10.0"
+  resolved "https://registry.yarnpkg.com/isomorphic-dompurify/-/isomorphic-dompurify-0.10.0.tgz#e395cd35187df2ce717800068d416ab6d70377e0"
+  integrity sha512-Em84fL0OTZ702MGX803GpegLHv4Z2ZJvbqtIlomDo/zmkejUWWp3VJsNMOJ1EtXAnkTDoE4j/exr4A5x8aYwzQ==
   dependencies:
     "@types/dompurify" "^2.0.4"
-    dompurify "^2.2.2"
+    dompurify "^2.2.3"
     jsdom "^16.4.0"
 
 isstream@~0.1.2:
