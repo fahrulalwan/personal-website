@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "@tailwindcss/typography": "^0.3.1",
-    "dayjs": "1.9.7",
+    "dayjs": "1.9.8",
     "framer-motion": "3.1.1",
     "gray-matter": "4.0.2",
     "isomorphic-dompurify": "^0.10.0",
