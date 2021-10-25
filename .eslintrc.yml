@@ -60,6 +60,6 @@ rules:
     - error
     - never
     - ignorePackages: true
+      ".d.ts": never
       ".css": always
       ".json": always
-
