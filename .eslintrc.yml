@@ -4,6 +4,8 @@ env:
 parser: '@typescript-eslint/parser'
 plugins:
   - react
+  - import
+  - jsx-a11y
   - '@typescript-eslint'
 extends:
   - 'airbnb-typescript'
