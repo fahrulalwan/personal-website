@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 import Head from 'next/head';
-import { GetStaticPaths, GetStaticProps } from 'next';
+import { GetStaticPaths } from 'next';
 import dayjs from 'dayjs';
 import Layout from '../../components/Layout';
 import { getAllPostIds, getPostData } from '../../lib/posts';
@@ -16,7 +16,8 @@ interface PostData {
 
 const Post: FC<PostData> = ({ postData }: PostData) => (
   <Layout
-    description={`${postData.title}. Created on ${dayjs(postData.date).format('MMMM D, YYYY')}`}>
+    description={`${postData.title}. Created on ${dayjs(postData.date).format('MMMM D, YYYY')}`}
+  >
     <Head>
       <title>{postData.title}</title>
     </Head>
@@ -40,7 +41,13 @@ export const getStaticPaths: GetStaticPaths = async () => {
   };
 };
 
-export const getStaticProps: GetStaticProps<PostData, { id: string }> = async ({ params }) => {
+export const getStaticProps: ({
+  params,
+}: {
+  params: any;
+}) => Promise<{ props: { postData: { id: string; contentHtml: string } } }> = async ({
+  params,
+}) => {
   const postData = await getPostData(params?.id as string);
   return {
     props: {
