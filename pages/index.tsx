@@ -26,17 +26,10 @@ export default function Home({
       </Head>
       <section className="text-xl bg-white dark:bg-github p-5 rounded-xl mt-3 dark:text-white space-y-3">
         <p>
-          Hi, thanks for visiting my website. I&apos;m Fahrul, a software engineer (currently work
-          as Front-end) in Jatis. I&apos;m just like another human, I like to search good stuff on
-          the internet. But often neighbours ask me to do work I dont know about, like electrical &
-          mechanical stuff.
-        </p>
-        <p>
-          I can also considered as digital magician, I can turn coffee into automated script, even
-          software. It is actually easy to write code, you just have to focus on solving problem,
-          not syntaxes. Btw I love to learn pretty much anything (including outside the dev world!).
-          I also into philosophical stuff. I often challenge my mind to question stuff coming into
-          my mind.
+          Hi, thank you for visiting my website. I&apos;m Fahrul, a software engineer (currently
+          work as Front-end) in Axiata Digital Labs. I love to learn pretty much anything (including
+          outside the dev world!). I also into philosophical stuff. I often challenge my mind to
+          question stuff coming into my mind.
         </p>
         <p className="space-x-4 text-center">
           <a

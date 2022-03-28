@@ -1,8 +1,8 @@
 import React from 'react';
 import '../styles/global.css';
 import '../styles/custom-style.css';
-import {AppProps} from 'next/app';
-import {motion} from 'framer-motion';
+import { AppProps } from 'next/app';
+import { motion } from 'framer-motion';
 
 export default function App({ Component, pageProps, router }: AppProps) {
   return (
