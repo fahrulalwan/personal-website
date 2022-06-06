@@ -11,7 +11,7 @@
     "lint-staged": "lint-staged"
   },
   "dependencies": {
-    "dayjs": "^1.11.0",
+    "dayjs": "^1.11.3",
     "framer-motion": "^6.2.8",
     "gray-matter": "^4.0.3",
     "isomorphic-dompurify": "^0.18.0",
