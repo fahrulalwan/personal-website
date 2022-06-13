@@ -1,4 +1,4 @@
-import React, { FC, PropsWithChildren } from 'react';
+import React, { FC, PropsWithChildren, useState } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
@@ -7,18 +7,23 @@ import DarkModeToggle from './DarkModeToggle';
 
 const name = '@fahrulalwan';
 
-const Layout: FC<{ home?: boolean; description: string }> = ({
+interface LayoutInterface {
+  home?: boolean;
+  description: string;
+}
+
+const Layout: FC<PropsWithChildren<LayoutInterface>> = ({
   children,
   home,
   description,
-}: PropsWithChildren<{ home?: boolean; description: string }>) => {
-  const [hasMounted, setHasMounted] = React.useState(false);
+}: PropsWithChildren<LayoutInterface>) => {
+  const [isMounted, setMounted] = useState(false);
 
   React.useEffect(() => {
-    setHasMounted(true);
+    setMounted(true);
   }, []);
 
-  if (!hasMounted) {
+  if (!isMounted) {
     return null;
   }
 
