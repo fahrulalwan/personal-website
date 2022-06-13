@@ -3,7 +3,6 @@ import Head from 'next/head';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import dayjs from 'dayjs';
-import Typewriter from 'typewriter-effect';
 import DarkModeToggle from './DarkModeToggle';
 
 const name = '@fahrulalwan';
@@ -60,8 +59,8 @@ const Layout: FC<{ home?: boolean; description: string }> = ({
         />
         <meta name="reply-to" content="fahrulalwan@gmail.com" />
         <meta name="owner" content="Mohammad Fahrul Alwan" />
-        <meta name="url" content="https://fahrulalwan.now.sh" />
-        <meta name="identifier-URL" content="https://fahrulalwan.now.sh" />
+        <meta name="url" content="https://fahrulalwan.vercel.app" />
+        <meta name="identifier-URL" content="https://fahrulalwan.vercel.app" />
         <meta name="directory" content="submission" />
         <meta name="category" content="blog" />
         <meta name="target" content="all" />
@@ -73,7 +72,7 @@ const Layout: FC<{ home?: boolean; description: string }> = ({
 
         {/* OpenGraph Meta Tags */}
         <meta property="og:type" content="blog" />
-        <meta property="og:url" content="https://fahrulalwan.now.sh" />
+        <meta property="og:url" content="https://fahrulalwan.vercel.app" />
         <meta property="og:site_name" content="fahrulalwan blog" />
         <meta property="og:email" content="fahrulalwan@gmail.com" />
         <meta property="og:region" content="Jakarta" />
@@ -100,10 +99,10 @@ const Layout: FC<{ home?: boolean; description: string }> = ({
         {/* HTML Link Tags */}
         <link rel="shortcut icon" type="image/ico" href="/favicon.ico" />
         <link rel="fluid-icon" type="image/jpg" href="/images/profile.jpg" />
-        <link rel="me" type="text/html" href="https://fahrulalwan.now.sh" />
-        <link rel="shortlink" href="https://fahrulalwan.now.sh" />
-        <link rel="archives" title="May 2003" href="http://blog.unto.net/2003/05/" />
-        <link rel="index" title="Mohammad Fahrul Alwan" href="https://fahrulalwan.now.sh" />
+        <link rel="me" type="text/html" href="https://fahrulalwan.vercel.app" />
+        <link rel="shortlink" href="https://fahrulalwan.vercel.app" />
+        {/*<link rel="archives" title="May 2003" href="http://blog.unto.net/2003/05/" />*/}
+        <link rel="index" title="Mohammad Fahrul Alwan" href="https://fahrulalwan.vercel.app" />
 
         {/* google some update */}
       </Head>
@@ -144,21 +143,9 @@ const Layout: FC<{ home?: boolean; description: string }> = ({
                   },
                 },
               }}
-              className="my-4">
+              className="my-4"
+            >
               <h1 className="text-4xl font-semibold dark:text-white">{name}</h1>
-              <div className="dark:text-white text-xl my-2 text-center sm:text-left">
-                <Typewriter
-                  options={{
-                    strings: ['Software Engineer', 'Student', 'Night Owl'],
-                    autoStart: true,
-                    loop: true,
-                    delay: 'natural',
-                    deleteSpeed: 'natural',
-                    skipAddStyles: true,
-                  }}
-                  onInit={typewriter => typewriter.start()}
-                />
-              </div>
             </motion.div>
           </>
         ) : (
@@ -202,7 +189,8 @@ const Layout: FC<{ home?: boolean; description: string }> = ({
                     },
                   },
                 }}
-                className="text-4xl leading-6 font-semibold my-4 text-black dark:text-white cursor-pointer">
+                className="text-4xl leading-6 font-semibold my-4 text-black dark:text-white cursor-pointer"
+              >
                 {name}
               </motion.a>
             </Link>
