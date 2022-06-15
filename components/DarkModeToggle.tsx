@@ -1,4 +1,5 @@
 import React, { FC, useEffect, useState } from 'react';
+import { logAnalyticEvent } from '../lib/gtag';
 
 export type Themes = 'light' | 'dark';
 
@@ -6,12 +7,13 @@ export enum Theme {
   LIGHT = 'light',
   DARK = 'dark',
 }
+
 const DarkModeToggle: FC = () => {
   const [theme, setTheme] = useState<Themes>(() => {
     const persistedTheme = localStorage?.getItem('theme') as Themes;
 
     if (persistedTheme === Theme.DARK) {
-      document.querySelector('html')?.classList.add('dark');
+      document.querySelector('html')?.classList.add(Theme.DARK);
       return persistedTheme;
     }
     return Theme.LIGHT;
@@ -22,16 +24,30 @@ const DarkModeToggle: FC = () => {
     if (existingTheme && existingTheme !== theme) {
       setTheme(existingTheme);
       const htmlTag = document.querySelector('html');
-      if (existingTheme === Theme.DARK && htmlTag?.classList.contains('dark') === false)
-        htmlTag.classList.add('dark');
+      if (existingTheme === Theme.DARK && htmlTag?.classList.contains(Theme.DARK) === false)
+        htmlTag.classList.add(Theme.DARK);
     }
   }, []);
 
-  function onChangeTheme() {
+  function logAnalytic(nextTheme: Theme): void {
+    logAnalyticEvent({
+      action: 'change_theme',
+      params: {
+        category: 'app_interaction',
+        label: nextTheme,
+      },
+    });
+  }
+
+  function onChangeTheme(): void {
     const nextTheme = theme === Theme.LIGHT ? Theme.DARK : Theme.LIGHT;
     localStorage.setItem('theme', nextTheme);
     setTheme(nextTheme);
-    document.querySelector('html')?.classList[nextTheme === Theme.DARK ? 'add' : 'remove']('dark');
+    document
+      .querySelector('html')
+      ?.classList[nextTheme === Theme.DARK ? 'add' : 'remove'](Theme.DARK);
+
+    logAnalytic(nextTheme);
   }
 
   return (

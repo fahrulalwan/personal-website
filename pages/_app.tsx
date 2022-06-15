@@ -3,13 +3,12 @@ import '../styles/global.css';
 import { AppProps } from 'next/app';
 import { motion } from 'framer-motion';
 import Script from 'next/script';
-import * as gtagLib from '../lib/gtag';
-import { GA_TRACKING_ID } from '../lib/gtag';
+import { GA_TRACKING_ID, logAnalyticPageView } from '../lib/gtag';
 
 export default function App({ Component, pageProps, router }: AppProps) {
   useEffect(() => {
     const handleRouteChange = (url: string) => {
-      gtagLib.pageview(url);
+      logAnalyticPageView(url);
     };
     router.events.on('routeChangeComplete', handleRouteChange);
     router.events.on('hashChangeComplete', handleRouteChange);
