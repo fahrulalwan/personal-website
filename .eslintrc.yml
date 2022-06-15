@@ -8,22 +8,31 @@ plugins:
   - jsx-a11y
   - '@typescript-eslint'
 extends:
-  - 'airbnb-typescript'
-  - 'eslint:recommended'
-  - 'plugin:@typescript-eslint/recommended'
-  - 'plugin:react/recommended'
-  - 'prettier'
+  - airbnb
+  - airbnb-typescript
+  - eslint:recommended
+  - plugin:@typescript-eslint/recommended
+  - next
+  - next/core-web-vitals
+  - plugin:react/recommended
+  - plugin:react/jsx-runtime
+  - plugin:react-hooks/recommended
+  - prettier
+  - plugin:testing-library/react
+  - plugin:jest-dom/recommended
 parserOptions:
   project:
-    - './tsconfig.json'
+    - ./tsconfig.json
 settings:
+  react:
+    version: detect
   import/resolver:
     node:
       extensions:
-        - ".js"
-        - ".jsx"
-        - ".ts"
-        - ".tsx"
+        - .js
+        - .jsx
+        - .ts
+        - .tsx
   ecmaFeatures:
     jsx: true
     arrowFunctions: true
@@ -46,10 +55,10 @@ rules:
   react/jsx-filename-extension:
     - 1
     - extensions:
-        - ".js"
-        - ".jsx"
-        - ".ts"
-        - ".tsx"
+        - .js
+        - .jsx
+        - .ts
+        - .tsx
   react/jsx-props-no-spreading:
     - 1
     - custom: ignore
