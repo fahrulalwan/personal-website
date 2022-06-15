@@ -4,6 +4,7 @@ import { AppProps } from 'next/app';
 import { motion } from 'framer-motion';
 import Script from 'next/script';
 import * as gtagLib from '../lib/gtag';
+import { GA_TRACKING_ID } from '../lib/gtag';
 
 export default function App({ Component, pageProps, router }: AppProps) {
   useEffect(() => {
@@ -21,7 +22,7 @@ export default function App({ Component, pageProps, router }: AppProps) {
   return (
     <>
       <Script
-        src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"
+        src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`}
         strategy="afterInteractive"
       />
       <Script id="google-analytics" strategy="afterInteractive">
@@ -30,7 +31,7 @@ export default function App({ Component, pageProps, router }: AppProps) {
           function gtag(){window.dataLayer.push(arguments);}
           gtag('js', new Date());
 
-          gtag('config', 'GA_MEASUREMENT_ID');
+          gtag('config', '${GA_TRACKING_ID}');
         `}
       </Script>
 
