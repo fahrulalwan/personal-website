@@ -1,11 +1,11 @@
-import React, { useEffect } from 'react';
+import { FC, useEffect } from 'react';
 import '../styles/global.css';
 import { AppProps } from 'next/app';
 import { motion } from 'framer-motion';
 import Script from 'next/script';
 import { GA_TRACKING_ID, logAnalyticPageView } from '../lib/gtag';
 
-export default function App({ Component, pageProps, router }: AppProps) {
+const App: FC<AppProps> = ({ Component, pageProps, router }: AppProps) => {
   useEffect(() => {
     const handleRouteChange = (url: string) => {
       logAnalyticPageView(url);
@@ -45,10 +45,11 @@ export default function App({ Component, pageProps, router }: AppProps) {
           pageAnimate: {
             opacity: 1,
           },
-        }}
-      >
+        }}>
         <Component {...pageProps} />
       </motion.div>
     </>
   );
-}
+};
+
+export default App;

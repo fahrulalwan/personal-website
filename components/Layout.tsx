@@ -28,7 +28,7 @@ const Layout: FC<PropsWithChildren<LayoutInterface>> = ({
   }
 
   return (
-    <div className="max-w-screen-sm mx-auto pt-12 pb-24 px-4">
+    <div className="mx-auto max-w-screen-sm px-4 pt-12 pb-24">
       <Head>
         <title>{name}</title>
         <meta property="og:title" content={name} />
@@ -99,19 +99,13 @@ const Layout: FC<PropsWithChildren<LayoutInterface>> = ({
           content="height=device-height,width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no,minimal-ui"
         />
         <link rel="apple-touch-icon" href="/images/profile.jpg" />
-        <link rel="apple-touch-startup-image" href="/images/profile.jpg" />
 
         {/* HTML Link Tags */}
         <link rel="shortcut icon" type="image/ico" href="/favicon.ico" />
-        <link rel="fluid-icon" type="image/jpg" href="/images/profile.jpg" />
-        <link rel="me" type="text/html" href="https://fahrulalwan.vercel.app" />
-        <link rel="shortlink" href="https://fahrulalwan.vercel.app" />
-        {/*<link rel="archives" title="May 2003" href="http://blog.unto.net/2003/05/" />*/}
-        <link rel="index" title="Mohammad Fahrul Alwan" href="https://fahrulalwan.vercel.app" />
 
         {/* google some update */}
       </Head>
-      <header className="flex flex-col sm:flex-row items-center sm:relative sm:space-x-6 pb-4">
+      <header className="flex flex-col items-center pb-4 sm:relative sm:flex-row sm:space-x-6">
         {home ? (
           <>
             <motion.img
@@ -148,8 +142,7 @@ const Layout: FC<PropsWithChildren<LayoutInterface>> = ({
                   },
                 },
               }}
-              className="my-4"
-            >
+              className="my-4">
               <h1 className="text-4xl font-semibold dark:text-white">{name}</h1>
             </motion.div>
           </>
@@ -194,8 +187,7 @@ const Layout: FC<PropsWithChildren<LayoutInterface>> = ({
                     },
                   },
                 }}
-                className="text-4xl leading-6 font-semibold my-4 text-black dark:text-white cursor-pointer"
-              >
+                className="my-4 cursor-pointer text-4xl font-semibold leading-6 text-black dark:text-white">
                 {name}
               </motion.a>
             </Link>
@@ -213,6 +205,10 @@ const Layout: FC<PropsWithChildren<LayoutInterface>> = ({
       )}
     </div>
   );
+};
+
+Layout.defaultProps = {
+  home: false,
 };
 
 export default Layout;

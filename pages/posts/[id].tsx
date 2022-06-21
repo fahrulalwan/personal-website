@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import { FC } from 'react';
 import Head from 'next/head';
 import { GetStaticPaths } from 'next';
 import dayjs from 'dayjs';
@@ -16,12 +16,11 @@ interface PostData {
 
 const Post: FC<PostData> = ({ postData }: PostData) => (
   <Layout
-    description={`${postData.title}. Created on ${dayjs(postData.date).format('MMMM D, YYYY')}`}
-  >
+    description={`${postData.title}. Created on ${dayjs(postData.date).format('MMMM D, YYYY')}`}>
     <Head>
       <title>{postData.title}</title>
     </Head>
-    <article className="p-5 bg-white dark:bg-github rounded-lg mt-3 prose prose-sm sm:prose-lg dark:prose-invert mx-auto">
+    <article className="prose prose-sm mx-auto mt-3 rounded-lg bg-white p-5 dark:prose-invert dark:bg-github sm:prose-lg">
       <h1>{postData.title}</h1>
       <div className="mb-2">
         <Date dateString={postData.date} />

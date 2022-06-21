@@ -1,14 +1,20 @@
-import { screen } from '@testing-library/react';
-// import Home from '../pages/index';
+import { render } from '@testing-library/react';
+import Home from '../pages';
+import '@testing-library/jest-dom';
+
+describe('App Environment', () => {
+  it('runs in test environment', () => {
+    expect(process.env.NODE_ENV).toEqual('test');
+  });
+});
 
 describe('Home', () => {
-  it('renders a heading', () => {
-    // render(<Home />);
+  it('renders home', () => {
+    const homeComponent = <Home allPostsData={[]} />;
 
-    const heading = screen.getByRole('heading', {
-      name: /welcome to next\.js!/i,
-    });
+    render(homeComponent);
 
-    expect(heading).toBeInTheDocument();
+    expect(homeComponent).toBeInTheDocument();
+    expect(homeComponent.props.allPostsData).toBeEmpty();
   });
 });

@@ -1,6 +1,8 @@
-jsxBracketSameLine: true
+bracketSameLine: true
 singleQuote: true
 semi: true
 arrowParens: avoid
 parser: typescript
 printWidth: 100
+plugins:
+  - prettier-plugin-tailwindcss
