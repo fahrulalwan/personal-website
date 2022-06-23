@@ -51,6 +51,7 @@ const Home: FC<{ allPostsData: ArticleProps[] }> = ({
         </p>
         <p className="space-x-4 text-center">
           <a
+            aria-label="Github Link"
             onClick={handleLogAnalytic(ContactType.GITHUB)}
             className="ml-2"
             target="_blank"
@@ -72,6 +73,7 @@ const Home: FC<{ allPostsData: ArticleProps[] }> = ({
             </svg>
           </a>
           <a
+            aria-label="LinkedIn Link"
             onClick={handleLogAnalytic(ContactType.LINKEDIN)}
             target="_blank"
             href="https://www.linkedin.com/in/fahrulalwan/"
@@ -92,6 +94,7 @@ const Home: FC<{ allPostsData: ArticleProps[] }> = ({
             </svg>
           </a>
           <a
+            aria-label="Email Link"
             onClick={handleLogAnalytic(ContactType.EMAIL)}
             rel="noopener noreferrer"
             target="_blank"

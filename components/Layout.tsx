@@ -43,8 +43,8 @@ const Layout: FC<PropsWithChildren<LayoutInterface>> = ({
           </>
         )}
 
-        <meta name="twitter:image" content="/images/profile.jpg" />
-        <meta property="og:image" content="/images/profile.jpg" />
+        <meta name="twitter:image" content="/images/profile1.webp" />
+        <meta property="og:image" content="/images/profile1.webp" />
 
         {/* belom di edit */}
         {/* Basic HTML Meta Tags */}
@@ -96,9 +96,9 @@ const Layout: FC<PropsWithChildren<LayoutInterface>> = ({
         <meta name="format-detection" content="telephone=no" />
         <meta
           name="viewport"
-          content="height=device-height,width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no,minimal-ui"
+          content="height=device-height,width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=5.0,minimal-ui"
         />
-        <link rel="apple-touch-icon" href="/images/profile.jpg" />
+        <link rel="apple-touch-icon" href="/images/profile1.webp" />
 
         {/* HTML Link Tags */}
         <link rel="shortcut icon" type="image/ico" href="/favicon.ico" />
@@ -124,7 +124,7 @@ const Layout: FC<PropsWithChildren<LayoutInterface>> = ({
                   },
                 },
               }}
-              src="/images/profile.jpg"
+              src="/images/profile1.webp"
               className="h-32 w-32 rounded-full"
               alt={name}
             />
@@ -166,7 +166,7 @@ const Layout: FC<PropsWithChildren<LayoutInterface>> = ({
                       },
                     },
                   }}
-                  src="/images/profile.jpg"
+                  src="/images/profile1.webp"
                   className="h-32 w-32 rounded-full"
                   alt={name}
                 />
@@ -187,7 +187,7 @@ const Layout: FC<PropsWithChildren<LayoutInterface>> = ({
                     },
                   },
                 }}
-                className="my-4 cursor-pointer text-4xl font-semibold leading-6 text-black dark:text-white">
+                className="my-4 cursor-pointer text-4xl font-semibold leading-6 text-black dark:text-white sm:my-0">
                 {name}
               </motion.a>
             </Link>
