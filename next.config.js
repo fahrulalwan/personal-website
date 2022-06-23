@@ -3,7 +3,7 @@ const isDev = process.env.NODE_ENV === 'development';
 const ContentSecurityPolicy = `
   default-src 'self';
   script-src 'self' ${(isDev && "'unsafe-eval'") || ''};
-  script-src-elem 'self' https://www.googletagmanager.com;
+  script-src-elem 'self' https://www.googletagmanager.com 'unsafe-inline';
   style-src 'self' 'unsafe-inline';
   style-src-elem 'self' 'unsafe-inline';
   img-src 'self' data:;
