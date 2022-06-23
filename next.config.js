@@ -12,7 +12,6 @@ const ContentSecurityPolicy = `
   frame-ancestors 'none';
   base-uri 'none';
   form-action 'none';
-  ${(!isDev && "require-trusted-types-for 'script';") || ''}
 `;
 
 const securityHeaders = [
