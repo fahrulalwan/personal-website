@@ -4,6 +4,7 @@ import { AppProps } from 'next/app';
 import { motion } from 'framer-motion';
 import Script from 'next/script';
 import { GA_TRACKING_ID, logAnalyticPageView } from '../lib/gtag';
+import ErrorBoundary from '../components/ErrorBoundary';
 
 const App: FC<AppProps> = ({ Component, pageProps, router }: AppProps) => {
   useEffect(() => {
@@ -46,7 +47,9 @@ const App: FC<AppProps> = ({ Component, pageProps, router }: AppProps) => {
             opacity: 1,
           },
         }}>
-        <Component {...pageProps} />
+        <ErrorBoundary>
+          <Component {...pageProps} />
+        </ErrorBoundary>
       </motion.div>
     </>
   );

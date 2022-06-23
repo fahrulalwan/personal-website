@@ -21,3 +21,10 @@ export const logAnalyticPageView = (url: string) => {
 export const logAnalyticEvent = ({ action, params }: GtagEvents) => {
   gtag('event', action, params);
 };
+
+export const logAnalyticException = (description: string, fatal = false) => {
+  gtag('event', 'exception', {
+    description,
+    fatal,
+  });
+};
