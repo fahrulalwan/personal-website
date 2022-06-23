@@ -7,6 +7,7 @@ import Date from '../components/date';
 import Layout from '../components/Layout';
 import { getSortedPostsData } from '../lib/posts';
 import { logAnalyticEvent } from '../lib/gtag';
+import isProduction from '../lib/isProduction';
 
 interface ArticleProps {
   date: string;
@@ -28,6 +29,7 @@ const Home: FC<{ allPostsData: ArticleProps[] }> = ({
   allPostsData: ArticleProps[];
 }) => {
   const handleLogAnalytic = (contact: ContactTypes) => () =>
+    isProduction &&
     logAnalyticEvent({
       action: `contact_${contact}`,
       params: {

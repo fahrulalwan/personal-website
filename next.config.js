@@ -1,10 +1,18 @@
+const isDev = process.env.NODE_ENV === 'development';
+
 const ContentSecurityPolicy = `
   default-src 'self';
-  script-src 'unsafe-eval';
-  script-src-elem 'self' https://www.googletagmanager.com 'unsafe-inline';
-  style-src 'unsafe-inline';
+  script-src 'self' ${(isDev && "'unsafe-eval'") || ''};
+  script-src-elem 'self' https://www.googletagmanager.com;
+  style-src 'self' 'unsafe-inline';
+  style-src-elem 'self' 'unsafe-inline';
   img-src 'self' data:;
-  connect-src 'self' https://www.google-analytics.com;
+  object-src 'none';
+  connect-src 'self' https://www.google-analytics.com https://vitals.vercel-insights.com;
+  frame-ancestors 'none';
+  base-uri 'none';
+  form-action 'none';
+  ${(!isDev && "require-trusted-types-for 'script';") || ''}
 `;
 
 const securityHeaders = [
@@ -45,7 +53,6 @@ module.exports = {
   async headers() {
     return [
       {
-        // Apply these headers to all routes in your application.
         source: '/:path*',
         headers: securityHeaders,
       },

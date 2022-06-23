@@ -5,10 +5,15 @@ import { motion } from 'framer-motion';
 import Script from 'next/script';
 import { GA_TRACKING_ID, logAnalyticPageView } from '../lib/gtag';
 import ErrorBoundary from '../components/ErrorBoundary';
+import isProduction from '../lib/isProduction';
 
 const App: FC<AppProps> = ({ Component, pageProps, router }: AppProps) => {
   useEffect(() => {
     const handleRouteChange = (url: string) => {
+      if (!isProduction) {
+        return;
+      }
+
       logAnalyticPageView(url);
     };
     router.events.on('routeChangeComplete', handleRouteChange);
@@ -21,19 +26,23 @@ const App: FC<AppProps> = ({ Component, pageProps, router }: AppProps) => {
 
   return (
     <>
-      <Script
-        src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`}
-        strategy="afterInteractive"
-      />
-      <Script id="google-analytics" strategy="afterInteractive">
-        {`
+      {isProduction && (
+        <>
+          <Script
+            src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`}
+            strategy="afterInteractive"
+          />
+          <Script id="google-analytics" strategy="afterInteractive">
+            {`
           window.dataLayer = window.dataLayer || [];
           function gtag(){window.dataLayer.push(arguments);}
           gtag('js', new Date());
 
           gtag('config', '${GA_TRACKING_ID}');
         `}
-      </Script>
+          </Script>
+        </>
+      )}
 
       <motion.div
         key={router.route}

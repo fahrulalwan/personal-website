@@ -96,7 +96,7 @@ const Layout: FC<PropsWithChildren<LayoutInterface>> = ({
         <meta name="format-detection" content="telephone=no" />
         <meta
           name="viewport"
-          content="height=device-height,width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=5.0,minimal-ui"
+          content="height=device-height,width=device-width,initial-scale=1.0,minimal-ui"
         />
         <link rel="apple-touch-icon" href="/images/profile1.webp" />
 

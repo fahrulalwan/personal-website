@@ -1,5 +1,6 @@
 import { FC, useEffect, useState } from 'react';
 import { logAnalyticEvent } from '../lib/gtag';
+import isProduction from '../lib/isProduction';
 
 export type Themes = 'light' | 'dark';
 
@@ -29,7 +30,8 @@ const DarkModeToggle: FC = () => {
     }
   }, [theme]);
 
-  function logAnalytic(nextTheme: Theme): void {
+  const logAnalytic = (nextTheme: Theme) =>
+    isProduction &&
     logAnalyticEvent({
       action: 'change_theme',
       params: {
@@ -37,7 +39,6 @@ const DarkModeToggle: FC = () => {
         label: nextTheme,
       },
     });
-  }
 
   function onChangeTheme(): void {
     const nextTheme = theme === Theme.LIGHT ? Theme.DARK : Theme.LIGHT;
@@ -84,7 +85,10 @@ const DarkModeToggle: FC = () => {
       )}
 
       <div className="relative h-8 transition duration-200 ease-in">
-        <label htmlFor="toggleDarkMode" className="relative inline-flex cursor-pointer">
+        <label
+          htmlFor="toggleDarkMode"
+          aria-label="Toggle Dark Mode"
+          className="relative inline-flex cursor-pointer">
           <input
             id="toggleDarkMode"
             type="checkbox"
