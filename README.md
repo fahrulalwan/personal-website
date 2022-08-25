@@ -1,3 +1,7 @@
 # Personal Portofolio
-You can read this for my roadmap ;)
-https://www.notion.so/fahrulalwan/Personal-Website-Development-2c00594d2b7c416d97096d5990935bd4
+
+Hi, welcome to my github page :)
+
+Unfortunately, there is nothing much i can update for now. However, i create my roadmap for my personal website project, check it out! ;)
+
+https://fahrulalwan.notion.site/Personal-Website-Development-4821b392499c47019e622c4bb57523ca
