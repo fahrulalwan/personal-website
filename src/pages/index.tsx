@@ -1,7 +1,7 @@
 import Head from 'next/head';
 import Link from 'next/link';
 import { GetStaticProps } from 'next';
-import { motion } from 'framer-motion';
+import { m } from 'framer-motion';
 import { FC } from 'react';
 import Date from '../components/date';
 import Layout from '../components/Layout';
@@ -121,7 +121,7 @@ const Home: FC<{ allPostsData: ArticleProps[] }> = ({
       </section>
       <section className="mt-5 px-5 pt-px leading-normal">
         <h2 className="my-4 text-3xl leading-relaxed dark:text-white">Blog</h2>
-        <motion.ul
+        <m.ul
           initial="closed"
           animate="open"
           className="space-y-5"
@@ -134,7 +134,7 @@ const Home: FC<{ allPostsData: ArticleProps[] }> = ({
             },
           }}>
           {allPostsData.map(({ id, date, title }) => (
-            <motion.li
+            <m.li
               key={id}
               variants={{
                 open: {
@@ -159,9 +159,9 @@ const Home: FC<{ allPostsData: ArticleProps[] }> = ({
               <small className="text-gray-500 dark:text-gray-400">
                 <Date dateString={date} />
               </small>
-            </motion.li>
+            </m.li>
           ))}
-        </motion.ul>
+        </m.ul>
       </section>
     </Layout>
   );

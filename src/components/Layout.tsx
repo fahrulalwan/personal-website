@@ -1,7 +1,7 @@
 import React, { FC, PropsWithChildren, useState } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
-import { motion } from 'framer-motion';
+import { m } from 'framer-motion';
 import dayjs from 'dayjs';
 import DarkModeToggle from './DarkModeToggle';
 
@@ -108,7 +108,7 @@ const Layout: FC<PropsWithChildren<LayoutInterface>> = ({
       <header className="flex flex-col items-center pb-4 sm:relative sm:flex-row sm:space-x-6">
         {home ? (
           <>
-            <motion.img
+            <m.img
               initial="hidden"
               animate="visible"
               variants={{
@@ -128,7 +128,7 @@ const Layout: FC<PropsWithChildren<LayoutInterface>> = ({
               className="h-32 w-32 rounded-full"
               alt={name}
             />
-            <motion.div
+            <m.div
               initial="hidden"
               animate="visible"
               variants={{
@@ -144,13 +144,13 @@ const Layout: FC<PropsWithChildren<LayoutInterface>> = ({
               }}
               className="my-4">
               <h1 className="text-4xl font-semibold dark:text-white">{name}</h1>
-            </motion.div>
+            </m.div>
           </>
         ) : (
           <>
             <Link href="/">
               <a>
-                <motion.img
+                <m.img
                   initial="hidden"
                   animate="visible"
                   variants={{
@@ -173,7 +173,7 @@ const Layout: FC<PropsWithChildren<LayoutInterface>> = ({
               </a>
             </Link>
             <Link href="/">
-              <motion.a
+              <m.a
                 initial="hidden"
                 animate="visible"
                 variants={{
@@ -189,7 +189,7 @@ const Layout: FC<PropsWithChildren<LayoutInterface>> = ({
                 }}
                 className="my-4 cursor-pointer text-4xl font-semibold leading-6 text-black dark:text-white sm:my-0">
                 {name}
-              </motion.a>
+              </m.a>
             </Link>
           </>
         )}

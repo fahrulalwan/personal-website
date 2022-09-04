@@ -1,7 +1,7 @@
 import { FC, useEffect } from 'react';
 import '../styles/global.css';
 import { AppProps } from 'next/app';
-import { motion } from 'framer-motion';
+import { domAnimation, LazyMotion, m } from 'framer-motion';
 import Script from 'next/script';
 import { GA_TRACKING_ID, logAnalyticPageView } from '../lib/gtag';
 import ErrorBoundary from '../components/ErrorBoundary';
@@ -37,29 +37,29 @@ const App: FC<AppProps> = ({ Component, pageProps, router }: AppProps) => {
           window.dataLayer = window.dataLayer || [];
           function gtag(){window.dataLayer.push(arguments);}
           gtag('js', new Date());
-
           gtag('config', '${GA_TRACKING_ID}');
         `}
           </Script>
         </>
       )}
-
-      <motion.div
-        key={router.route}
-        initial="pageInitial"
-        animate="pageAnimate"
-        variants={{
-          pageInitial: {
-            opacity: 0,
-          },
-          pageAnimate: {
-            opacity: 1,
-          },
-        }}>
-        <ErrorBoundary>
-          <Component {...pageProps} />
-        </ErrorBoundary>
-      </motion.div>
+      <LazyMotion features={domAnimation} strict>
+        <m.div
+          key={router.route}
+          initial="pageInitial"
+          animate="pageAnimate"
+          variants={{
+            pageInitial: {
+              opacity: 0,
+            },
+            pageAnimate: {
+              opacity: 1,
+            },
+          }}>
+          <ErrorBoundary>
+            <Component {...pageProps} />
+          </ErrorBoundary>
+        </m.div>
+      </LazyMotion>
     </>
   );
 };
