@@ -15,6 +15,5 @@ describe('Home', () => {
     render(homeComponent);
 
     expect(homeComponent).toBeInTheDocument();
-    expect(homeComponent.props.allPostsData).toBeEmpty();
   });
 });
