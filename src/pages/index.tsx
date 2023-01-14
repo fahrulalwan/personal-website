@@ -46,10 +46,8 @@ const Home: FC<{ allPostsData: ArticleProps[] }> = ({
       </Head>
       <section className="mt-3 space-y-3 rounded-xl bg-white p-5 text-xl dark:bg-github dark:text-white">
         <p>
-          Hi, thank you for visiting my website. I&apos;m Fahrul, a software engineer (currently
-          work as Front-end) in Axiata Digital Labs. I love to learn pretty much anything (including
-          outside the dev world!). I also into philosophical stuff. I often challenge my mind to
-          question stuff coming into my mind.
+          I love to learn pretty much anything (including outside the dev world!). I also into
+          philosophical stuff. I often challenge my mind to question stuff coming into my mind.
         </p>
         <p className="space-x-4 text-center">
           <a
@@ -154,8 +152,11 @@ const Home: FC<{ allPostsData: ArticleProps[] }> = ({
                   },
                 },
               }}>
-              <Link href="/posts/[id]" as={`/posts/${id}`}>
-                <a className="text-xl text-blue-600 dark:text-violet-200">{title}</a>
+              <Link
+                href="/posts/[id]"
+                as={`/posts/${id}`}
+                className="text-xl text-blue-600 dark:text-violet-200">
+                {title}
               </Link>
               <br />
               <small className="text-gray-500 dark:text-gray-400">

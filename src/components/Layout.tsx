@@ -149,28 +149,26 @@ const Layout: FC<PropsWithChildren<LayoutInterface>> = ({
         ) : (
           <>
             <Link href="/">
-              <a>
-                <m.img
-                  initial="hidden"
-                  animate="visible"
-                  variants={{
-                    hidden: {
-                      scale: 0.9,
-                      opacity: 0,
+              <m.img
+                initial="hidden"
+                animate="visible"
+                variants={{
+                  hidden: {
+                    scale: 0.9,
+                    opacity: 0,
+                  },
+                  visible: {
+                    scale: 1,
+                    opacity: 1,
+                    transition: {
+                      delay: 0.4,
                     },
-                    visible: {
-                      scale: 1,
-                      opacity: 1,
-                      transition: {
-                        delay: 0.4,
-                      },
-                    },
-                  }}
-                  src="/images/profile1.webp"
-                  className="h-32 w-32 rounded-full"
-                  alt={name}
-                />
-              </a>
+                  },
+                }}
+                src="/images/profile1.webp"
+                className="h-32 w-32 rounded-full"
+                alt={name}
+              />
             </Link>
             <Link href="/">
               <m.a
@@ -198,8 +196,8 @@ const Layout: FC<PropsWithChildren<LayoutInterface>> = ({
       <main>{children}</main>
       {!home && (
         <div className="mt-8 ml-3">
-          <Link href="/">
-            <a className="dark:text-white">← Back to home</a>
+          <Link href="/" className="dark:text-white">
+            ← Back to home
           </Link>
         </div>
       )}
