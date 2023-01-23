@@ -27,7 +27,7 @@
     "remark-html": "15.0.1"
   },
   "devDependencies": {
-    "@next/eslint-plugin-next": "13.1.2",
+    "@next/eslint-plugin-next": "13.1.4",
     "@tailwindcss/typography": "0.5.9",
     "@testing-library/jest-dom": "5.16.5",
     "@testing-library/react": "13.4.0",
