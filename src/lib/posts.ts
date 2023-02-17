@@ -17,7 +17,7 @@ export function getSortedPostsData(): { date: string; id: string; title: string 
     const fullPath = path.join(postsDirectory, fileName);
     const fileContents = fs.readFileSync(fullPath, 'utf8');
 
-    // Use gray-matter to parse the post metadata section
+    // Use gray-matter to parse the post-metadata section
     const matterResult = matter(fileContents);
 
     // Combine the data with the id
@@ -48,7 +48,7 @@ export async function getPostData(id: string): Promise<{ id: string; contentHtml
   const fullPath = path.join(postsDirectory, `${id}.md`);
   const fileContents = fs.readFileSync(fullPath, 'utf8');
 
-  // Use gray-matter to parse the post metadata section
+  // Use gray-matter to parse the post-metadata section
   const matterResult = matter(fileContents);
 
   // Use remark to convert markdown into HTML string
