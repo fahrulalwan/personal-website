@@ -21,7 +21,7 @@ const Post: FC<PostData> = ({ postData }: PostData) => (
       <title>{postData.title}</title>
     </Head>
     {/* eslint-disable-next-line tailwindcss/classnames-order */}
-    <article className="prose prose-sm mx-auto mt-3 rounded-lg bg-white p-5 dark:bg-github dark:prose-invert sm:prose-lg">
+    <article className="prose prose-sm mx-auto mt-3 rounded-lg bg-white p-5 dark:prose-invert sm:prose-lg dark:bg-github">
       <h1>{postData.title}</h1>
       <div className="mb-2">
         <Date dateString={postData.date} />

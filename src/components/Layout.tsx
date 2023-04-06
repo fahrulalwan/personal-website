@@ -1,7 +1,7 @@
 import React, { FC, PropsWithChildren, useState } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
-import { m } from 'framer-motion';
+import { domAnimation, LazyMotion, m } from 'framer-motion';
 import dayjs from 'dayjs';
 import DarkModeToggle from './DarkModeToggle';
 
@@ -28,7 +28,7 @@ const Layout: FC<PropsWithChildren<LayoutInterface>> = ({
   }
 
   return (
-    <div className="mx-auto max-w-screen-sm px-4 pt-12 pb-24">
+    <div className="mx-auto max-w-screen-sm px-4 pb-24 pt-12">
       <Head>
         <title>{name}</title>
         <meta property="og:title" content={name} />
@@ -107,7 +107,7 @@ const Layout: FC<PropsWithChildren<LayoutInterface>> = ({
       </Head>
       <header className="flex flex-col items-center pb-4 sm:relative sm:flex-row sm:space-x-6">
         {home ? (
-          <>
+          <LazyMotion features={domAnimation} strict>
             <m.img
               initial="hidden"
               animate="visible"
@@ -145,9 +145,9 @@ const Layout: FC<PropsWithChildren<LayoutInterface>> = ({
               className="my-4">
               <h1 className="text-4xl font-semibold dark:text-white">{name}</h1>
             </m.div>
-          </>
+          </LazyMotion>
         ) : (
-          <>
+          <LazyMotion features={domAnimation} strict>
             <Link href="/">
               <m.img
                 initial="hidden"
@@ -189,13 +189,13 @@ const Layout: FC<PropsWithChildren<LayoutInterface>> = ({
                 {name}
               </m.a>
             </Link>
-          </>
+          </LazyMotion>
         )}
         <DarkModeToggle />
       </header>
       <main>{children}</main>
       {!home && (
-        <div className="mt-8 ml-3">
+        <div className="ml-3 mt-8">
           <Link href="/" className="dark:text-white">
             ← Back to home
           </Link>

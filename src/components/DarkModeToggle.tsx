@@ -52,7 +52,7 @@ const DarkModeToggle: FC = () => {
   }
 
   return (
-    <div className="top-0 right-0 inline-flex items-center space-x-3 sm:absolute">
+    <div className="right-0 top-0 inline-flex items-center space-x-3 sm:absolute">
       {theme === Theme.LIGHT ? (
         <svg
           width={30}

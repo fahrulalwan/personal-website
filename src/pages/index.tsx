@@ -1,7 +1,7 @@
 import Head from 'next/head';
 import Link from 'next/link';
 import { GetStaticProps } from 'next';
-import { m } from 'framer-motion';
+import { domAnimation, LazyMotion, m } from 'framer-motion';
 import { FC } from 'react';
 import Date from '../components/date';
 import Layout from '../components/Layout';
@@ -121,50 +121,52 @@ const Home: FC<{ allPostsData: ArticleProps[] }> = ({
       </section>
       <section className="mt-5 px-5 pt-px leading-normal">
         <h2 className="my-4 text-3xl leading-relaxed dark:text-white">Blog</h2>
-        <m.ul
-          initial="closed"
-          animate="open"
-          className="space-y-5"
-          variants={{
-            open: {
-              transition: { staggerChildren: 0.1, delayChildren: 0.2 },
-            },
-            closed: {
-              transition: { staggerChildren: 0.05, staggerDirection: -1 },
-            },
-          }}>
-          {allPostsData.map(({ id, date, title }) => (
-            <m.li
-              key={id}
-              variants={{
-                open: {
-                  y: 0,
-                  opacity: 1,
-                  transition: {
-                    y: { stiffness: 1000, velocity: -100 },
+        <LazyMotion features={domAnimation} strict>
+          <m.ul
+            initial="closed"
+            animate="open"
+            className="space-y-5"
+            variants={{
+              open: {
+                transition: { staggerChildren: 0.1, delayChildren: 0.2 },
+              },
+              closed: {
+                transition: { staggerChildren: 0.05, staggerDirection: -1 },
+              },
+            }}>
+            {allPostsData.map(({ id, date, title }) => (
+              <m.li
+                key={id}
+                variants={{
+                  open: {
+                    y: 0,
+                    opacity: 1,
+                    transition: {
+                      y: { stiffness: 1000, velocity: -100 },
+                    },
                   },
-                },
-                closed: {
-                  y: 25,
-                  opacity: 0,
-                  transition: {
-                    y: { stiffness: 1000 },
+                  closed: {
+                    y: 25,
+                    opacity: 0,
+                    transition: {
+                      y: { stiffness: 1000 },
+                    },
                   },
-                },
-              }}>
-              <Link
-                href="/posts/[id]"
-                as={`/posts/${id}`}
-                className="text-xl text-blue-600 dark:text-violet-200">
-                {title}
-              </Link>
-              <br />
-              <small className="text-gray-500 dark:text-gray-400">
-                <Date dateString={date} />
-              </small>
-            </m.li>
-          ))}
-        </m.ul>
+                }}>
+                <Link
+                  href="/posts/[id]"
+                  as={`/posts/${id}`}
+                  className="text-xl text-blue-600 dark:text-violet-200">
+                  {title}
+                </Link>
+                <br />
+                <small className="text-gray-500 dark:text-gray-400">
+                  <Date dateString={date} />
+                </small>
+              </m.li>
+            ))}
+          </m.ul>
+        </LazyMotion>
       </section>
     </Layout>
   );
