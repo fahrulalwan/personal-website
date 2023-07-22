@@ -30,9 +30,9 @@ const App: FC<AppProps> = ({ Component, pageProps, router }: AppProps) => {
         <>
           <Script
             src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`}
-            strategy="afterInteractive"
+            strategy="worker"
           />
-          <Script id="google-analytics" strategy="afterInteractive">
+          <Script id="google-analytics" strategy="worker">
             {`
           window.dataLayer = window.dataLayer || [];
           function gtag(){window.dataLayer.push(arguments);}
@@ -42,6 +42,7 @@ const App: FC<AppProps> = ({ Component, pageProps, router }: AppProps) => {
           </Script>
         </>
       )}
+
       <LazyMotion features={domAnimation} strict>
         <m.div
           key={router.route}

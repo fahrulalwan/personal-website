@@ -1,6 +1,5 @@
 import { render } from '@testing-library/react';
 import Home from '../pages';
-import '@testing-library/jest-dom';
 
 describe('App Environment', () => {
   it('runs in test environment', () => {
@@ -15,5 +14,18 @@ describe('Home', () => {
     render(homeComponent);
 
     expect(homeComponent).toBeInTheDocument();
+  });
+
+  it('renders home with allPostsData', () => {
+    const homeComponent = (
+      <Home allPostsData={[{ date: '2021-10-10', title: 'test', id: 'test' }]} />
+    );
+
+    const listElement = '<li';
+
+    render(homeComponent);
+
+    expect(listElement).toBeInTheDocument();
+    expect(homeComponent).not.toContain(listElement);
   });
 });

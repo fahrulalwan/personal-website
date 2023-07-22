@@ -33,7 +33,7 @@ const Post: FC<PostData> = ({ postData }: PostData) => (
   </Layout>
 );
 
-export const getStaticPaths: GetStaticPaths = async () => {
+export const getStaticPaths: GetStaticPaths = () => {
   const paths = getAllPostIds();
   return {
     paths,

@@ -44,12 +44,13 @@ const securityHeaders = [
   },
 ];
 
-module.exports = {
+/** @type {import('next').NextConfig} */
+const nextConfig = {
   i18n: {
     locales: ['en', 'id'],
     defaultLocale: 'en',
   },
-  async headers() {
+  headers: async () => {
     return [
       {
         source: '/:path*',
@@ -58,4 +59,13 @@ module.exports = {
     ];
   },
   swcMinify: true,
+  reactStrictMode: true,
+  compiler: {
+    removeConsole: !isDev,
+  },
+  experimental: {
+    nextScriptWorkers: true,
+  },
 };
+
+module.exports = nextConfig;

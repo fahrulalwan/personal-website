@@ -172,7 +172,7 @@ const Home: FC<{ allPostsData: ArticleProps[] }> = ({
   );
 };
 
-export const getStaticProps: GetStaticProps = async () => {
+export const getStaticProps: GetStaticProps = () => {
   const allPostsData = getSortedPostsData();
   return {
     props: {
