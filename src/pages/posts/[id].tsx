@@ -1,7 +1,6 @@
 import { FC } from 'react';
 import Head from 'next/head';
 import { GetStaticPaths } from 'next';
-import dayjs from 'dayjs';
 import Layout from '../../components/Layout';
 import { getAllPostIds, getPostData } from '../../lib/posts';
 import Date from '../../components/date';
@@ -15,10 +14,9 @@ interface PostData {
 }
 
 const Post: FC<PostData> = ({ postData }: PostData) => (
-  <Layout
-    description={`${postData.title}. Created on ${dayjs(postData.date).format('MMMM D, YYYY')}`}>
+  <Layout description={postData.title}>
     <Head>
-      <title>{postData.title}</title>
+      <title>{`@fahrulalwan | ${postData.title}`}</title>
     </Head>
     {/* eslint-disable-next-line tailwindcss/classnames-order */}
     <article className="prose prose-sm mx-auto mt-3 rounded-lg bg-white p-5 dark:prose-invert sm:prose-lg dark:bg-github">

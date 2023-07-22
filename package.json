@@ -16,7 +16,6 @@
     "lint-staged": "lint-staged"
   },
   "dependencies": {
-    "@builder.io/partytown": "^0.8.0",
     "dayjs": "1.11.9",
     "framer-motion": "10.13.0",
     "gray-matter": "4.0.3",

@@ -6,9 +6,9 @@ const ContentSecurityPolicy = `
   script-src-elem 'self' https://www.googletagmanager.com 'unsafe-inline';
   style-src 'self' 'unsafe-inline';
   style-src-elem 'self' 'unsafe-inline';
-  img-src 'self' data:;
+  img-src 'self' data: https://www.googletagmanager.com;
   object-src 'none';
-  connect-src 'self' https://www.google-analytics.com https://vitals.vercel-insights.com;
+  connect-src 'self' https://www.google-analytics.com https://www.googletagmanager.com https://vitals.vercel-insights.com;
   frame-ancestors 'none';
   base-uri 'none';
   form-action 'none';
@@ -61,10 +61,7 @@ const nextConfig = {
   swcMinify: true,
   reactStrictMode: true,
   compiler: {
-    removeConsole: !isDev,
-  },
-  experimental: {
-    nextScriptWorkers: true,
+    removeConsole: false,
   },
 };
 

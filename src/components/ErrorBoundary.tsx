@@ -1,6 +1,5 @@
 import { Component, PropsWithChildren } from 'react';
 import { logAnalyticException } from '../lib/gtag';
-import isProduction from '../lib/isProduction';
 
 interface ComponentProps {
   hasError: boolean;
@@ -17,7 +16,7 @@ class ErrorBoundary extends Component<PropsWithChildren, ComponentProps> {
   }
 
   componentDidCatch(error: Error) {
-    return isProduction && logAnalyticException(error.name, true);
+    return logAnalyticException(error.name, true);
   }
 
   render() {

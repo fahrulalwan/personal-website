@@ -5,17 +5,11 @@ import { domAnimation, LazyMotion, m } from 'framer-motion';
 import Script from 'next/script';
 import { GA_TRACKING_ID, logAnalyticPageView } from '../lib/gtag';
 import ErrorBoundary from '../components/ErrorBoundary';
-import isProduction from '../lib/isProduction';
 
 const App: FC<AppProps> = ({ Component, pageProps, router }: AppProps) => {
   useEffect(() => {
-    const handleRouteChange = (url: string) => {
-      if (!isProduction) {
-        return;
-      }
+    const handleRouteChange = (url: string) => logAnalyticPageView(url);
 
-      logAnalyticPageView(url);
-    };
     router.events.on('routeChangeComplete', handleRouteChange);
     router.events.on('hashChangeComplete', handleRouteChange);
     return () => {
@@ -26,22 +20,14 @@ const App: FC<AppProps> = ({ Component, pageProps, router }: AppProps) => {
 
   return (
     <>
-      {isProduction && (
-        <>
-          <Script
-            src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`}
-            strategy="worker"
-          />
-          <Script id="google-analytics" strategy="afterInteractive">
-            {`
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){window.dataLayer.push(arguments);}
-          gtag('js', new Date());
-          gtag('config', '${GA_TRACKING_ID}');
-        `}
-          </Script>
-        </>
-      )}
+      <Script id="google-analytics" strategy="afterInteractive">
+        {`window.dataLayer=window.dataLayer||[];function gtag(){window.dataLayer.push(arguments);}gtag('js',new Date());gtag('config','${GA_TRACKING_ID}');`}
+      </Script>
+
+      <Script
+        src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`}
+        strategy="afterInteractive"
+      />
 
       <LazyMotion features={domAnimation} strict>
         <m.div

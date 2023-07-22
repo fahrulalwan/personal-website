@@ -1,6 +1,6 @@
 import { FC, useEffect, useState } from 'react';
 import { logAnalyticEvent } from '../lib/gtag';
-import isProduction from '../lib/isProduction';
+import { useRouter } from 'next/router';
 
 export type Themes = 'light' | 'dark';
 
@@ -10,6 +10,8 @@ export enum Theme {
 }
 
 const DarkModeToggle: FC = () => {
+  const router = useRouter();
+
   const [theme, setTheme] = useState<Themes>(() => {
     const persistedTheme = localStorage?.getItem('theme') as Themes;
 
@@ -31,12 +33,12 @@ const DarkModeToggle: FC = () => {
   }, [theme]);
 
   const logAnalytic = (nextTheme: Theme) =>
-    isProduction &&
     logAnalyticEvent({
       action: 'change_theme',
       params: {
         category: 'app_interaction',
         label: nextTheme,
+        page_location: router.asPath,
       },
     });
 
