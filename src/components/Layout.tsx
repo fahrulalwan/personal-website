@@ -181,25 +181,23 @@ const Layout: FC<PropsWithChildren<LayoutInterface>> = ({
                 alt={name}
               />
             </Link>
-            <Link href="/">
-              <m.a
-                initial="hidden"
-                animate="visible"
-                variants={{
-                  hidden: {
-                    opacity: 0,
+            <m.span
+              initial="hidden"
+              animate="visible"
+              variants={{
+                hidden: {
+                  opacity: 0,
+                },
+                visible: {
+                  opacity: 1,
+                  transition: {
+                    duration: 0.5,
                   },
-                  visible: {
-                    opacity: 1,
-                    transition: {
-                      duration: 0.5,
-                    },
-                  },
-                }}
-                className="my-4 cursor-pointer text-4xl font-semibold leading-6 text-black dark:text-white sm:my-0">
-                {name}
-              </m.a>
-            </Link>
+                },
+              }}
+              className="my-4 cursor-pointer text-4xl font-semibold leading-6 text-black dark:text-white sm:my-0">
+              <Link href="/">{name}</Link>
+            </m.span>
           </LazyMotion>
         )}
         <DarkModeToggle />

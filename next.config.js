@@ -46,10 +46,6 @@ const securityHeaders = [
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  i18n: {
-    locales: ['en', 'id'],
-    defaultLocale: 'en',
-  },
   headers: async () => {
     return [
       {
@@ -61,7 +57,7 @@ const nextConfig = {
   swcMinify: true,
   reactStrictMode: true,
   compiler: {
-    removeConsole: false,
+    removeConsole: true,
   },
 };
 
