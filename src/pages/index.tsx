@@ -31,9 +31,10 @@ const Home: FC<{ allPostsData: ArticleProps[] }> = ({
   const handleLogAnalytic = (contact: ContactTypes) => () =>
     isProduction &&
     logAnalyticEvent({
-      action: `contact_${contact}`,
+      action: `click_contact`,
       params: {
-        method: contact,
+        category: 'app_interaction',
+        from: contact,
       },
     });
 
@@ -156,6 +157,15 @@ const Home: FC<{ allPostsData: ArticleProps[] }> = ({
                 <Link
                   href="/posts/[id]"
                   as={`/posts/${id}`}
+                  onClick={() => {
+                    logAnalyticEvent({
+                      action: 'select_article',
+                      params: {
+                        event_category: 'app_interaction',
+                        article_name: title,
+                      },
+                    });
+                  }}
                   className="text-xl text-blue-600 dark:text-violet-200">
                   {title}
                 </Link>

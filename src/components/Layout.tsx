@@ -1,9 +1,10 @@
-import React, { FC, PropsWithChildren, useState } from 'react';
+import { FC, PropsWithChildren, useEffect, useState } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
 import { domAnimation, LazyMotion, m } from 'framer-motion';
 import dayjs from 'dayjs';
 import DarkModeToggle from './DarkModeToggle';
+import { logAnalyticEvent } from '../lib/gtag';
 
 const name = '@fahrulalwan';
 
@@ -19,13 +20,23 @@ const Layout: FC<PropsWithChildren<LayoutInterface>> = ({
 }: PropsWithChildren<LayoutInterface>) => {
   const [isMounted, setMounted] = useState(false);
 
-  React.useEffect(() => {
+  useEffect(() => {
     setMounted(true);
   }, []);
 
   if (!isMounted) {
     return null;
   }
+
+  const logAnalytic = (position: string) => () => {
+    logAnalyticEvent({
+      action: 'navigate_to_home',
+      params: {
+        category: 'app_interaction',
+        position,
+      },
+    });
+  };
 
   return (
     <div className="mx-auto max-w-screen-sm px-4 pb-24 pt-12">
@@ -148,7 +159,7 @@ const Layout: FC<PropsWithChildren<LayoutInterface>> = ({
           </LazyMotion>
         ) : (
           <LazyMotion features={domAnimation} strict>
-            <Link href="/">
+            <Link href="/" onClick={() => logAnalytic('top')}>
               <m.img
                 initial="hidden"
                 animate="visible"
@@ -196,7 +207,7 @@ const Layout: FC<PropsWithChildren<LayoutInterface>> = ({
       <main>{children}</main>
       {!home && (
         <div className="ml-3 mt-8">
-          <Link href="/" className="dark:text-white">
+          <Link href="/" onClick={() => logAnalytic('bottom')} className="dark:text-white">
             ← Back to home
           </Link>
         </div>

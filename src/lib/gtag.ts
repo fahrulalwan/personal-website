@@ -1,10 +1,9 @@
-import EventNames = Gtag.EventNames;
-import EventParams = Gtag.EventParams;
-import ControlParams = Gtag.ControlParams;
-import CustomParams = Gtag.CustomParams;
+type EventParams = Gtag.EventParams;
+type ControlParams = Gtag.ControlParams;
+type CustomParams = Gtag.CustomParams;
 
 interface GtagEvents {
-  action: EventNames | string;
+  action: string;
   params: ControlParams | EventParams | CustomParams;
 }
 
