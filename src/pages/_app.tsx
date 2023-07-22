@@ -32,7 +32,7 @@ const App: FC<AppProps> = ({ Component, pageProps, router }: AppProps) => {
             src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`}
             strategy="worker"
           />
-          <Script id="google-analytics" strategy="worker">
+          <Script id="google-analytics" strategy="afterInteractive">
             {`
           window.dataLayer = window.dataLayer || [];
           function gtag(){window.dataLayer.push(arguments);}
