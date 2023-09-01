@@ -9,8 +9,8 @@ dependencies:
     specifier: 1.11.9
     version: 1.11.9
   framer-motion:
-    specifier: 10.13.0
-    version: 10.13.0(react-dom@18.2.0)(react@18.2.0)
+    specifier: 10.16.2
+    version: 10.16.2(react-dom@18.2.0)(react@18.2.0)
   gray-matter:
     specifier: 4.0.3
     version: 4.0.3
@@ -465,6 +465,7 @@ packages:
 
   /@emotion/memoize@0.7.4:
     resolution: {integrity: sha512-Ja/Vfqe3HpuzRsG1oBtWTHk2PGZ7GR+2Vz5iYGelAw8dx32K0y7PjVuxK6z1nMpZOqAFsRUPCkK1YjJ56qJlgw==}
+    requiresBuild: true
     dev: false
     optional: true
 
@@ -2907,8 +2908,8 @@ packages:
     resolution: {integrity: sha512-MhLuK+2gUcnZe8ZHlaaINnQLl0xRIGRfcGk2yl8xoQAfHrSsL3rYu6FCmBdkdbhc9EPlwyGHewaRsvwRMJtAlA==}
     dev: true
 
-  /framer-motion@10.13.0(react-dom@18.2.0)(react@18.2.0):
-    resolution: {integrity: sha512-xKhw9VCizmwEHbopOfluaoVunGHSZyMztGbTvsgOYqCjaKu6qtlwWY1J+6GhL41NY1P157JgEikjDm67XCFnvQ==}
+  /framer-motion@10.16.2(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-aY6L9YMvqMWtfOQptaUvvr8dp97jskXY5UYLQM0vOPxKeERrG/Z034EIQZ/52u7MeCT0HlCQy3/l0HdUZCB9Tw==}
     peerDependencies:
       react: ^18.0.0
       react-dom: ^18.0.0
