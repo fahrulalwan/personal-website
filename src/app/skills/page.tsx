@@ -41,18 +41,21 @@ const SkillsPage = () => {
 				Skills & Expertise
 			</h1>
 			<div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-				{skillCategories.map((category, index) => (
-					<Card key={index} className="bg-card text-card-foreground">
+				{skillCategories.map((category) => (
+					<Card
+						key={category.category}
+						className="bg-card text-card-foreground"
+					>
 						<CardHeader>
-							<CardTitle>{category.category}</CardTitle>
+							<CardTitle CompType="h2">{category.category}</CardTitle>
 						</CardHeader>
 						<CardContent>
 							<div className="space-y-4">
 								<div>
 									<h3 className="font-semibold mb-2">Expert</h3>
 									<div className="flex flex-wrap gap-2">
-										{category.expert.map((skill, skillIndex) => (
-											<Badge key={skillIndex} variant="default">
+										{category.expert.map((skill) => (
+											<Badge key={skill} variant="default">
 												{skill}
 											</Badge>
 										))}
@@ -61,8 +64,8 @@ const SkillsPage = () => {
 								<div>
 									<h3 className="font-semibold mb-2">Proficient</h3>
 									<div className="flex flex-wrap gap-2">
-										{category.proficient.map((skill, skillIndex) => (
-											<Badge key={skillIndex} variant="secondary">
+										{category.proficient.map((skill) => (
+											<Badge key={skill} variant="secondary">
 												{skill}
 											</Badge>
 										))}
@@ -71,8 +74,8 @@ const SkillsPage = () => {
 								<div>
 									<h3 className="font-semibold mb-2">Familiar</h3>
 									<div className="flex flex-wrap gap-2">
-										{category.familiar.map((skill, skillIndex) => (
-											<Badge key={skillIndex} variant="outline">
+										{category.familiar.map((skill) => (
+											<Badge key={skill} variant="outline">
 												{skill}
 											</Badge>
 										))}

@@ -50,13 +50,16 @@ const EducationPage = () => {
 			<h1 className="text-4xl font-bold mb-8 text-center">Education</h1>
 			<div className="max-w-4xl mx-auto">
 				<Timeline>
-					{educations.map((edu, index) => (
-						<TimelineItem key={index}>
+					{educations.map((edu) => (
+						<TimelineItem key={edu.degree}>
 							<TimelineIcon />
 							<TimelineContent>
 								<Card className="bg-card text-card-foreground mb-8">
 									<CardHeader>
-										<CardTitle className="flex justify-between items-center flex-wrap">
+										<CardTitle
+											CompType="h2"
+											className="flex justify-between items-center flex-wrap"
+										>
 											<span className="text-xl">{edu.degree}</span>
 											<Badge variant="secondary" className="text-sm">
 												{edu.period}
@@ -97,7 +100,7 @@ const EducationPage = () => {
 								{certifications.map((cert, index) => (
 									<Card key={index} className="bg-card text-card-foreground">
 										<CardHeader>
-											<CardTitle>{cert.name}</CardTitle>
+											<CardTitle CompType="h2">{cert.name}</CardTitle>
 										</CardHeader>
 										<CardContent>
 											<p>{cert.issuer}</p>

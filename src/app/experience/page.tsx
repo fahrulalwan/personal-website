@@ -110,7 +110,10 @@ const ExperiencePage: FC = () => {
 				{experiences.map((exp) => (
 					<Card key={exp.description} className="bg-card text-card-foreground">
 						<CardHeader>
-							<CardTitle className="flex justify-between items-center flex-wrap">
+							<CardTitle
+								CompType="h2"
+								className="flex justify-between items-center flex-wrap"
+							>
 								<span className="text-xl">{exp.title}</span>
 								<Badge variant="secondary" className="text-sm">
 									{exp.period}

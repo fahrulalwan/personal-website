@@ -70,13 +70,13 @@ const ProjectsPage = () => {
 		<div className="min-h-screen bg-background text-foreground">
 			<h1 className="text-4xl font-bold mb-8 text-center">Projects</h1>
 			<div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-				{projects.map((project, index) => (
+				{projects.map((project) => (
 					<Card
-						key={index}
+						key={project.title}
 						className="bg-card text-card-foreground flex flex-col"
 					>
 						<CardHeader>
-							<CardTitle>{project.title}</CardTitle>
+							<CardTitle CompType="h2">{project.title}</CardTitle>
 							<CardDescription>{project.description}</CardDescription>
 						</CardHeader>
 						<CardContent>

@@ -17,7 +17,7 @@ const AppPage = () => {
 					/>
 				</div>
 				<h1 className="text-5xl font-bold mb-4">Mohammad Fahrul Alwan</h1>
-				<p className="text-xl mb-8">Frontend Engineer Lead</p>
+				<h2 className="text-xl mb-8">Frontend Engineer Lead</h2>
 				<div className="flex space-x-4 mb-12">
 					<Button variant="outline" size="icon" asChild>
 						<Link

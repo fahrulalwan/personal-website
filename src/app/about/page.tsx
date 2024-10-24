@@ -9,7 +9,7 @@ const AboutPage: FC = () => {
 			<div className="space-y-8 max-w-4xl mx-auto">
 				<Card>
 					<CardHeader>
-						<CardTitle>Mohammad Fahrul Alwan</CardTitle>
+						<CardTitle CompType="h2">Mohammad Fahrul Alwan</CardTitle>
 					</CardHeader>
 					<CardContent>
 						<p className="mb-4">
@@ -37,7 +37,7 @@ const AboutPage: FC = () => {
 
 				<Card>
 					<CardHeader>
-						<CardTitle>Key Strengths</CardTitle>
+						<CardTitle CompType="h2">Key Strengths</CardTitle>
 					</CardHeader>
 					<CardContent>
 						<ul className="space-y-2">
@@ -78,7 +78,7 @@ const AboutPage: FC = () => {
 
 				<Card>
 					<CardHeader>
-						<CardTitle>Professional Interests</CardTitle>
+						<CardTitle CompType="h2">Professional Interests</CardTitle>
 					</CardHeader>
 					<CardContent>
 						<ul className="space-y-2">
@@ -101,7 +101,7 @@ const AboutPage: FC = () => {
 
 				<Card>
 					<CardHeader>
-						<CardTitle>Key Achievements</CardTitle>
+						<CardTitle CompType="h2">Key Achievements</CardTitle>
 					</CardHeader>
 					<CardContent>
 						<ul className="space-y-2">

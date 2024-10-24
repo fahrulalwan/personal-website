@@ -21,7 +21,7 @@ const ContactPage: FC = () => {
 			<div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
 				<Card className="bg-card text-card-foreground">
 					<CardHeader>
-						<CardTitle>Send Me a Message</CardTitle>
+						<CardTitle CompType="h2">Send Me a Message</CardTitle>
 						<CardDescription>I&apos;d love to hear from you!</CardDescription>
 					</CardHeader>
 					<CardContent>
@@ -64,7 +64,7 @@ const ContactPage: FC = () => {
 				<div className="space-y-8">
 					<Card className="bg-card text-card-foreground">
 						<CardHeader>
-							<CardTitle>Contact Information</CardTitle>
+							<CardTitle CompType="h2">Contact Information</CardTitle>
 							<CardDescription>
 								Feel free to reach out through any of these channels
 							</CardDescription>
@@ -87,7 +87,7 @@ const ContactPage: FC = () => {
 					</Card>
 					<Card className="bg-card text-card-foreground">
 						<CardHeader>
-							<CardTitle>Social Media</CardTitle>
+							<CardTitle CompType="h2">Social Media</CardTitle>
 							<CardDescription>
 								Connect with me on professional networks
 							</CardDescription>
