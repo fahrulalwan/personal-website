@@ -37,8 +37,8 @@ const TestimonialsPage = () => {
 		<div className="min-h-screen bg-background text-foreground">
 			<h1 className="text-4xl font-bold mb-8 text-center">Testimonials</h1>
 			<div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-				{testimonials.map((testimonial, index) => (
-					<Card key={index} className="bg-card text-card-foreground">
+				{testimonials.map((testimonial) => (
+					<Card key={testimonial.name} className="bg-card text-card-foreground">
 						<CardHeader>
 							<div className="flex items-center space-x-4">
 								<Avatar>
