@@ -108,7 +108,7 @@ const ExperiencePage: FC = () => {
 			</h1>
 			<div className="space-y-8 max-w-4xl mx-auto">
 				{experiences.map((exp) => (
-					<Card key={exp.title} className="bg-card text-card-foreground">
+					<Card key={exp.description} className="bg-card text-card-foreground">
 						<CardHeader>
 							<CardTitle className="flex justify-between items-center flex-wrap">
 								<span className="text-xl">{exp.title}</span>
