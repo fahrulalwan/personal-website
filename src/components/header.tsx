@@ -4,6 +4,7 @@ import { Home } from "lucide-react";
 import { usePathname } from "next/navigation";
 import { Button } from "./ui/button";
 import Link from "next/link";
+import ThemeToggle from "@/components/theme-toggle";
 
 const Header = () => {
 	const pathname = usePathname();
@@ -13,7 +14,7 @@ const Header = () => {
 	}
 
 	return (
-		<header className="fixed top-4 left-4 z-50">
+		<header className="fixed top-4 left-4 z-50 flex items-center space-x-4">
 			<Link href="/" passHref>
 				<Button
 					variant="ghost"
@@ -24,6 +25,7 @@ const Header = () => {
 					<span className="sr-only">Go to homepage</span>
 				</Button>
 			</Link>
+			<ThemeToggle />
 		</header>
 	);
 };

@@ -1,7 +1,8 @@
 import { Inter, Fira_Code } from "next/font/google";
 import { ThemeProvider } from "@/components/ui/theme-provider";
 import "./globals.css";
-import type { ReactNode } from "react";
+import "./theme.css";
+import type { FC, PropsWithChildren } from "react";
 import Header from "@/components/header";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
@@ -10,24 +11,20 @@ const firaCode = Fira_Code({
 	variable: "--font-fira-code",
 });
 
-export const metadata = {
-	title: "Mohammad Fahrul Alwan - Portfolio",
-	description: "Senior Frontend Engineer & Tech Lead",
-};
-
-export default function RootLayout({
-	children,
-}: Readonly<{
-	children: ReactNode;
-}>) {
+const RootLayout: FC<PropsWithChildren> = ({ children }) => {
 	return (
 		<html
 			lang="en"
-			className={`${inter.variable} ${firaCode.variable}`}
 			suppressHydrationWarning
+			className={`${inter.variable} ${firaCode.variable}`}
 		>
 			<body>
-				<ThemeProvider attribute="class">
+				<ThemeProvider
+					attribute="class"
+					defaultTheme="system"
+					enableSystem
+					disableTransitionOnChange
+				>
 					<div className="flex flex-col min-h-screen">
 						<Header />
 						<main className="flex-grow">
@@ -48,4 +45,6 @@ export default function RootLayout({
 			</body>
 		</html>
 	);
-}
+};
+
+export default RootLayout;
