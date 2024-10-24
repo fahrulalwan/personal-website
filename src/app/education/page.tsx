@@ -44,7 +44,7 @@ const certifications = [
 	},
 ];
 
-export default function EducationPage() {
+const EducationPage = () => {
 	return (
 		<div className="min-h-screen bg-background text-foreground">
 			<h1 className="text-4xl font-bold mb-8 text-center">Education</h1>
@@ -140,4 +140,6 @@ export default function EducationPage() {
 			</div>
 		</div>
 	);
-}
+};
+
+export default EducationPage;

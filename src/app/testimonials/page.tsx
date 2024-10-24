@@ -32,7 +32,7 @@ const testimonials = [
 	},
 ];
 
-export default function TestimonialsPage() {
+const TestimonialsPage = () => {
 	return (
 		<div className="min-h-screen bg-background text-foreground">
 			<h1 className="text-4xl font-bold mb-8 text-center">Testimonials</h1>
@@ -69,4 +69,6 @@ export default function TestimonialsPage() {
 			</div>
 		</div>
 	);
-}
+};
+
+export default TestimonialsPage;

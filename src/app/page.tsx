@@ -4,7 +4,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Github, Linkedin, Mail, ChevronRight } from "lucide-react";
 import Image from "next/image";
 
-export default function AppPage() {
+const AppPage = () => {
 	return (
 		<div className="min-h-screen bg-background text-foreground">
 			<div className="flex flex-col items-center justify-center text-center">
@@ -140,4 +140,6 @@ export default function AppPage() {
 			</div>
 		</div>
 	);
-}
+};
+
+export default AppPage;

@@ -65,7 +65,7 @@ const projects = [
 	},
 ];
 
-export default function ProjectsPage() {
+const ProjectsPage = () => {
 	return (
 		<div className="min-h-screen bg-background text-foreground">
 			<h1 className="text-4xl font-bold mb-8 text-center">Projects</h1>
@@ -133,4 +133,6 @@ export default function ProjectsPage() {
 			</div>
 		</div>
 	);
-}
+};
+
+export default ProjectsPage;

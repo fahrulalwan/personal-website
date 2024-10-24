@@ -1,3 +1,4 @@
+import { GoogleAnalytics } from "@next/third-parties/google";
 import { Inter, Fira_Code } from "next/font/google";
 import { ThemeProvider } from "@/components/ui/theme-provider";
 import "./globals.css";
@@ -43,6 +44,7 @@ const RootLayout: FC<PropsWithChildren> = ({ children }) => {
 					</div>
 				</ThemeProvider>
 			</body>
+			<GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID as string} />
 		</html>
 	);
 };
