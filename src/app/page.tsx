@@ -12,8 +12,8 @@ export default function AppPage() {
 					<Image
 						src="https://via.assets.so/game.png?id=1&q=95&w=200&h=200&fit=fill"
 						alt="Mohammad Fahrul Alwan"
-						layout="fill"
-						objectFit="cover"
+						width={200}
+						height={200}
 					/>
 				</div>
 				<h1 className="text-5xl font-bold mb-4">Mohammad Fahrul Alwan</h1>
