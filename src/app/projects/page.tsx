@@ -88,8 +88,8 @@ const ProjectsPage = () => {
 								className="w-full h-48 object-cover rounded-md mb-4"
 							/>
 							<div className="flex flex-wrap gap-2 mb-4">
-								{project.technologies.map((tech, techIndex) => (
-									<Badge key={techIndex} variant="secondary">
+								{project.technologies.map((tech) => (
+									<Badge key={tech} variant="secondary">
 										{tech}
 									</Badge>
 								))}

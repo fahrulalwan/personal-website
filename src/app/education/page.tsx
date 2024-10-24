@@ -73,14 +73,14 @@ const EducationPage = () => {
 										{edu.grade && <p className="mb-2">Grade: {edu.grade}</p>}
 										{edu.achievements && (
 											<ul className="list-disc list-inside mb-4">
-												{edu.achievements.map((achievement, i) => (
-													<li key={i}>{achievement}</li>
+												{edu.achievements.map((achievement) => (
+													<li key={achievement}>{achievement}</li>
 												))}
 											</ul>
 										)}
 										<div className="flex flex-wrap gap-2">
-											{edu.skills.map((skill, skillIndex) => (
-												<Badge key={skillIndex} variant="outline">
+											{edu.skills.map((skill) => (
+												<Badge key={skill} variant="outline">
 													{skill}
 												</Badge>
 											))}
@@ -97,8 +97,11 @@ const EducationPage = () => {
 								Professional Certifications
 							</h2>
 							<div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-								{certifications.map((cert, index) => (
-									<Card key={index} className="bg-card text-card-foreground">
+								{certifications.map((cert) => (
+									<Card
+										key={cert.name}
+										className="bg-card text-card-foreground"
+									>
 										<CardHeader>
 											<CardTitle CompType="h2">{cert.name}</CardTitle>
 										</CardHeader>
