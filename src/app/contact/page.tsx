@@ -9,13 +9,15 @@ import {
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
-import { Github, Linkedin, Mail, Phone, MapPin } from "lucide-react";
+import { Github, Linkedin, Mail, MapPin } from "lucide-react";
 import type { FC } from "react";
 
 const ContactPage: FC = () => {
 	return (
 		<div className="min-h-screen bg-background text-foreground">
-			<h1 className="text-4xl font-bold mb-8 text-center">Let's Connect</h1>
+			<h1 className="text-4xl font-bold mb-8 text-center">
+				Let&apos;s Connect
+			</h1>
 			<div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
 				<Card className="bg-card text-card-foreground">
 					<CardHeader>

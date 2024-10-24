@@ -123,7 +123,7 @@ const ExperiencePage: FC = () => {
 							<p className="mb-4">{exp.description}</p>
 							<h4 className="font-semibold mb-2">Key Achievements:</h4>
 							<ul className="list-disc list-inside mb-4">
-								{exp.achievements.map((achievement, i) => (
+								{exp.achievements.map((achievement) => (
 									<li key={achievement}>{achievement}</li>
 								))}
 							</ul>
