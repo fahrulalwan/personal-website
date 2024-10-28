@@ -6,12 +6,19 @@ import type { FC, PropsWithChildren } from "react";
 import Header from "@/components/header";
 import { Analytics } from "@vercel/analytics/react";
 import type { Metadata } from "next";
+import { headers } from "next/headers";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 const firaCode = Fira_Code({
 	subsets: ["latin"],
 	variable: "--font-fira-code",
 });
+
+export async function generateMetadata(): Promise<Metadata> {
+	return {
+		metadataBase: new URL(`https://${(await headers()).get("host")}`),
+	};
+}
 
 export const metadata: Metadata = {
 	title: {
