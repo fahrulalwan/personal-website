@@ -15,70 +15,69 @@ const firaCode = Fira_Code({
 });
 
 export async function generateMetadata(): Promise<Metadata> {
-	return {
-		metadataBase: new URL(`https://${(await headers()).get("host")}`),
-	};
-}
+	const awaitedHeaders = await headers();
 
-export const metadata: Metadata = {
-	title: {
-		template: "%s | @fahrulalwan",
-		default: "@fahrulalwan",
-	},
-	description:
-		"Software Engineer with a passion for building delightful user experiences. I specialize in frontend development with React and Next.js.",
-	referrer: "same-origin",
-	keywords: [
-		"Mohammad Fahrul Alwan",
-		"Software Engineer",
-		"Frontend Developer",
-		"Full-stack Developer",
-		"React Developer",
-		"React Engineer",
-		"Lead Developer",
-		"Engineering Lead",
-		"Technical Lead",
-		"Software Developer",
-		"Web Developer",
-		"JavaScript Developer",
-		"TypeScript Developer",
-		"Next.js Developer",
-		"React Native Developer",
-		"Node.js Developer",
-	],
-	openGraph: {
-		type: "website",
-		locale: "enUS",
-		siteName: "@fahrulalwan",
-		alternateLocale: ["idID"],
-		countryName: "Indonesia",
+	return {
+		metadataBase: new URL(`https://${awaitedHeaders.get("host")}`),
+		title: {
+			template: "%s | @fahrulalwan",
+			default: "@fahrulalwan",
+		},
 		description:
 			"Software Engineer with a passion for building delightful user experiences. I specialize in frontend development with React and Next.js.",
-		emails: "fahrulalwan@gmail.com",
-		title: "@fahrulalwan",
-	},
-	robots: {
-		follow: true,
-		index: true,
-		googleBot: {
-			index: true,
-			follow: true,
-			noimageindex: true,
-			"max-video-preview": -1,
-			"max-image-preview": "large",
-			"max-snippet": -1,
+		referrer: "same-origin",
+		keywords: [
+			"Mohammad Fahrul Alwan",
+			"Software Engineer",
+			"Frontend Developer",
+			"Full-stack Developer",
+			"React Developer",
+			"React Engineer",
+			"Lead Developer",
+			"Engineering Lead",
+			"Technical Lead",
+			"Software Developer",
+			"Web Developer",
+			"JavaScript Developer",
+			"TypeScript Developer",
+			"Next.js Developer",
+			"React Native Developer",
+			"Node.js Developer",
+		],
+		openGraph: {
+			type: "website",
+			locale: "enUS",
+			siteName: "@fahrulalwan",
+			alternateLocale: ["idID"],
+			countryName: "Indonesia",
+			description:
+				"Software Engineer with a passion for building delightful user experiences. I specialize in frontend development with React and Next.js.",
+			emails: "fahrulalwan@gmail.com",
+			title: "@fahrulalwan",
 		},
-	},
-	// icons: {
-	// 	icon: "/icon.png",
-	// 	shortcut: "/shortcut-icon.png",
-	// 	apple: "/apple-icon.png",
-	// 	other: {
-	// 		rel: "apple-touch-icon-precomposed",
-	// 		url: "/apple-touch-icon-precomposed.png",
-	// 	},
-	// },
-};
+		robots: {
+			follow: true,
+			index: true,
+			googleBot: {
+				index: true,
+				follow: true,
+				noimageindex: true,
+				"max-video-preview": -1,
+				"max-image-preview": "large",
+				"max-snippet": -1,
+			},
+		},
+		// icons: {
+		// 	icon: "/icon.png",
+		// 	shortcut: "/shortcut-icon.png",
+		// 	apple: "/apple-icon.png",
+		// 	other: {
+		// 		rel: "apple-touch-icon-precomposed",
+		// 		url: "/apple-touch-icon-precomposed.png",
+		// 	},
+		// },
+	};
+}
 
 const RootLayout: FC<PropsWithChildren> = ({ children }) => {
 	return (
