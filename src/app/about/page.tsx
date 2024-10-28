@@ -4,73 +4,83 @@ import type { FC } from "react";
 
 const AboutPage: FC = () => {
 	return (
-		<div className="min-h-screen bg-background text-foreground">
+		<div className="min-h-screen bg-background text-foreground p-4">
 			<h1 className="text-4xl font-bold mb-8 text-center">About Me</h1>
 			<div className="space-y-8 max-w-4xl mx-auto">
 				<Card>
 					<CardHeader>
-						<CardTitle CompType="h2">Mohammad Fahrul Alwan</CardTitle>
+						<CardTitle as="h2">Mohammad Fahrul Alwan</CardTitle>
 					</CardHeader>
 					<CardContent>
+						<div className="flex flex-wrap gap-2 mb-4">
+							<Badge variant="secondary">11+ Years IT Experience</Badge>
+							<Badge variant="secondary">7+ Years Coding</Badge>
+							<Badge variant="secondary">Magna Cum Laude Graduate</Badge>
+						</div>
 						<p className="mb-4">
-							I&apos;m a Senior Frontend Engineer and Tech Lead with 7 years of
-							diverse experience in the tech industry. My journey began in
-							networking, but I quickly found my passion in coding, particularly
-							frontend development.
+							My journey in IT began at Telkom Vocational Highschool in West
+							Jakarta, where I developed a strong foundation in various aspects
+							of information technology, from optical transmission to program
+							development. This early exposure sparked a passion that has driven
+							my career ever since.
 						</p>
 						<p className="mb-4">
-							With 6 years of coding experience, including 2 years as a frontend
-							tech lead, I&apos;ve had the opportunity to work on a wide range
-							of projects across various industries. I&apos;m passionate about
-							product development, marketing, business impact, and engineering
-							best practices.
+							Continuing my education at Bina Nusantara University, I chose to
+							major in Information Systems to broaden my knowledge in software
+							development. During my studies, I balanced full-time work as a
+							Software Engineer at an IT Consultant Company, allowing me to
+							apply classroom learning to real-world scenarios. This dual focus
+							on academics and practical experience culminated in my graduation
+							with Magna Cum Laude honors.
 						</p>
 						<p>
-							I hold a Bachelor&apos;s degree in Information Systems from Bina
-							Nusantara University, where I achieved a GPA of 3.76, graduating
-							Magna Cum Laude. What sets me apart is my ability to balance
-							full-time work with academic excellence, demonstrating my strong
-							work ethic and time management skills.
+							Over the past 7+ years, I&apos;ve had the opportunity to work on
+							diverse projects across multiple industries. My experience spans
+							auction commerce, e-commerce, education administration, HR
+							operations, and more. Each project has contributed to my growth as
+							a developer and leader in the field.
 						</p>
 					</CardContent>
 				</Card>
 
 				<Card>
 					<CardHeader>
-						<CardTitle CompType="h2">Key Strengths</CardTitle>
+						<CardTitle as="h2">Key Strengths</CardTitle>
 					</CardHeader>
 					<CardContent>
 						<ul className="space-y-2">
 							<li>
 								<Badge variant="secondary" className="mr-2">
-									Problem Solver
+									Problem Solving
 								</Badge>
-								Adept at finding innovative solutions to complex technical
-								challenges
+								Ability to tackle complex technical challenges with innovative
+								solutions
 							</li>
 							<li>
 								<Badge variant="secondary" className="mr-2">
-									Tech Lead
+									Technical Leadership
 								</Badge>
-								Experienced in leading and mentoring development teams
+								Experience in guiding development teams and managing projects
+								effectively
 							</li>
 							<li>
 								<Badge variant="secondary" className="mr-2">
-									Versatile
+									Full-Stack Proficiency
 								</Badge>
-								Proficient in a wide range of technologies and frameworks
+								Skilled in both frontend and backend technologies
 							</li>
 							<li>
 								<Badge variant="secondary" className="mr-2">
-									Business-Oriented
+									Business Acumen
 								</Badge>
-								Focus on creating solutions that drive business impact
+								Focus on creating solutions that align with and drive business
+								objectives
 							</li>
 							<li>
 								<Badge variant="secondary" className="mr-2">
-									Adaptable
+									Adaptability
 								</Badge>
-								Quick to learn and apply new technologies and methodologies
+								Quick to learn and implement new technologies and methodologies
 							</li>
 						</ul>
 					</CardContent>
@@ -78,67 +88,65 @@ const AboutPage: FC = () => {
 
 				<Card>
 					<CardHeader>
-						<CardTitle CompType="h2">Professional Interests</CardTitle>
+						<CardTitle as="h2">Professional Interests</CardTitle>
 					</CardHeader>
 					<CardContent>
 						<ul className="space-y-2">
+							<li>Exploring and implementing cutting-edge web technologies</li>
+							<li>Optimizing application performance and user experience</li>
 							<li>
-								Exploring cutting-edge frontend technologies and frameworks
+								Designing scalable architectures for large-scale applications
 							</li>
-							<li>Optimizing web performance and user experience</li>
+							<li>Mentoring and fostering growth in junior developers</li>
 							<li>
-								Implementing scalable architecture for large-scale applications
+								Bridging the gap between design concepts and technical
+								implementation
 							</li>
-							<li>Mentoring and nurturing junior developers</li>
-							<li>Bridging the gap between design and development</li>
-							<li>
-								Staying updated with the latest industry trends and best
-								practices
-							</li>
+							<li>Staying current with industry trends and best practices</li>
 						</ul>
 					</CardContent>
 				</Card>
 
 				<Card>
 					<CardHeader>
-						<CardTitle CompType="h2">Key Achievements</CardTitle>
+						<CardTitle as="h2">Notable Achievements</CardTitle>
 					</CardHeader>
 					<CardContent>
 						<ul className="space-y-2">
 							<li>
 								<Badge variant="secondary" className="mr-2">
-									Leadership
+									Team Leadership
 								</Badge>
-								Successfully led a team of 4 frontend developers, increasing
-								productivity by 30%
+								Successfully led a team of 4 frontend developers, improving
+								overall productivity
 							</li>
 							<li>
 								<Badge variant="secondary" className="mr-2">
-									Innovation
+									System Optimization
 								</Badge>
-								Implemented a new design system that reduced development time by
-								40%
+								Implemented a new design system that significantly reduced
+								development time
 							</li>
 							<li>
 								<Badge variant="secondary" className="mr-2">
-									Performance
+									Performance Enhancement
 								</Badge>
-								Optimized web application load time, improving user engagement
-								by 25%
+								Optimized web application load times, leading to improved user
+								engagement
 							</li>
 							<li>
 								<Badge variant="secondary" className="mr-2">
 									Academic Excellence
 								</Badge>
-								Graduated Magna Cum Laude while working full-time in the tech
-								industry
+								Graduated Magna Cum Laude while maintaining full-time employment
+								in the tech industry
 							</li>
 							<li>
 								<Badge variant="secondary" className="mr-2">
-									Project Success
+									Project Management
 								</Badge>
-								Delivered a critical project 2 weeks ahead of schedule, saving
-								the company $100,000
+								Delivered a critical project ahead of schedule, resulting in
+								significant cost savings
 							</li>
 						</ul>
 					</CardContent>

@@ -57,7 +57,7 @@ const EducationPage = () => {
 								<Card className="bg-card text-card-foreground mb-8">
 									<CardHeader>
 										<CardTitle
-											CompType="h2"
+											as="h2"
 											className="flex justify-between items-center flex-wrap"
 										>
 											<span className="text-xl">{edu.degree}</span>
@@ -103,7 +103,7 @@ const EducationPage = () => {
 										className="bg-card text-card-foreground"
 									>
 										<CardHeader>
-											<CardTitle CompType="h2">{cert.name}</CardTitle>
+											<CardTitle as="h2">{cert.name}</CardTitle>
 										</CardHeader>
 										<CardContent>
 											<p>{cert.issuer}</p>

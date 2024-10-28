@@ -3,21 +3,40 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Github, Linkedin, Mail, ChevronRight } from "lucide-react";
 import Image from "next/image";
+import profileImage from "../../public/profile.webp";
 
 const AppPage = () => {
 	return (
 		<div className="min-h-screen bg-background text-foreground">
 			<div className="flex flex-col items-center justify-center text-center">
-				<div className="mb-8 relative w-48 h-48 rounded-full overflow-hidden">
+				<div className="mb-8 w-48 h-48 rounded-full overflow-hidden">
 					<Image
-						src="https://via.assets.so/game.png?id=1&q=95&w=200&h=200&fit=fill"
+						src={profileImage}
 						alt="Mohammad Fahrul Alwan"
 						width={200}
 						height={200}
+						priority
 					/>
 				</div>
 				<h1 className="text-5xl font-bold mb-4">Mohammad Fahrul Alwan</h1>
-				<h2 className="text-xl mb-8">Frontend Engineer Lead</h2>
+				<h2 className="text-xl mb-8">Senior Frontend Engineer & Tech Lead</h2>
+				<div className="max-w-2xl mb-12">
+					<p className="text-lg mb-4">
+						An M-shaped professional with a passion for structured thinking,
+						business impact, and innovative solutions. Bridging the gap between
+						technology and business objectives.
+					</p>
+					<p className="text-lg mb-4">
+						With 11+ years of IT-focused learning and 7+ years of coding
+						experience, I specialize in creating robust and scalable web
+						applications using modern JavaScript frameworks.
+					</p>
+					<p className="text-lg">
+						I&apos;m passionate about solving complex problems and driving
+						business impact through innovative technology solutions.
+					</p>
+				</div>
+
 				<div className="flex space-x-4 mb-12">
 					<Button variant="outline" size="icon" asChild>
 						<Link
@@ -46,93 +65,83 @@ const AppPage = () => {
 						</Link>
 					</Button>
 				</div>
-				<div className="max-w-2xl mb-12">
-					<p className="text-lg mb-4">
-						With 7 years of experience in the tech industry and a Summa Cum
-						Laude degree in Information Systems, I specialize in creating robust
-						and scalable web applications using modern JavaScript frameworks.
-					</p>
-					<p className="text-lg">
-						I&apos;m passionate about solving complex problems and driving
-						business impact through innovative technology solutions.
-					</p>
-				</div>
+
 				<div className="grid grid-cols-1 md:grid-cols-3 gap-4 w-full max-w-3xl">
 					<Link href="/about" passHref legacyBehavior>
 						<Card className="hover:bg-accent transition-colors cursor-pointer">
 							<CardHeader>
-								<CardTitle className="flex items-center justify-between">
+								<CardTitle className="flex items-center justify-between text-xl">
 									About Me
 									<ChevronRight className="h-5 w-5" />
 								</CardTitle>
 							</CardHeader>
 							<CardContent>
-								<p>Learn more about my background and aspirations.</p>
+								<p>Learn more about my background and aspirations</p>
 							</CardContent>
 						</Card>
 					</Link>
 					<Link href="/experience" passHref legacyBehavior>
 						<Card className="hover:bg-accent transition-colors cursor-pointer">
 							<CardHeader>
-								<CardTitle className="flex items-center justify-between">
+								<CardTitle className="flex items-center justify-between text-xl">
 									Experience
 									<ChevronRight className="h-5 w-5" />
 								</CardTitle>
 							</CardHeader>
 							<CardContent>
-								<p>Explore my 7 years of diverse industry experience.</p>
+								<p>Explore my professional journey and projects</p>
 							</CardContent>
 						</Card>
 					</Link>
 					<Link href="/projects" passHref legacyBehavior>
 						<Card className="hover:bg-accent transition-colors cursor-pointer">
 							<CardHeader>
-								<CardTitle className="flex items-center justify-between">
+								<CardTitle className="flex items-center justify-between text-xl">
 									Projects
 									<ChevronRight className="h-5 w-5" />
 								</CardTitle>
 							</CardHeader>
 							<CardContent>
-								<p>View my notable projects and contributions.</p>
+								<p>View my notable projects and contributions</p>
 							</CardContent>
 						</Card>
 					</Link>
 					<Link href="/skills" passHref legacyBehavior>
 						<Card className="hover:bg-accent transition-colors cursor-pointer">
 							<CardHeader>
-								<CardTitle className="flex items-center justify-between">
+								<CardTitle className="flex items-center justify-between text-xl">
 									Skills
 									<ChevronRight className="h-5 w-5" />
 								</CardTitle>
 							</CardHeader>
 							<CardContent>
-								<p>Check out my technical skills and expertise.</p>
+								<p>Check out my technical skills and expertise</p>
 							</CardContent>
 						</Card>
 					</Link>
 					<Link href="/education" passHref legacyBehavior>
 						<Card className="hover:bg-accent transition-colors cursor-pointer">
 							<CardHeader>
-								<CardTitle className="flex items-center justify-between">
+								<CardTitle className="flex items-center justify-between text-xl">
 									Education
 									<ChevronRight className="h-5 w-5" />
 								</CardTitle>
 							</CardHeader>
 							<CardContent>
-								<p>Learn about my academic achievements and certifications.</p>
+								<p>Learn about my academic achievements and certifications</p>
 							</CardContent>
 						</Card>
 					</Link>
 					<Link href="/contact" passHref legacyBehavior>
 						<Card className="hover:bg-accent transition-colors cursor-pointer">
 							<CardHeader>
-								<CardTitle className="flex items-center justify-between">
+								<CardTitle className="flex items-center justify-between text-xl">
 									Contact
 									<ChevronRight className="h-5 w-5" />
 								</CardTitle>
 							</CardHeader>
 							<CardContent>
-								<p>Get in touch for opportunities or collaboration.</p>
+								<p>Get in touch for opportunities or collaborations</p>
 							</CardContent>
 						</Card>
 					</Link>

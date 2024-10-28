@@ -47,7 +47,7 @@ const SkillsPage = () => {
 						className="bg-card text-card-foreground"
 					>
 						<CardHeader>
-							<CardTitle CompType="h2">{category.category}</CardTitle>
+							<CardTitle as="h2">{category.category}</CardTitle>
 						</CardHeader>
 						<CardContent>
 							<div className="space-y-4">

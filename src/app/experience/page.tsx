@@ -1,6 +1,7 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import type { FC } from "react";
+import { Briefcase, Lightbulb, Target } from "lucide-react";
 
 const experiences = [
 	{
@@ -100,46 +101,88 @@ const experiences = [
 	},
 ];
 
+const approachItems = [
+	{
+		icon: <Briefcase className="w-10 h-10" />,
+		title: "Holistic Problem-Solving",
+		description:
+			"I approach each project with a comprehensive view, considering not just the technical aspects but also the broader business implications and user experience.",
+	},
+	{
+		icon: <Lightbulb className="w-10 h-10" />,
+		title: "Continuous Innovation",
+		description:
+			"I stay at the forefront of technology trends, constantly seeking new ways to improve processes and deliver cutting-edge solutions.",
+	},
+	{
+		icon: <Target className="w-10 h-10" />,
+		title: "Results-Driven Focus",
+		description:
+			"My ultimate goal is to create tangible value. I align technical solutions with business objectives to drive measurable results and growth.",
+	},
+];
+
 const ExperiencePage: FC = () => {
 	return (
-		<div className="min-h-screen bg-background text-foreground">
+		<div className="min-h-screen bg-background text-foreground p-4">
 			<h1 className="text-4xl font-bold mb-8 text-center">
 				Professional Experience
 			</h1>
 			<div className="space-y-8 max-w-4xl mx-auto">
-				{experiences.map((exp) => (
-					<Card key={exp.description} className="bg-card text-card-foreground">
-						<CardHeader>
-							<CardTitle
-								CompType="h2"
-								className="flex justify-between items-center flex-wrap"
-							>
-								<span className="text-xl">{exp.title}</span>
-								<Badge variant="secondary" className="text-sm">
-									{exp.period}
-								</Badge>
-							</CardTitle>
-							<p className="font-semibold text-primary">{exp.company}</p>
-							<p className="text-sm text-muted-foreground">{exp.location}</p>
-						</CardHeader>
-						<CardContent>
-							<p className="mb-4">{exp.description}</p>
-							<h3 className="font-semibold mb-2">Key Achievements:</h3>
-							<ul className="list-disc list-inside mb-4">
-								{exp.achievements.map((achievement) => (
-									<li key={achievement}>{achievement}</li>
-								))}
-							</ul>
-							<div className="flex flex-wrap gap-2">
-								{exp.technologies.map((tech) => (
-									<Badge key={tech} variant="outline">
-										{tech}
+				<Card className="bg-primary text-primary-foreground">
+					<CardHeader>
+						<CardTitle className="text-2xl">My Approach to Work</CardTitle>
+					</CardHeader>
+					<CardContent>
+						<div className="grid gap-6 md:grid-cols-3">
+							{approachItems.map((item) => (
+								<div
+									key={item.title}
+									className="flex flex-col items-center text-center"
+								>
+									<div className="mb-4 p-3 bg-primary-foreground text-primary rounded-full">
+										{item.icon}
+									</div>
+									<h3 className="font-semibold mb-2">{item.title}</h3>
+									<p className="text-sm">{item.description}</p>
+								</div>
+							))}
+						</div>
+					</CardContent>
+				</Card>
+				<div className="space-y-6">
+					<h2 className="text-2xl font-bold">Work History</h2>
+					{experiences.map((exp) => (
+						<Card key={exp.title} className="bg-card text-card-foreground">
+							<CardHeader>
+								<CardTitle className="flex justify-between items-center flex-wrap">
+									<span className="text-xl">{exp.title}</span>
+									<Badge variant="secondary" className="text-sm">
+										{exp.period}
 									</Badge>
-								))}
-							</div>
-						</CardContent>
-					</Card>
-				))}
+								</CardTitle>
+								<p className="font-semibold text-primary">{exp.company}</p>
+								<p className="text-sm text-muted-foreground">{exp.location}</p>
+							</CardHeader>
+							<CardContent>
+								<p className="mb-4">{exp.description}</p>
+								<h4 className="font-semibold mb-2">Key Achievements:</h4>
+								<ul className="list-disc list-inside mb-4">
+									{exp.achievements.map((achievement) => (
+										<li key={achievement}>{achievement}</li>
+									))}
+								</ul>
+								<div className="flex flex-wrap gap-2">
+									{exp.technologies.map((tech) => (
+										<Badge key={tech} variant="outline">
+											{tech}
+										</Badge>
+									))}
+								</div>
+							</CardContent>
+						</Card>
+					))}
+				</div>
 			</div>
 		</div>
 	);

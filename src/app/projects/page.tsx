@@ -76,7 +76,7 @@ const ProjectsPage = () => {
 						className="bg-card text-card-foreground flex flex-col"
 					>
 						<CardHeader>
-							<CardTitle CompType="h2">{project.title}</CardTitle>
+							<CardTitle as="h2">{project.title}</CardTitle>
 							<CardDescription>{project.description}</CardDescription>
 						</CardHeader>
 						<CardContent>

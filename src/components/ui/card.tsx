@@ -29,9 +29,9 @@ CardHeader.displayName = "CardHeader";
 const CardTitle = forwardRef<
 	HTMLHeadingElement,
 	HTMLAttributes<HTMLHeadingElement> & {
-		CompType?: "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
+		as?: "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
 	}
->(({ CompType = "h3", className, children, ...props }, ref) => (
+>(({ as: CompType = "h3", className, children, ...props }, ref) => (
 	<CompType
 		ref={ref}
 		className={cn("font-semibold leading-none tracking-tight", className)}
