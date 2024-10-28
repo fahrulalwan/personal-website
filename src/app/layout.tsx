@@ -6,7 +6,6 @@ import type { FC, PropsWithChildren } from "react";
 import Header from "@/components/header";
 import { Analytics } from "@vercel/analytics/react";
 import type { Metadata } from "next";
-import { headers } from "next/headers";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 const firaCode = Fira_Code({
@@ -14,70 +13,66 @@ const firaCode = Fira_Code({
 	variable: "--font-fira-code",
 });
 
-export async function generateMetadata(): Promise<Metadata> {
-	const awaitedHeaders = await headers();
-
-	return {
-		metadataBase: new URL(`https://${awaitedHeaders.get("host")}`),
-		title: {
-			template: "%s | @fahrulalwan",
-			default: "@fahrulalwan",
-		},
+export const metadata: Metadata = {
+	metadataBase: new URL("https://fahrulalwan.vercel.app/"),
+	title: {
+		template: "%s | @fahrulalwan",
+		default: "@fahrulalwan",
+	},
+	description:
+		"Software Engineer with a passion for building delightful user experiences. I specialize in frontend development with React and Next.js.",
+	referrer: "same-origin",
+	keywords: [
+		"Mohammad Fahrul Alwan",
+		"Software Engineer",
+		"Frontend Developer",
+		"Full-stack Developer",
+		"React Developer",
+		"React Engineer",
+		"Lead Developer",
+		"Engineering Lead",
+		"Technical Lead",
+		"Software Developer",
+		"Web Developer",
+		"JavaScript Developer",
+		"TypeScript Developer",
+		"Next.js Developer",
+		"React Native Developer",
+		"Node.js Developer",
+	],
+	openGraph: {
+		type: "website",
+		locale: "enUS",
+		siteName: "@fahrulalwan",
+		alternateLocale: ["idID"],
+		countryName: "Indonesia",
 		description:
 			"Software Engineer with a passion for building delightful user experiences. I specialize in frontend development with React and Next.js.",
-		referrer: "same-origin",
-		keywords: [
-			"Mohammad Fahrul Alwan",
-			"Software Engineer",
-			"Frontend Developer",
-			"Full-stack Developer",
-			"React Developer",
-			"React Engineer",
-			"Lead Developer",
-			"Engineering Lead",
-			"Technical Lead",
-			"Software Developer",
-			"Web Developer",
-			"JavaScript Developer",
-			"TypeScript Developer",
-			"Next.js Developer",
-			"React Native Developer",
-			"Node.js Developer",
-		],
-		openGraph: {
-			type: "website",
-			locale: "enUS",
-			siteName: "@fahrulalwan",
-			alternateLocale: ["idID"],
-			countryName: "Indonesia",
-			description:
-				"Software Engineer with a passion for building delightful user experiences. I specialize in frontend development with React and Next.js.",
-			emails: "fahrulalwan@gmail.com",
-			title: "@fahrulalwan",
-		},
-		robots: {
-			follow: true,
+		emails: "fahrulalwan@gmail.com",
+		title: "@fahrulalwan",
+	},
+	robots: {
+		follow: true,
+		index: true,
+		googleBot: {
 			index: true,
-			googleBot: {
-				index: true,
-				follow: true,
-				noimageindex: true,
-				"max-video-preview": -1,
-				"max-image-preview": "large",
-				"max-snippet": -1,
-			},
+			follow: true,
+			noimageindex: true,
+			"max-video-preview": -1,
+			"max-image-preview": "large",
+			"max-snippet": -1,
 		},
-		// icons: {
-		// 	icon: "/icon.png",
-		// 	shortcut: "/shortcut-icon.png",
-		// 	apple: "/apple-icon.png",
-		// 	other: {
-		// 		rel: "apple-touch-icon-precomposed",
-		// 		url: "/apple-touch-icon-precomposed.png",
-		// 	},
-		// },
-	};
-}
+	},
+	// icons: {
+	// 	icon: "/icon.png",
+	// 	shortcut: "/shortcut-icon.png",
+	// 	apple: "/apple-icon.png",
+	// 	other: {
+	// 		rel: "apple-touch-icon-precomposed",
+	// 		url: "/apple-touch-icon-precomposed.png",
+	// 	},
+	// },
+};
 
 const RootLayout: FC<PropsWithChildren> = ({ children }) => {
 	return (
