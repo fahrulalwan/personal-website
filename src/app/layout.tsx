@@ -14,7 +14,7 @@ const firaCode = Fira_Code({
 });
 
 export const metadata: Metadata = {
-	metadataBase: new URL(`https://${process.env.VERCEL_URL}`),
+	metadataBase: new URL(`https://${process.env.NEXT_PUBLIC_VERCEL_URL}`),
 	title: {
 		template: "%s | @fahrulalwan",
 		default: "@fahrulalwan",
