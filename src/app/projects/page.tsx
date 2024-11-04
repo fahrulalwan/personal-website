@@ -8,46 +8,58 @@ import {
 } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { ExternalLink, Github, ArrowRight } from "lucide-react";
-import Link from "next/link";
+import { ExternalLink } from "lucide-react";
 import Image from "next/image";
+import project_lanthera from "../../../public/project-lanthera.png";
+import project_bareksa from "../../../public/project-lanthera-1.png";
+import project_treetan from "../../../public/project-treetan.png";
+import project_xp from "../../../public/project-xprivate.png";
+import project_fifada from "../../../public/project-fifada.png";
+import project_caready from "../../../public/project-caready.png";
 
 const projects = [
 	{
-		title: "Mental Health Mobile App",
+		title: "Lanthera",
 		description:
 			"Led the frontend development of a React Native app for Android and iOS, providing mental health support and resources. Implemented real-time chat, mood tracking, and personalized content recommendations.",
 		technologies: ["React Native", "TypeScript", "Redux", "Jest", "Firebase"],
-		link: "https://example.com/mental-health-app",
-		github: "https://github.com/fahrulalwan/mental-health-app",
-		image: "https://via.assets.so/game.png?id=1&q=95&w=400&h=200&fit=fill",
+		link: "https://lanthera.com",
+		image: project_lanthera,
 		impact:
 			"Helped over 50,000 users manage their mental health more effectively.",
 	},
 	{
-		title: "Investment Platform Dashboard",
+		title: "Bareksa",
 		description:
 			"Developed a comprehensive dashboard for a fintech superapp, focusing on investment portfolio management. Integrated real-time market data, implemented complex financial calculations, and optimized performance for handling large datasets.",
 		technologies: ["React", "Next.js", "TypeScript", "GraphQL", "D3.js"],
-		link: "https://example.com/investment-dashboard",
-		github: "https://github.com/fahrulalwan/investment-dashboard",
-		image: "https://via.assets.so/game.png?id=1&q=95&w=400&h=200&fit=fill",
+		link: "https://www.bareksa.com",
+		image: project_bareksa,
 		impact:
 			"Increased user engagement by 40% and improved portfolio performance for clients.",
 	},
 	{
-		title: "Online Tutoring Platform",
+		title: "Treetan",
 		description:
 			"Built an interactive platform for online tutoring with real-time collaboration features. Implemented video conferencing, shared whiteboard, and a scheduling system for tutors and students.",
 		technologies: ["Angular", "RxJS", "Socket.io", "WebRTC", "Node.js"],
-		link: "https://example.com/tutoring-platform",
-		github: "https://github.com/fahrulalwan/tutoring-platform",
-		image: "https://via.assets.so/game.png?id=1&q=95&w=400&h=200&fit=fill",
+		link: "https://treetan.com/",
+		image: project_treetan,
 		impact:
 			"Facilitated over 100,000 online tutoring sessions, improving student performance.",
 	},
 	{
-		title: "E-commerce Microservices Solution",
+		title: "XPrivate Education",
+		description:
+			"Built an interactive platform for online tutoring with real-time collaboration features. Implemented video conferencing, shared whiteboard, and a scheduling system for tutors and students.",
+		technologies: ["Angular", "RxJS", "Socket.io", "WebRTC", "Node.js"],
+		link: "https://xprivate.education",
+		image: project_xp,
+		impact:
+			"Facilitated over 100,000 online tutoring sessions, improving student performance.",
+	},
+	{
+		title: "FIFADA",
 		description:
 			"Architected and developed a full-stack e-commerce platform using a microservices architecture. Implemented advanced search functionality, recommendation engine, and integrated multiple payment gateways.",
 		technologies: [
@@ -58,9 +70,24 @@ const projects = [
 			"Docker",
 			"Kubernetes",
 		],
-		link: "https://example.com/ecommerce-solution",
-		github: "https://github.com/fahrulalwan/ecommerce-solution",
-		image: "https://via.assets.so/game.png?id=1&q=95&w=400&h=200&fit=fill",
+		link: "https://fifada.com",
+		image: project_fifada,
+		impact: "Increased sales by 25% and reduced infrastructure costs by 30%.",
+	},
+	{
+		title: "CAReady",
+		description:
+			"Architected and developed a full-stack e-commerce platform using a microservices architecture. Implemented advanced search functionality, recommendation engine, and integrated multiple payment gateways.",
+		technologies: [
+			"Vue.js",
+			"Node.js",
+			"Express",
+			"MongoDB",
+			"Docker",
+			"Kubernetes",
+		],
+		link: "https://caready.co.id",
+		image: project_caready,
 		impact: "Increased sales by 25% and reduced infrastructure costs by 30%.",
 	},
 ];
@@ -76,7 +103,9 @@ const ProjectsPage = () => {
 						className="bg-card text-card-foreground flex flex-col"
 					>
 						<CardHeader>
-							<CardTitle as="h2">{project.title}</CardTitle>
+							<CardTitle as="h2" className="text-2xl">
+								{project.title}
+							</CardTitle>
 							<CardDescription>{project.description}</CardDescription>
 						</CardHeader>
 						<CardContent>
@@ -85,7 +114,7 @@ const ProjectsPage = () => {
 								alt={project.title}
 								width={400}
 								height={200}
-								className="w-full h-48 object-cover rounded-md mb-4"
+								className="w-full h-48 object-contain rounded-md mb-4"
 							/>
 							<div className="flex flex-wrap gap-2 mb-4">
 								{project.technologies.map((tech) => (
@@ -98,38 +127,22 @@ const ProjectsPage = () => {
 								<strong>Impact:</strong> {project.impact}
 							</p>
 						</CardContent>
-						<CardFooter className="mt-auto flex justify-between">
-							<Button variant="outline" asChild>
-								<a
-									href={project.link}
-									target="_blank"
-									rel="noopener noreferrer"
-								>
-									<ExternalLink className="mr-2 h-4 w-4" />
-									View Project
-								</a>
-							</Button>
-							<Button variant="outline" asChild>
-								<a
-									href={project.github}
-									target="_blank"
-									rel="noopener noreferrer"
-								>
-									<Github className="mr-2 h-4 w-4" />
-									GitHub
-								</a>
-							</Button>
+						<CardFooter className="mt-auto flex">
+							{project.link && (
+								<Button variant="outline" asChild>
+									<a
+										href={project.link}
+										target="_blank"
+										rel="noopener noreferrer"
+									>
+										<ExternalLink className="mr-2 h-4 w-4" />
+										View Project
+									</a>
+								</Button>
+							)}
 						</CardFooter>
 					</Card>
 				))}
-			</div>
-			<div className="mt-12 text-center">
-				<Link href="/contact" passHref legacyBehavior>
-					<Button variant="default" size="lg">
-						Discuss Your Project
-						<ArrowRight className="ml-2 h-4 w-4" />
-					</Button>
-				</Link>
 			</div>
 		</div>
 	);

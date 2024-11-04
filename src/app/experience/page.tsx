@@ -16,10 +16,11 @@ const experiences = [
 			"Orchestrated the web implementation of our news platform & Landing Page Revamp, serving a substantial user base exceeding hundreds of thousands of MAUs",
 			"Played a pivotal role in engineering the implementation for campaign launches, contributing to successful outcomes with billions of rupiah AUM per campaign",
 		],
-		technologies: [
+		tags: [
 			"React.js",
 			"Next.js",
 			"Technical Leadership",
+			"Product Management",
 			"Team Management",
 			"Software Project Management",
 		],
@@ -37,7 +38,7 @@ const experiences = [
 			"Designed technical structures to fit project needs and discussed upcoming features, assessing feasibility and workarounds",
 			"Helped the team achieve delivery goals with expected quality and timeliness",
 		],
-		technologies: [
+		tags: [
 			"Angular",
 			"Tailwind CSS",
 			"CI/CD",
@@ -47,9 +48,9 @@ const experiences = [
 	},
 	{
 		title: "Frontend Developer",
-		company: "Jati Piranti Solusindo, PT",
+		company: "Jati Piranti Solusindo",
 		period: "Aug 2019 - Aug 2021",
-		location: "Greater Jakarta Area, Indonesia",
+		location: "Jakarta, Indonesia",
 		description:
 			"Worked on production-grade platforms for auction and e-commerce projects. Developed features for a major financial service company's e-commerce platform, focusing on mobile view.",
 		achievements: [
@@ -57,13 +58,13 @@ const experiences = [
 			"Developed e-commerce features including product detail displays and payment systems with multiple methods",
 			"Gained expertise in state management for single-page applications",
 		],
-		technologies: ["Angular", "React.js", "Next.js", "Redux", "E-Commerce"],
+		tags: ["Angular", "React.js", "Next.js", "Redux", "E-Commerce"],
 	},
 	{
 		title: "Frontend Developer",
 		company: "Pradipta Jatis Indonesia",
 		period: "Dec 2018 - Aug 2019",
-		location: "Greater Jakarta Area, Indonesia",
+		location: "Jakarta, Indonesia",
 		description:
 			"Worked on an Auction Commerce Platform for a subsidiary of a major transportation company using Angular Framework.",
 		achievements: [
@@ -71,33 +72,20 @@ const experiences = [
 			"Researched and implemented Websocket technology with Angular",
 			"Configured Nginx for frontend endpoint with multiple projects, handled deployments and CORS",
 		],
-		technologies: [
-			"Angular",
-			"Tailwind CSS",
-			"Spring MVC",
-			"E-auctions",
-			"PostgreSQL",
-		],
+		tags: ["Angular", "Tailwind CSS", "Spring MVC", "E-auctions", "PostgreSQL"],
 	},
 	{
 		title: "Fullstack Java Developer Trainee",
 		company: "Pradipta Jatis Indonesia",
 		period: "Aug 2018 - Dec 2018",
-		location: "Greater Jakarta Area, Indonesia",
+		location: "Jakarta, Indonesia",
 		description:
 			"Attended Fullstack Developer Training and created a mini-bank application using Java 1.8 (Spring Boot, MyBatis & JSP) as a bootcamp assessment.",
 		achievements: [
 			"Successfully finished bootcamp as one of the highest-graded members",
 			"Developed a mini-bank application using Java 1.8, Spring Boot, MyBatis, and JSP",
 		],
-		technologies: [
-			"Java",
-			"Spring Boot",
-			"MyBatis",
-			"JSP",
-			"JavaScript",
-			"Bootstrap",
-		],
+		tags: ["Java", "Spring Boot", "MyBatis", "JSP", "JavaScript", "Bootstrap"],
 	},
 ];
 
@@ -153,7 +141,7 @@ const ExperiencePage: FC = () => {
 				<div className="space-y-6">
 					<h2 className="text-2xl font-bold">Work History</h2>
 					{experiences.map((exp) => (
-						<Card key={exp.title} className="bg-card text-card-foreground">
+						<Card key={exp.period} className="bg-card text-card-foreground">
 							<CardHeader>
 								<CardTitle className="flex justify-between items-center flex-wrap">
 									<span className="text-xl">{exp.title}</span>
@@ -173,7 +161,7 @@ const ExperiencePage: FC = () => {
 									))}
 								</ul>
 								<div className="flex flex-wrap gap-2">
-									{exp.technologies.map((tech) => (
+									{exp.tags.map((tech) => (
 										<Badge key={tech} variant="outline">
 											{tech}
 										</Badge>
