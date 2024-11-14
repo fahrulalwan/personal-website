@@ -9,8 +9,9 @@ export const metadata: Metadata = {
 
 const AboutPage: FC = () => {
 	return (
-		<div className="min-h-screen bg-background text-foreground p-4">
-			<h1 className="text-4xl font-bold mb-8 text-center">About Me</h1>
+		<>
+			<h1 className="text-4xl font-bold mb-8 text-center mt-4">About Me</h1>
+
 			<div className="space-y-8 max-w-4xl mx-auto">
 				<Card>
 					<CardHeader>
@@ -165,7 +166,7 @@ const AboutPage: FC = () => {
 					</CardContent>
 				</Card>
 			</div>
-		</div>
+		</>
 	);
 };
 

@@ -66,8 +66,9 @@ export const metadata: Metadata = {
 
 const SkillsPage = () => {
 	return (
-		<div className="min-h-screen bg-background text-foreground">
-			<h1 className="text-4xl font-bold mb-8 text-center">Skills</h1>
+		<>
+			<h1 className="text-4xl font-bold mb-8 text-center mt-4">Skills</h1>
+
 			<div className="grid grid-cols-1 md:grid-cols-2 gap-8">
 				{skillCategories.map((category) => (
 					<Card
@@ -75,7 +76,9 @@ const SkillsPage = () => {
 						className="bg-card text-card-foreground"
 					>
 						<CardHeader>
-							<CardTitle as="h2">{category.category}</CardTitle>
+							<CardTitle as="h2" className="text-xl">
+								{category.category}
+							</CardTitle>
 						</CardHeader>
 						<CardContent>
 							<div className="space-y-4">
@@ -122,7 +125,7 @@ const SkillsPage = () => {
 					</Card>
 				))}
 			</div>
-		</div>
+		</>
 	);
 };
 

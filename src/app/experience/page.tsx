@@ -117,10 +117,11 @@ export const metadata: Metadata = {
 
 const ExperiencePage: FC = () => {
 	return (
-		<div className="min-h-screen bg-background text-foreground p-4">
-			<h1 className="text-4xl font-bold mb-8 text-center">
+		<>
+			<h1 className="text-4xl font-bold mb-8 text-center mt-4">
 				Professional Experience
 			</h1>
+
 			<div className="space-y-8 max-w-4xl mx-auto">
 				<Card className="bg-primary text-primary-foreground">
 					<CardHeader>
@@ -179,7 +180,7 @@ const ExperiencePage: FC = () => {
 					))}
 				</div>
 			</div>
-		</div>
+		</>
 	);
 };
 

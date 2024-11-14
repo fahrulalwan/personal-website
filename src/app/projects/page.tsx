@@ -134,8 +134,9 @@ export const metadata: Metadata = {
 
 const ProjectsPage = () => {
 	return (
-		<div className="min-h-screen bg-background text-foreground">
-			<h1 className="text-4xl font-bold mb-8 text-center">Projects</h1>
+		<>
+			<h1 className="text-4xl font-bold mb-8 text-center mt-4">Projects</h1>
+
 			<div className="grid grid-cols-1 md:grid-cols-2 gap-8">
 				{projects.map((project) => (
 					<Card
@@ -199,7 +200,7 @@ const ProjectsPage = () => {
 					</Card>
 				))}
 			</div>
-		</div>
+		</>
 	);
 };
 
