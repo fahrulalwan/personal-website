@@ -18,6 +18,7 @@ import project_fifada from "../../../public/project-fifada.png";
 import project_caready from "../../../public/project-caready.png";
 import type { Metadata } from "next";
 
+// TODO: change png to webp, resize accordingly, & adjust light & dark image
 const projects = [
 	{
 		title: "Lanthera",
@@ -138,7 +139,7 @@ const ProjectsPage = () => {
 			<h1 className="text-4xl font-bold mb-8 text-center mt-4">Projects</h1>
 
 			<div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-				{projects.map((project) => (
+				{projects.map((project, index) => (
 					<Card
 						key={project.title}
 						className="bg-card text-card-foreground flex flex-col"
@@ -152,10 +153,9 @@ const ProjectsPage = () => {
 						<CardContent>
 							<Image
 								src={project.image}
-								alt={project.title}
-								width={400}
-								height={200}
+								alt={`${project.title} Logo`}
 								className="w-full h-48 object-contain rounded-md mb-4"
+								priority={index < 2}
 							/>
 							<div className="flex flex-wrap gap-2 mb-4">
 								{project.technologies.map((tech) => (
