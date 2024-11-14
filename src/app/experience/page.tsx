@@ -124,7 +124,9 @@ const ExperiencePage: FC = () => {
 			<div className="space-y-8 max-w-4xl mx-auto">
 				<Card className="bg-primary text-primary-foreground">
 					<CardHeader>
-						<CardTitle className="text-2xl">My Approach to Work</CardTitle>
+						<CardTitle as="h2" className="text-2xl">
+							My Approach to Work
+						</CardTitle>
 					</CardHeader>
 					<CardContent>
 						<div className="grid gap-6 md:grid-cols-3">

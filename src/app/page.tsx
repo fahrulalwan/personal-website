@@ -51,8 +51,12 @@ const AppPage = () => {
 						priority
 					/>
 				</div>
-				<h1 className="text-5xl font-bold mb-4">Mohammad Fahrul Alwan</h1>
-				<h2 className="text-xl mb-8">Senior Frontend Engineer & Tech Lead</h2>
+
+				<header className="mb-8">
+					<h1 className="text-5xl font-bold mb-4">Mohammad Fahrul Alwan</h1>
+					<h2 className="text-xl">Senior Frontend Engineer & Tech Lead</h2>
+				</header>
+
 				<div className="max-w-2xl mb-12">
 					<p className="text-lg mb-4">
 						An M-shaped professional with a passion for structured thinking,
@@ -77,7 +81,7 @@ const AppPage = () => {
 							target="_blank"
 							rel="noopener noreferrer"
 						>
-							<Github className="h-5 w-5" />
+							<Github className="h-6 w-6" />
 							<span className="sr-only">GitHub</span>
 						</Link>
 					</Button>
@@ -87,13 +91,13 @@ const AppPage = () => {
 							target="_blank"
 							rel="noopener noreferrer"
 						>
-							<Linkedin className="h-5 w-5" />
+							<Linkedin className="h-6 w-6" />
 							<span className="sr-only">LinkedIn</span>
 						</Link>
 					</Button>
 					<Button variant="outline" size="icon" asChild>
 						<Link href="mailto:fahrulalwan@gmail.com">
-							<Mail className="h-5 w-5" />
+							<Mail className="h-6 w-6" />
 							<span className="sr-only">Email</span>
 						</Link>
 					</Button>

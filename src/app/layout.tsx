@@ -17,6 +17,7 @@ const firaCode = Fira_Code({
 });
 
 export const metadata: Metadata = {
+	metadataBase: new URL("https://fahrulalwan.vercel.app"),
 	title: {
 		template: "%s | @fahrulalwan",
 		default: "@fahrulalwan",
@@ -44,6 +45,9 @@ export const metadata: Metadata = {
 		"Node.js Developer",
 	],
 	creator: "Mohammad Fahrul Alwan",
+	alternates: {
+		canonical: "/",
+	},
 	openGraph: {
 		type: "website",
 		locale: "enUS",
@@ -86,42 +90,38 @@ const RootLayout: FC<PropsWithChildren> = ({ children }) => {
 			suppressHydrationWarning
 			className={`${inter.variable} ${firaCode.variable}`}
 		>
-			<body>
+			<body className="flex flex-col min-h-screen">
 				<ThemeProvider
 					attribute="class"
 					defaultTheme="system"
 					enableSystem
 					disableTransitionOnChange
 				>
-					<div className="flex flex-col min-h-screen">
-						<header className="fixed top-4 left-4 z-50 flex items-center space-x-4">
-							<Link href="/">
-								<Button
-									type="button"
-									variant="ghost"
-									size="icon"
-									className="bg-background/50 backdrop-blur-sm rounded-full"
-								>
-									<Home className="h-5 w-5" />
-									<span className="sr-only">Go to homepage</span>
-								</Button>
-							</Link>
-							<ThemeToggle />
-						</header>
-						<main className="flex-grow">
-							<div className="max-w-[1024px] mx-auto px-4 py-16">
-								{children}
-							</div>
-						</main>
-						<footer className="bg-background border-t border-border py-4 text-center">
-							<div className="max-w-[1024px] mx-auto px-4">
-								<p>
-									&copy; {new Date().getFullYear()} Mohammad Fahrul Alwan. All
-									rights reserved.
-								</p>
-							</div>
-						</footer>
-					</div>
+					<nav className="fixed top-4 left-4 z-50 flex items-center space-x-4">
+						<Link href="/">
+							<Button
+								type="button"
+								variant="ghost"
+								size="icon"
+								className="bg-background/50 backdrop-blur-sm rounded-full"
+							>
+								<Home className="h-5 w-5" />
+								<span className="sr-only">Go to homepage</span>
+							</Button>
+						</Link>
+						<ThemeToggle />
+					</nav>
+					<main className="flex-grow">
+						<div className="max-w-screen-lg mx-auto px-4 py-16">{children}</div>
+					</main>
+					<footer className="bg-background border-t border-border py-4 text-center">
+						<div className="max-w-screen-lg mx-auto px-4">
+							<p>
+								&copy; {new Date().getFullYear()} Mohammad Fahrul Alwan. All
+								rights reserved.
+							</p>
+						</div>
+					</footer>
 				</ThemeProvider>
 				<Analytics />
 			</body>
