@@ -1,6 +1,11 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import type { FC } from "react";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+	title: "About",
+};
 
 const AboutPage: FC = () => {
 	return (
@@ -71,7 +76,7 @@ const AboutPage: FC = () => {
 								<Badge variant="secondary" className="mr-2">
 									Full-Stack Proficiency
 								</Badge>
-								Skilled in both frontend and backend technologies
+								Proficient in both frontend and backend technologies
 							</li>
 							<li>
 								<Badge variant="secondary" className="mr-2">

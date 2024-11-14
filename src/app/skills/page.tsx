@@ -1,10 +1,11 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import type { Metadata } from "next";
 
 const skillCategories = [
 	{
 		category: "Frontend",
-		expert: [
+		advanced: [
 			"React",
 			"Next.js",
 			"TypeScript",
@@ -13,16 +14,17 @@ const skillCategories = [
 			"CSS3",
 			"Tailwind CSS",
 		],
-		proficient: ["Angular", "Vue.js"],
-		familiar: ["Svelte", "Astro"],
+		proficient: ["Angular", "Vue.js", "Websockets"],
+		familiar: ["Svelte", "Astro", "GraphQL"],
 	},
 	{
 		category: "Backend",
-		expert: [],
+		advanced: [],
 		proficient: [
 			"Node.js",
 			"Express",
-			"Java Spring Boot",
+			"Java",
+			"Spring Boot",
 			"MongoDB",
 			"PostgreSQL",
 			"Redis",
@@ -31,30 +33,41 @@ const skillCategories = [
 	},
 	{
 		category: "Mobile",
-		expert: [],
+		advanced: [],
 		proficient: ["React Native"],
-		familiar: ["iOS", "Android"],
+		familiar: ["iOS", "Android", "Flutter"],
 	},
 	{
 		category: "DevOps & Cloud",
-		expert: [],
+		advanced: [],
 		proficient: ["Linux", "Docker", "Kubernetes", "Nginx", "GCP"],
 		familiar: ["Digital Ocean", "AWS", "Prometheus", "Grafana", "Proxmox"],
 	},
 	{
 		category: "Tools & Practices",
-		expert: ["Git", "Agile Methodologies"],
-		proficient: ["CI/CD", "Serverless", "Leadership"],
-		familiar: ["Microservices Architecture", "Test-Driven Development"],
+		advanced: [
+			"Git",
+			"Agile Methodologies",
+			"Atomic Design",
+			"Responsive Design",
+		],
+		proficient: ["CI/CD", "Serverless", "Leadership", "Cache Management"],
+		familiar: [
+			"Microservices Architecture",
+			"Test-Driven Development",
+			"Web Security",
+		],
 	},
 ];
+
+export const metadata: Metadata = {
+	title: "Skills",
+};
 
 const SkillsPage = () => {
 	return (
 		<div className="min-h-screen bg-background text-foreground">
-			<h1 className="text-4xl font-bold mb-8 text-center">
-				Skills & Expertises
-			</h1>
+			<h1 className="text-4xl font-bold mb-8 text-center">Skills</h1>
 			<div className="grid grid-cols-1 md:grid-cols-2 gap-8">
 				{skillCategories.map((category) => (
 					<Card
@@ -66,11 +79,11 @@ const SkillsPage = () => {
 						</CardHeader>
 						<CardContent>
 							<div className="space-y-4">
-								{!!category.expert.length && (
+								{!!category.advanced.length && (
 									<div>
-										<h3 className="font-semibold mb-2">Expert</h3>
+										<h3 className="font-semibold mb-2">Advanced</h3>
 										<div className="flex flex-wrap gap-2">
-											{category.expert.map((skill) => (
+											{category.advanced.map((skill) => (
 												<Badge key={skill} variant="default">
 													{skill}
 												</Badge>

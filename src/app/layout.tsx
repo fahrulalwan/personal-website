@@ -3,9 +3,12 @@ import { ThemeProvider } from "@/components/ui/theme-provider";
 import "./globals.css";
 import "./theme.css";
 import type { FC, PropsWithChildren } from "react";
-import Header from "@/components/header";
 import { Analytics } from "@vercel/analytics/react";
 import type { Metadata } from "next";
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
+import { Home } from "lucide-react";
+import ThemeToggle from "@/components/theme-toggle";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 const firaCode = Fira_Code({
@@ -14,14 +17,14 @@ const firaCode = Fira_Code({
 });
 
 export const metadata: Metadata = {
-	metadataBase: new URL("https://fahrulalwan.vercel.app"),
 	title: {
 		template: "%s | @fahrulalwan",
 		default: "@fahrulalwan",
 	},
+	generator: "Next.js",
+	applicationName: "Fahrul Alwan's Portfolio",
 	description:
 		"Software Engineer with a passion for building delightful user experiences. I specialize in frontend development with React and Next.js.",
-	referrer: "same-origin",
 	keywords: [
 		"Mohammad Fahrul Alwan",
 		"Software Engineer",
@@ -40,6 +43,7 @@ export const metadata: Metadata = {
 		"React Native Developer",
 		"Node.js Developer",
 	],
+	creator: "Mohammad Fahrul Alwan",
 	openGraph: {
 		type: "website",
 		locale: "enUS",
@@ -63,6 +67,7 @@ export const metadata: Metadata = {
 			"max-snippet": -1,
 		},
 	},
+	// TODO: Add favicon
 	// icons: {
 	// 	icon: "/icon.png",
 	// 	shortcut: "/shortcut-icon.png",
@@ -89,7 +94,20 @@ const RootLayout: FC<PropsWithChildren> = ({ children }) => {
 					disableTransitionOnChange
 				>
 					<div className="flex flex-col min-h-screen">
-						<Header />
+						<header className="fixed top-4 left-4 z-50 flex items-center space-x-4">
+							<Link href="/">
+								<Button
+									type="button"
+									variant="ghost"
+									size="icon"
+									className="bg-background/50 backdrop-blur-sm rounded-full"
+								>
+									<Home className="h-5 w-5" />
+									<span className="sr-only">Go to homepage</span>
+								</Button>
+							</Link>
+							<ThemeToggle />
+						</header>
 						<main className="flex-grow">
 							<div className="max-w-[1024px] mx-auto px-4 py-16">
 								{children}

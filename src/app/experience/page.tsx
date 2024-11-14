@@ -2,6 +2,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import type { FC } from "react";
 import { Briefcase, Lightbulb, Target } from "lucide-react";
+import type { Metadata } from "next";
 
 const experiences = [
 	{
@@ -110,6 +111,10 @@ const approachItems = [
 	},
 ];
 
+export const metadata: Metadata = {
+	title: "Experiences",
+};
+
 const ExperiencePage: FC = () => {
 	return (
 		<div className="min-h-screen bg-background text-foreground p-4">
@@ -155,7 +160,7 @@ const ExperiencePage: FC = () => {
 							<CardContent>
 								<p className="mb-4">{exp.description}</p>
 								<h4 className="font-semibold mb-2">Key Achievements:</h4>
-								<ul className="list-disc list-inside mb-4">
+								<ul className="list-disc list-outside mb-4 pl-4">
 									{exp.achievements.map((achievement) => (
 										<li key={achievement}>{achievement}</li>
 									))}

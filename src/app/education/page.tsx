@@ -1,151 +1,146 @@
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
 import {
-	Timeline,
-	TimelineItem,
-	TimelineIcon,
-	TimelineContent,
-} from "@/components/ui/timeline";
+	Card,
+	CardContent,
+	CardDescription,
+	CardHeader,
+	CardTitle,
+} from "@/components/ui/card";
+import { GraduationCap, Calendar, Award, Trophy, BookOpen } from "lucide-react";
+import type { Metadata } from "next";
 
-const educations = [
+interface Education {
+	degree: string;
+	institution: string;
+	period: string;
+	description: string;
+	keyActivities: string[];
+	achievements: string[];
+}
+
+interface Certification {
+	name: string;
+	issuer: string;
+	date: string;
+	description: string;
+}
+
+const educationData: Education[] = [
 	{
-		degree: "Bachelor's degree, Management Information Systems and Services",
-		institution: "BINUS University",
-		period: "Apr 2018 - Sep 2022",
-		grade: "3.76",
-		achievements: ["Achieved Magna Cum Laude"],
-		skills: [
-			"Data Science",
-			"Data Analysis",
-			"Business Process",
-			"Software Project Management",
-			"Business Analysis",
-			"Business Intelligence (BI)",
-		],
-	},
-	{
-		degree: "Teknik Jaringan Akses",
+		degree: "Vocational Degree in Access Network",
 		institution: "SMK Telkom Jakarta",
 		period: "2014 - 2017",
-		skills: ["Networking", "Technical Skills"],
+		description:
+			"The program focuses on telecommunications technology and access network systems. The program includes dynamic and disciplined education and training in telecommunications technology and information communication technology.",
+		keyActivities: ["Completed internship at PT Telkom Indonesia"],
+		achievements: [],
+	},
+	{
+		degree: "Bachelor of Information Systems",
+		institution: "Bina Nusantara University",
+		period: "2018 - 2022",
+		description:
+			"The program integrates computing and business to develop competencies in information systems management, computing technology, databases, business processes, project management, and IS auditing.",
+		keyActivities: ["Act as class leader in college major"],
+		achievements: ["Graduated with Summa Cum Laude (GPA: 3.76/4.0)"],
 	},
 ];
 
-const certifications = [
+const certificationData: Certification[] = [
 	{
-		name: "AWS Certified Developer - Associate",
-		issuer: "Amazon Web Services (AWS)",
-		year: "2022",
-	},
-	{
-		name: "Google Cloud Certified - Professional Cloud Developer",
-		issuer: "Google Cloud",
-		year: "2023",
+		name: "Cisco Certified Network Associate (CCNA)",
+		issuer: "Cisco",
+		date: "2016",
+		description:
+			"Demonstrated knowledge and skills in networking fundamentals, network access, IP connectivity, IP services, security fundamentals, and automation and programmability.",
 	},
 ];
 
-const EducationPage = () => {
+export const metadata: Metadata = {
+	title: "Education",
+};
+
+export default function EducationPage() {
 	return (
-		<div className="min-h-screen bg-background text-foreground">
-			<h1 className="text-4xl font-bold mb-8 text-center">Education</h1>
-			<div className="max-w-4xl mx-auto">
-				<Timeline>
-					{educations.map((edu) => (
-						<TimelineItem key={edu.degree}>
-							<TimelineIcon />
-							<TimelineContent>
-								<Card className="bg-card text-card-foreground mb-8">
-									<CardHeader>
-										<CardTitle
-											as="h2"
-											className="flex justify-between items-center flex-wrap"
-										>
-											<span className="text-xl">{edu.degree}</span>
-											<Badge variant="secondary" className="text-sm">
-												{edu.period}
-											</Badge>
-										</CardTitle>
-									</CardHeader>
-									<CardContent>
-										<p className="font-semibold mb-2 text-primary">
-											{edu.institution}
-										</p>
-										{edu.grade && <p className="mb-2">Grade: {edu.grade}</p>}
-										{edu.achievements && (
-											<ul className="list-disc list-inside mb-4">
+		<div className="container mx-auto px-4 py-8">
+			<h1 className="text-3xl font-bold mb-8 text-center">Education</h1>
+
+			<div className="space-y-8">
+				<section>
+					<h2 className="text-2xl font-semibold mb-4 flex items-center gap-2">
+						<GraduationCap className="w-6 h-6" />
+						Education
+					</h2>
+					<div className="grid gap-6 md:grid-cols-2">
+						{educationData.map((edu) => (
+							<Card key={edu.degree}>
+								<CardHeader>
+									<CardTitle className="text-xl">{edu.degree}</CardTitle>
+									<CardDescription>{edu.institution}</CardDescription>
+								</CardHeader>
+								<CardContent className="space-y-4">
+									<div className="flex items-center gap-2 text-sm text-muted-foreground">
+										<Calendar className="w-4 h-4" />
+										<span>{edu.period}</span>
+									</div>
+									<p>{edu.description}</p>
+
+									{!!edu.keyActivities.length && (
+										<div>
+											<h4 className="font-semibold mb-2 flex items-center gap-2">
+												<BookOpen className="w-4 h-4" />
+												Key Activities:
+											</h4>
+											<ul className="list-disc list-outside space-y-1 pl-4">
+												{edu.keyActivities.map((activity) => (
+													<li key={activity}>{activity}</li>
+												))}
+											</ul>
+										</div>
+									)}
+
+									{!!edu.achievements.length && (
+										<div>
+											<h4 className="font-semibold mb-2 flex items-center gap-2">
+												<Trophy className="w-4 h-4" />
+												Achievements:
+											</h4>
+											<ul className="list-disc list-outside space-y-1 pl-4">
 												{edu.achievements.map((achievement) => (
 													<li key={achievement}>{achievement}</li>
 												))}
 											</ul>
-										)}
-										<div className="flex flex-wrap gap-2">
-											{edu.skills.map((skill) => (
-												<Badge key={skill} variant="outline">
-													{skill}
-												</Badge>
-											))}
 										</div>
-									</CardContent>
-								</Card>
-							</TimelineContent>
-						</TimelineItem>
-					))}
-					<TimelineItem>
-						<TimelineIcon />
-						<TimelineContent>
-							<h2 className="text-2xl font-bold mb-4">
-								Professional Certifications
-							</h2>
-							<div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-								{certifications.map((cert) => (
-									<Card
-										key={cert.name}
-										className="bg-card text-card-foreground"
-									>
-										<CardHeader>
-											<CardTitle as="h2">{cert.name}</CardTitle>
-										</CardHeader>
-										<CardContent>
-											<p>{cert.issuer}</p>
-											<Badge variant="outline" className="mt-2">
-												{cert.year}
-											</Badge>
-										</CardContent>
-									</Card>
-								))}
-							</div>
-						</TimelineContent>
-					</TimelineItem>
-					<TimelineItem>
-						<TimelineIcon />
-						<TimelineContent>
-							<h2 className="text-2xl font-bold mb-4">Continuous Learning</h2>
-							<Card className="bg-card text-card-foreground">
-								<CardContent>
-									<ul className="list-disc list-inside space-y-2">
-										<li>
-											Regularly attend web development conferences and workshops
-										</li>
-										<li>
-											Active participant in online coding communities and forums
-										</li>
-										<li>
-											Completed numerous online courses on platforms like
-											Coursera and Udemy
-										</li>
-										<li>
-											Contribute to open-source projects to stay updated with
-											latest practices
-										</li>
-									</ul>
+									)}
 								</CardContent>
 							</Card>
-						</TimelineContent>
-					</TimelineItem>
-				</Timeline>
+						))}
+					</div>
+				</section>
+
+				<section>
+					<h2 className="text-2xl font-semibold mb-4 flex items-center gap-2">
+						<Award className="w-6 h-6" />
+						Certification
+					</h2>
+					<div className="grid gap-6 md:grid-cols-2">
+						{certificationData.map((cert) => (
+							<Card key={cert.name}>
+								<CardHeader>
+									<CardTitle className="text-xl">{cert.name}</CardTitle>
+									<CardDescription>{cert.issuer}</CardDescription>
+								</CardHeader>
+								<CardContent>
+									<div className="flex items-center gap-2 text-sm text-muted-foreground mb-2">
+										<Calendar className="w-4 h-4" />
+										<span>{cert.date}</span>
+									</div>
+									<p>{cert.description}</p>
+								</CardContent>
+							</Card>
+						))}
+					</div>
+				</section>
 			</div>
 		</div>
 	);
-};
-
-export default EducationPage;
+}

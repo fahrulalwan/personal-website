@@ -5,6 +5,39 @@ import { Github, Linkedin, Mail, ChevronRight } from "lucide-react";
 import Image from "next/image";
 import profileImage from "../../public/profile.webp";
 
+const menus = [
+	{
+		title: "About Me",
+		description: "Learn more about my background and aspirations",
+		link: "/about",
+	},
+	{
+		title: "Experience",
+		description: "Explore my professional journey and projects",
+		link: "/experience",
+	},
+	{
+		title: "Projects",
+		description: "View my notable projects and contributions",
+		link: "/projects",
+	},
+	{
+		title: "Skills",
+		description: "Check out my technical skills and expertise",
+		link: "/skills",
+	},
+	{
+		title: "Education",
+		description: "Learn about my academic achievements and certifications",
+		link: "/education",
+	},
+	// {
+	// 	title: "Blog",
+	// 	description: "Read my latest thoughts and musings on technology",
+	// 	link: "/blog",
+	// }
+];
+
 const AppPage = () => {
 	return (
 		<div className="min-h-screen bg-background text-foreground">
@@ -67,84 +100,21 @@ const AppPage = () => {
 				</div>
 
 				<div className="grid grid-cols-1 md:grid-cols-3 gap-4 w-full max-w-3xl">
-					<Link href="/about" passHref legacyBehavior>
-						<Card className="hover:bg-accent transition-colors cursor-pointer">
-							<CardHeader>
-								<CardTitle className="flex items-center justify-between text-xl">
-									About Me
-									<ChevronRight className="h-5 w-5" />
-								</CardTitle>
-							</CardHeader>
-							<CardContent>
-								<p>Learn more about my background and aspirations</p>
-							</CardContent>
-						</Card>
-					</Link>
-					<Link href="/experience" passHref legacyBehavior>
-						<Card className="hover:bg-accent transition-colors cursor-pointer">
-							<CardHeader>
-								<CardTitle className="flex items-center justify-between text-xl">
-									Experience
-									<ChevronRight className="h-5 w-5" />
-								</CardTitle>
-							</CardHeader>
-							<CardContent>
-								<p>Explore my professional journey and projects</p>
-							</CardContent>
-						</Card>
-					</Link>
-					<Link href="/projects" passHref legacyBehavior>
-						<Card className="hover:bg-accent transition-colors cursor-pointer">
-							<CardHeader>
-								<CardTitle className="flex items-center justify-between text-xl">
-									Projects
-									<ChevronRight className="h-5 w-5" />
-								</CardTitle>
-							</CardHeader>
-							<CardContent>
-								<p>View my notable projects and contributions</p>
-							</CardContent>
-						</Card>
-					</Link>
-					<Link href="/skills" passHref legacyBehavior>
-						<Card className="hover:bg-accent transition-colors cursor-pointer">
-							<CardHeader>
-								<CardTitle className="flex items-center justify-between text-xl">
-									Skills
-									<ChevronRight className="h-5 w-5" />
-								</CardTitle>
-							</CardHeader>
-							<CardContent>
-								<p>Check out my technical skills and expertise</p>
-							</CardContent>
-						</Card>
-					</Link>
-					<Link href="/education" passHref legacyBehavior>
-						<Card className="hover:bg-accent transition-colors cursor-pointer">
-							<CardHeader>
-								<CardTitle className="flex items-center justify-between text-xl">
-									Education
-									<ChevronRight className="h-5 w-5" />
-								</CardTitle>
-							</CardHeader>
-							<CardContent>
-								<p>Learn about my academic achievements and certifications</p>
-							</CardContent>
-						</Card>
-					</Link>
-					<Link href="/contact" passHref legacyBehavior>
-						<Card className="hover:bg-accent transition-colors cursor-pointer">
-							<CardHeader>
-								<CardTitle className="flex items-center justify-between text-xl">
-									Contact
-									<ChevronRight className="h-5 w-5" />
-								</CardTitle>
-							</CardHeader>
-							<CardContent>
-								<p>Get in touch for opportunities or collaborations</p>
-							</CardContent>
-						</Card>
-					</Link>
+					{menus.map((menu) => (
+						<Link href={menu.link} key={menu.title}>
+							<Card className="hover:bg-accent transition-colors cursor-pointer h-full">
+								<CardHeader>
+									<CardTitle className="flex items-center justify-between text-xl">
+										{menu.title}
+										<ChevronRight className="h-5 w-5" />
+									</CardTitle>
+								</CardHeader>
+								<CardContent>
+									<p>{menu.description}</p>
+								</CardContent>
+							</Card>
+						</Link>
+					))}
 				</div>
 			</div>
 		</div>

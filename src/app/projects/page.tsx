@@ -8,89 +8,129 @@ import {
 } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { ExternalLink } from "lucide-react";
+import { Briefcase, Calendar, ExternalLink, Tag } from "lucide-react";
 import Image from "next/image";
 import project_lanthera from "../../../public/project-lanthera.png";
-import project_bareksa from "../../../public/project-lanthera-1.png";
 import project_treetan from "../../../public/project-treetan.png";
+import project_xl from "../../../public/project-newxlife.png";
 import project_xp from "../../../public/project-xprivate.png";
 import project_fifada from "../../../public/project-fifada.png";
 import project_caready from "../../../public/project-caready.png";
+import type { Metadata } from "next";
 
 const projects = [
 	{
 		title: "Lanthera",
+		year: "2024",
+		role: "Frontend Developer",
+		category: "Mental Health",
 		description:
-			"Led the frontend development of a React Native app for Android and iOS, providing mental health support and resources. Implemented real-time chat, mood tracking, and personalized content recommendations.",
-		technologies: ["React Native", "TypeScript", "Redux", "Jest", "Firebase"],
+			"Led the frontend development of a mental health support app using React Native. Implemented complex UI interaction animations, onboarding experience, activity dashboard, connect to therapist, profile & settings page, Journaling feature, and Firebase integration.",
+		technologies: ["React Native", "TypeScript", "Redux", "Firebase"],
 		link: "https://lanthera.com",
 		image: project_lanthera,
 		impact:
-			"Helped over 50,000 users manage their mental health more effectively.",
-	},
-	{
-		title: "Bareksa",
-		description:
-			"Developed a comprehensive dashboard for a fintech superapp, focusing on investment portfolio management. Integrated real-time market data, implemented complex financial calculations, and optimized performance for handling large datasets.",
-		technologies: ["React", "Next.js", "TypeScript", "GraphQL", "D3.js"],
-		link: "https://www.bareksa.com",
-		image: project_bareksa,
-		impact:
-			"Increased user engagement by 40% and improved portfolio performance for clients.",
+			"Delivered a production-ready MVP within 8 months while maintaining cross-platform compatibility. Established a robust frontend architecture that scales across iOS and Android, setting strong foundations for future feature expansion.",
 	},
 	{
 		title: "Treetan",
+		year: "2023",
+		role: "Lead Frontend Engineer",
+		category: "Travel",
 		description:
-			"Built an interactive platform for online tutoring with real-time collaboration features. Implemented video conferencing, shared whiteboard, and a scheduling system for tutors and students.",
-		technologies: ["Angular", "RxJS", "Socket.io", "WebRTC", "Node.js"],
-		link: "https://treetan.com/",
+			"Engineered critical business features for a comprehensive Umrah and Hajj travel platform. Implemented end-to-end document verification system, automated requirement tracking, and invoicing system.",
+		technologies: ["Vue.js", "Nuxt.js", "Tailwind CSS"],
+		link: "https://treetan.com",
 		image: project_treetan,
 		impact:
-			"Facilitated over 100,000 online tutoring sessions, improving student performance.",
+			"Established scalable development practices enabling team growth from 2 to 6 developers & increased project delivery speed by designing reusable components and modules.",
+	},
+	// done
+	{
+		title: "NewXLife",
+		year: "2021",
+		role: "Frontend Engineer",
+		category: "Enterprise",
+		description:
+			"Led the frontend development an internal HC Super App for XL Axiata employees from ground up, featuring dynamic form/page builder, health submission tracking, news & articles and multilingual support.",
+		technologies: [
+			"Angular",
+			"Tailwind CSS",
+			"Travis CI",
+			"Docker",
+			"Kubernetes",
+		],
+		link: "https://www.newxlife.xl.co.id/en",
+		image: project_xl,
+		impact:
+			"Delivered all features ahead of schedule with zero scope compromise. Reduced deployment bottlenecks by optimizing CI/CD pipelines, cutting deployment time from 30 to under 10 minutes while maintaining reliability.",
 	},
 	{
 		title: "XPrivate Education",
+		year: "2020",
+		role: "Full Stack Developer",
+		category: "Education",
 		description:
-			"Built an interactive platform for online tutoring with real-time collaboration features. Implemented video conferencing, shared whiteboard, and a scheduling system for tutors and students.",
-		technologies: ["Angular", "RxJS", "Socket.io", "WebRTC", "Node.js"],
+			"Developed an end-to-end solution of a tutoring platform with a dedicated web-app for students and tutors. Implemented automated reporting system, real-time scheduling.",
+		technologies: [
+			"Angular",
+			"RxJS",
+			"TypeScript",
+			"Tailwind CSS",
+			"Java",
+			"Spring Boot",
+			"PostgreSQL",
+			"Nginx",
+		],
 		link: "https://xprivate.education",
 		image: project_xp,
 		impact:
-			"Facilitated over 100,000 online tutoring sessions, improving student performance.",
+			"Enabled thousands successful tutoring sessions & helping scalable growth that increased operational efficiency, reduced manual work.",
 	},
 	{
 		title: "FIFADA",
+		year: "2020",
+		role: "Frontend Developer",
+		category: "E-commerce",
 		description:
-			"Architected and developed a full-stack e-commerce platform using a microservices architecture. Implemented advanced search functionality, recommendation engine, and integrated multiple payment gateways.",
+			"Contributed to building a modern e-commerce platform with sophisticated cross-selling capabilities across Astra Group's product ecosystem. Implemented advanced product discovery and recommendation features.",
 		technologies: [
-			"Vue.js",
-			"Node.js",
-			"Express",
-			"MongoDB",
-			"Docker",
-			"Kubernetes",
+			"React",
+			"Next.js",
+			"TypeScript",
+			"Tailwind CSS",
+			"Redux",
+			"Material UI",
 		],
 		link: "https://fifada.com",
 		image: project_fifada,
-		impact: "Increased sales by 25% and reduced infrastructure costs by 30%.",
+		impact:
+			"Built scalable frontend technical design on complex cross-selling mechanism on the platform. Achieved 100% of the project scopes.",
 	},
 	{
 		title: "CAReady",
+		year: "2019",
+		role: "Frontend Developer",
+		category: "Auction Commerce",
 		description:
-			"Architected and developed a full-stack e-commerce platform using a microservices architecture. Implemented advanced search functionality, recommendation engine, and integrated multiple payment gateways.",
+			"Built a sophisticated real-time vehicle auction platform handling concurrent bidding from both online and offline participants. Implemented robust auction management tools with fail-safe mechanisms.",
 		technologies: [
-			"Vue.js",
-			"Node.js",
-			"Express",
-			"MongoDB",
-			"Docker",
-			"Kubernetes",
+			"Angular",
+			"RxJS",
+			"TypeScript",
+			"Tailwind CSS",
+			"Websockets",
 		],
 		link: "https://caready.co.id",
 		image: project_caready,
-		impact: "Increased sales by 25% and reduced infrastructure costs by 30%.",
+		impact:
+			"Implemented real-time bidding mechanism that can be joined by online & offline users while maintaining data consistency. Enabling the platform to be used in various auction events.",
 	},
 ];
+
+export const metadata: Metadata = {
+	title: "Projects",
+};
 
 const ProjectsPage = () => {
 	return (
@@ -127,8 +167,23 @@ const ProjectsPage = () => {
 								<strong>Impact:</strong> {project.impact}
 							</p>
 						</CardContent>
-						<CardFooter className="mt-auto flex">
-							{project.link && (
+						<CardFooter className="mt-auto flex-col items-start">
+							<div className="grid grid-cols-2 gap-2 text-sm mb-4 w-full">
+								<div className="flex items-center gap-2">
+									<Briefcase className="w-4 h-4 text-muted-foreground" />
+									<span>{project.role}</span>
+								</div>
+								<div className="flex items-center gap-2">
+									<Calendar className="w-4 h-4 text-muted-foreground" />
+									<span>{project.year}</span>
+								</div>
+								<div className="flex items-center gap-2">
+									<Tag className="w-4 h-4 text-muted-foreground" />
+									<span>{project.category}</span>
+								</div>
+							</div>
+
+							{!!project.link && (
 								<Button variant="outline" asChild>
 									<a
 										href={project.link}
