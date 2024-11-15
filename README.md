@@ -1,36 +1,44 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+![Profile Image](./public/profile.webp)
 
-## Getting Started
+# Mohammad Fahrul Alwan
 
-First, run the development server:
+![GitHub Followers](https://img.shields.io/github/followers/fahrulalwan?style=social)
+![GitHub Stars](https://img.shields.io/github/stars/fahrulalwan?style=social)
+![Profile Views](https://komarev.com/ghpvc/?username=fahrulalwan&color=blue)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Table of Contents
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- [Mohammad Fahrul Alwan](#mohammad-fahrul-alwan)
+  - [Table of Contents](#table-of-contents)
+  - [About Me](#about-me)
+  - [Skills](#skills)
+  - [Personal Life](#personal-life)
+  - [Contact](#contact)
+  - [License](#license)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## About Me
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Hi! I'm a Senior Frontend Engineer & Tech Lead with over 11 years of IT-focused learning and 7+ years of coding experience. I specialize in creating robust and scalable web applications using modern JavaScript frameworks. I'm passionate about solving complex problems and driving business impact through innovative technology solutions.
 
-## Learn More
+I'm currently working as a Frontend Engineering Lead at [Bareksa](https://bareksa.com), a leading fintech company in Indonesia. I'm responsible for leading the frontend team, designing and developing web applications, and ensuring the quality of the codebase. I collaborate with cross-functional teams to deliver high-quality products.
 
-To learn more about Next.js, take a look at the following resources:
+## Skills
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- **Frontend Development**: React, Next.js, TypeScript, JavaScript, HTML, CSS, Tailwind CSS
+- **Backend Development**: Node.js, Express.js
+- **DevOps & Cloud**: Linux, Docker, Kubernetes, Nginx, GCP, AWS
+- **Tools & Practices**: Git, Agile Methodologies, CI/CD, Serverless, Leadership
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Personal Life
 
-## Deploy on Vercel
+I have a deep passion for learning new things, especially philosophical concepts. Traveling and exploring new places fuels my creativity and broadens my perspective. I'm an avid basketball enthusiast, enjoy hitting the gym, and have a keen interest in photography and classic music. Currently, I'm cultivating a habit of reading books to enrich my knowledge further😬
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Contact
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- **Website**: [https://fahrulalwan.vercel.app](https://fahrulalwan.vercel.app)
+- **Email**: [fahrulalwan@gmail.com](mailto:fahrulalwan@gmail.com)
+- **LinkedIn**: [linkedin.com/in/fahrulalwan](https://linkedin.com/in/fahrulalwan)
+
+## License
+
+This repository is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
