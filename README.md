@@ -1,5 +1,3 @@
-![Profile Image](./public/profile.webp)
-
 # Mohammad Fahrul Alwan
 
 ![GitHub Followers](https://img.shields.io/github/followers/fahrulalwan?style=social)
