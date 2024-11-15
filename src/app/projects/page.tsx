@@ -10,15 +10,14 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Briefcase, Calendar, ExternalLink, Tag } from "lucide-react";
 import Image from "next/image";
-import project_lanthera from "../../../public/project-lanthera.png";
-import project_treetan from "../../../public/project-treetan.png";
-import project_xl from "../../../public/project-newxlife.png";
-import project_xp from "../../../public/project-xprivate.png";
-import project_fifada from "../../../public/project-fifada.png";
-import project_caready from "../../../public/project-caready.png";
+import project_lanthera from "../../../public/projects/project-lanthera.webp";
+import project_treetan from "../../../public/projects/project-treetan.webp";
+import project_xl from "../../../public/projects/project-newxlife.webp";
+import project_xp from "../../../public/projects/project-xprivate.webp";
+import project_fifada from "../../../public/projects/project-fifada.webp";
+import project_caready from "../../../public/projects/project-caready.webp";
 import type { Metadata } from "next";
 
-// TODO: change png to webp, resize accordingly, & adjust light & dark image
 const projects = [
 	{
 		title: "Lanthera",

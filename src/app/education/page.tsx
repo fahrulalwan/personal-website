@@ -7,6 +7,7 @@ import {
 } from "@/components/ui/card";
 import { GraduationCap, Calendar, Award, Trophy, BookOpen } from "lucide-react";
 import type { Metadata } from "next";
+import type { FC } from "react";
 
 interface Education {
 	degree: string;
@@ -59,7 +60,7 @@ export const metadata: Metadata = {
 	title: "Education",
 };
 
-export default function EducationPage() {
+const EducationPage: FC = () => {
 	return (
 		<>
 			<h1 className="text-3xl font-bold mb-8 text-center mt-4">Education</h1>
@@ -143,4 +144,6 @@ export default function EducationPage() {
 			</div>
 		</>
 	);
-}
+};
+
+export default EducationPage;

@@ -95,7 +95,6 @@ const AboutPage: FC = () => {
 						</ul>
 					</CardContent>
 				</Card>
-
 				<Card>
 					<CardHeader>
 						<CardTitle as="h2" className="text-2xl">
@@ -103,7 +102,7 @@ const AboutPage: FC = () => {
 						</CardTitle>
 					</CardHeader>
 					<CardContent>
-						<ul className="space-y-2">
+						<ul className="space-y-2 list-disc list-outside pl-4">
 							<li>Exploring and implementing cutting-edge web technologies</li>
 							<li>Optimizing application performance and user experience</li>
 							<li>
@@ -115,53 +114,6 @@ const AboutPage: FC = () => {
 								implementation
 							</li>
 							<li>Staying current with industry trends and best practices</li>
-						</ul>
-					</CardContent>
-				</Card>
-
-				<Card>
-					<CardHeader>
-						<CardTitle as="h2" className="text-2xl">
-							Notable Achievements
-						</CardTitle>
-					</CardHeader>
-					<CardContent>
-						<ul className="space-y-2">
-							<li>
-								<Badge variant="secondary" className="mr-2">
-									Team Leadership
-								</Badge>
-								Successfully led a team of 4 frontend developers, improving
-								overall productivity
-							</li>
-							<li>
-								<Badge variant="secondary" className="mr-2">
-									System Optimization
-								</Badge>
-								Implemented a new design system that significantly reduced
-								development time
-							</li>
-							<li>
-								<Badge variant="secondary" className="mr-2">
-									Performance Enhancement
-								</Badge>
-								Optimized web application load times, leading to improved user
-								engagement
-							</li>
-							<li>
-								<Badge variant="secondary" className="mr-2">
-									Academic Excellence
-								</Badge>
-								Graduated Magna Cum Laude while maintaining full-time employment
-								in the tech industry
-							</li>
-							<li>
-								<Badge variant="secondary" className="mr-2">
-									Project Management
-								</Badge>
-								Delivered a critical project ahead of schedule, resulting in
-								significant cost savings
-							</li>
 						</ul>
 					</CardContent>
 				</Card>
