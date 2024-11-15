@@ -4,6 +4,7 @@ import "./globals.css";
 import "./theme.css";
 import type { FC, PropsWithChildren } from "react";
 import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
@@ -112,6 +113,7 @@ const RootLayout: FC<PropsWithChildren> = ({ children }) => {
 					</footer>
 				</ThemeProvider>
 				<Analytics />
+				<SpeedInsights />
 			</body>
 		</html>
 	);
