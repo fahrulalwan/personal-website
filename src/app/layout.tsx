@@ -101,16 +101,14 @@ const RootLayout: FC<PropsWithChildren> = ({ children }) => {
 						</Link>
 						<ThemeToggle />
 					</nav>
-					<main className="flex-grow">
-						<div className="max-w-screen-lg mx-auto px-4 py-16">{children}</div>
+					<main className="flex-grow max-w-screen-lg mx-auto px-4 py-16">
+						{children}
 					</main>
-					<footer className="border-t border-border py-4 text-center">
-						<div className="max-w-screen-lg mx-auto px-4">
-							<p>
-								&copy; {new Date().getFullYear()} Mohammad Fahrul Alwan. All
-								rights reserved.
-							</p>
-						</div>
+					<footer className="border-t border-border p-4 text-center">
+						<p>
+							&copy; {new Date().getFullYear()} Mohammad Fahrul Alwan. All
+							rights reserved.
+						</p>
 					</footer>
 				</ThemeProvider>
 				<Analytics />
