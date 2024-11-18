@@ -41,7 +41,7 @@ const menus = [
 const AppPage = () => {
 	return (
 		<div className="*:mx-auto text-center">
-			<div className="mb-6 sm:mb-8 w-40 h-40 sm:w-48 sm:h-48 rounded-full overflow-hidden">
+			<div className="mb-6 sm:mb-8 w-40 h-40 rounded-full overflow-hidden">
 				<Image
 					src={profileImage}
 					width={160}
