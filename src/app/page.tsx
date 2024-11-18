@@ -41,7 +41,7 @@ const menus = [
 const AppPage = () => {
 	return (
 		<div className="*:mx-auto text-center">
-			<div className="mb-8 w-48 h-48 rounded-full overflow-hidden">
+			<div className="mb-6 sm:mb-8 w-40 h-40 sm:w-48 sm:h-48 rounded-full overflow-hidden">
 				<Image
 					src={profileImage}
 					alt="Mohammad Fahrul Alwan Profile Image"
@@ -49,29 +49,33 @@ const AppPage = () => {
 				/>
 			</div>
 
-			<header className="mb-8">
-				<h1 className="text-5xl font-bold mb-4">Mohammad Fahrul Alwan</h1>
-				<h2 className="text-xl">Senior Frontend Engineer & Tech Lead</h2>
+			<header className="mb-5 sm:mb-8">
+				<h1 className="text-3xl sm:text-4xl font-bold mb-2 sm:mb-3">
+					Mohammad Fahrul Alwan
+				</h1>
+				<h2 className="text-lg sm:text-xl text-lime-900 font-medium">
+					Senior Frontend Engineer & Tech Lead
+				</h2>
 			</header>
 
-			<div className="max-w-2xl mb-12">
-				<p className="text-lg mb-4">
+			<div className="max-w-2xl mb-8 sm:mb-12">
+				<p className="sm:text-lg mb-4">
 					An M-shaped professional with a passion for structured thinking,
 					business impact, and innovative solutions. Bridging the gap between
 					technology and business objectives.
 				</p>
-				<p className="text-lg mb-4">
+				<p className="sm:text-lg mb-4">
 					With 11+ years of IT-focused learning and 7+ years of coding
 					experience, I specialize in creating robust and scalable web
 					applications using modern JavaScript frameworks.
 				</p>
-				<p className="text-lg">
+				<p className="sm:text-lg">
 					I&apos;m passionate about solving complex problems and driving
 					business impact through innovative technology solutions.
 				</p>
 			</div>
 
-			<div className="space-x-4 mb-12">
+			<div className="space-x-4 mb-8 sm:mb-12">
 				<Button variant="outline" size="icon" asChild>
 					<Link
 						href="https://github.com/fahrulalwan"

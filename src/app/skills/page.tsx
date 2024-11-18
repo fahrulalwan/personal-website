@@ -35,7 +35,7 @@ const skillCategories = [
 		category: "Mobile",
 		advanced: [],
 		proficient: ["React Native"],
-		familiar: ["iOS", "Android", "Flutter"],
+		familiar: ["iOS", "Android", "Flutter", "Expo"],
 	},
 	{
 		category: "DevOps & Cloud",

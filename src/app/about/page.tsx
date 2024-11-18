@@ -16,7 +16,7 @@ const AboutPage: FC = () => {
 				<Card>
 					<CardHeader>
 						<CardTitle as="h2" className="text-2xl">
-							Mohammad Fahrul Alwan
+							Background
 						</CardTitle>
 					</CardHeader>
 					<CardContent>

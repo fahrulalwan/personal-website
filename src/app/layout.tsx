@@ -9,7 +9,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Home } from "lucide-react";
-import ThemeToggle from "@/components/theme-toggle";
+import ThemeToggle from "@/components/ui/theme-toggle";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 const firaCode = Fira_Code({
@@ -102,7 +102,7 @@ const RootLayout: FC<PropsWithChildren> = ({ children }) => {
 						</Link>
 						<ThemeToggle />
 					</nav>
-					<main className="flex-grow max-w-screen-lg mx-auto px-4 py-16">
+					<main className="flex-grow max-w-screen-lg mx-auto px-5 sm:px-4 py-16">
 						{children}
 					</main>
 					<footer className="border-t border-border p-4 text-center">

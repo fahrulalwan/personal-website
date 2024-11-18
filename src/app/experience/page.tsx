@@ -9,7 +9,7 @@ const experiences = [
 		title: "Frontend Engineer Lead",
 		company: "Bareksa",
 		period: "Oct 2022 - Present",
-		location: "Jakarta, Indonesia · Hybrid",
+		location: "Jakarta, Indonesia",
 		description:
 			"As a Frontend Engineering Leader, I manage a team of four and oversee dozens of repositories. I've led the implementation of a new design system migration across our web platform and orchestrated web implementation for our news platform & Landing Page Revamp, serving hundreds of thousands of MAUs.",
 		achievements: [
@@ -30,7 +30,7 @@ const experiences = [
 		title: "Software Engineer",
 		company: "Axiata Digital Labs",
 		period: "Sep 2021 - Oct 2022",
-		location: "Jakarta, Indonesia · Hybrid",
+		location: "Jakarta, Indonesia",
 		description:
 			"Helped build an employee operation platform called 'Super Apps' for a big telecommunication company. The platform included features such as employee work clock, COVID assessment services, building management, news & articles, page builder & dynamic form builder, document management, auction, marketplace, and multi-language support.",
 		achievements: [
