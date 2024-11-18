@@ -55,7 +55,7 @@ const AppPage = () => {
 				<h1 className="text-3xl sm:text-4xl font-bold mb-2 sm:mb-3">
 					Mohammad Fahrul Alwan
 				</h1>
-				<h2 className="text-lg sm:text-xl text-lime-900 font-medium">
+				<h2 className="text-lg sm:text-xl text-lime-900 dark:text-lime-50 font-medium">
 					Senior Frontend Engineer & Tech Lead
 				</h2>
 			</header>
