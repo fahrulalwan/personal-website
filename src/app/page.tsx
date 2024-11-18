@@ -44,6 +44,8 @@ const AppPage = () => {
 			<div className="mb-6 sm:mb-8 w-40 h-40 sm:w-48 sm:h-48 rounded-full overflow-hidden">
 				<Image
 					src={profileImage}
+					width={192}
+					height={192}
 					alt="Mohammad Fahrul Alwan Profile Image"
 					priority
 				/>
