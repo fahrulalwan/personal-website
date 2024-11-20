@@ -21,8 +21,8 @@ const AboutPage: FC = () => {
           </CardHeader>
           <CardContent>
             <div className="flex flex-wrap gap-2 mb-4">
-              <Badge variant="secondary">11+ Years IT Experience</Badge>
-              <Badge variant="secondary">7+ Years Coding</Badge>
+              <Badge variant="secondary">11+ Years IT-focused Learning</Badge>
+              <Badge variant="secondary">7+ Years Experiences</Badge>
               <Badge variant="secondary">Magna Cum Laude Graduate</Badge>
             </div>
             <p className="mb-4 tracking-wide">
