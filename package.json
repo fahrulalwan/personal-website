@@ -17,7 +17,7 @@
     "@vercel/speed-insights": "^1.1.0",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
-    "lucide-react": "^0.439.0",
+    "lucide-react": "^0.462.0",
     "next": "^15.0.3",
     "next-themes": "^0.3.0",
     "react": "19.0.0-rc-e1ef8c95-20241115",
