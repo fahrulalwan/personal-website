@@ -26,6 +26,7 @@ const AboutPage: FC = () => {
               <Badge variant="secondary">7+ Years Experiences</Badge>
               <Badge variant="secondary">4 Years in Consultant</Badge>
               <Badge variant="secondary">2+ Years in Product</Badge>
+              <Badge variant="secondary">3+ Years Leadership Experiences</Badge>
             </div>
             <p className="mb-4 tracking-wide">
               My journey in IT began at Telkom Vocational Highschool in West
