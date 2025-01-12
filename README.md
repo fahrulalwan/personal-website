@@ -18,12 +18,12 @@
 
 Hi! I'm a Senior Frontend Engineer & Tech Lead with over 11 years of IT-focused learning and 7+ years of coding experience. I specialize in creating robust and scalable web applications using modern JavaScript frameworks. I'm passionate about solving complex problems and driving business impact through innovative technology solutions.
 
-I'm currently working as a Frontend Engineering Lead at [Bareksa](https://bareksa.com), a leading fintech company in Indonesia. I'm responsible for leading the frontend team, designing and developing web applications, and ensuring the quality of the codebase. I collaborate with cross-functional teams to deliver high-quality products.
+I'm currently working as a Frontend Engineering Lead at [Bareksa](https://bareksa.com), a leading fintech company in Indonesia. I'm responsible for leading the frontend team, designing and developing web applications, and ensuring the quality of the codebase. I collaborate with cross-functional teams to deliver high-quality products. Currently interested & hyped with AI development!
 
 ## Skills
 
 - **Frontend Development**: React, Next.js, TypeScript, JavaScript, HTML, CSS, Tailwind CSS
-- **Backend Development**: Node.js, Express.js
+- **Backend Development**: Node.js, Express.js, Java - Spring Boot, PostgreSQL
 - **DevOps & Cloud**: Linux, Docker, Kubernetes, Nginx, GCP, AWS
 - **Tools & Practices**: Git, Agile Methodologies, CI/CD, Serverless, Leadership
 
