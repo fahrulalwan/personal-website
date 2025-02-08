@@ -54,6 +54,20 @@ const certificationData: Certification[] = [
     description:
       'Demonstrated knowledge and skills in networking fundamentals, network access, IP connectivity, IP services, security fundamentals, and automation and programmability.',
   },
+  {
+    name: 'Angular (Basic) Certificate',
+    issuer: 'HackerRank',
+    date: 'Jul 2022',
+    description:
+      'Demonstrated skills in building applications using Angular, including components, services, and routing.',
+  },
+  {
+    name: 'Frontend Developer (React) Certificate',
+    issuer: 'HackerRank',
+    date: 'Jan 2025',
+    description:
+      'Demonstrated an understanding of React, including hooks, state management, and working with APIs.',
+  }
 ];
 
 export const metadata: Metadata = {
