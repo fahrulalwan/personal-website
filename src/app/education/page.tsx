@@ -67,7 +67,14 @@ const certificationData: Certification[] = [
     date: 'Jan 2025',
     description:
       'Demonstrated an understanding of React, including hooks, state management, and working with APIs.',
-  }
+  },
+  {
+    name: 'The AI Engineer Path',
+    issuer: 'Scrimba',
+    date: 'Jan 2024',
+    description:
+      'Comprehensive training in AI engineering covering Prompt Engineering, LangChain, OpenAI API integration, Vector Databases, and ReAct patterns for building AI-powered applications.',
+  },
 ];
 
 export const metadata: Metadata = {
